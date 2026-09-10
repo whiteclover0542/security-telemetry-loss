@@ -41,6 +41,7 @@
 - 최신 설계 확인: Inria 수정·라벨 코드를 고정 버전으로 검토하고 핵심 공격 호스트 201·501·051의 TAR 위치를 확인했다. [수정·라벨 검토](research/LABEL_AND_CORRECTION_REVIEW.md). 선택 다운로드는 HTTP 503으로 미완료.
 - 고정 입력: 세 공격 사례의 데이터 파일 ID·바이트 위치·크기와 라벨 SHA-256을 [study_inputs.json](config/study_inputs.json)에 기록했다. 256KiB 재시도도 HTTP 504/503으로 실패하여 서버 회복 후 같은 범위로 재시도한다.
 - 고정 탐지기: [탐지기 선택 기록](research/DETECTOR_SELECTION.md)에 PIDSMaker KAIROS 버전, 정상 검증 임계값, 사례 판정, 무유실 기준 실행 중단 조건을 고정했다. 원본 OpTC KAIROS 노트북의 테스트별 임계값과 손상된 노트북 형식, PIDSMaker 큐 평가의 미작동 표시는 제외 사유로 기록했다.
+- 정상 입력 범위: 2019-09-19~22 TAR의 파일 ID·크기·MD5를 [study_inputs.json](config/study_inputs.json)에 고정했다. 2026-09-10 재확인에서 Inria 메타데이터 API도 HTTP 503을 반환해, 세 호스트의 개별 gzip 위치 색인은 서버 복구 뒤 재개한다.
 - 카드 상태: `대기` / `진행 중` / `막힘` / `완료`
 - 막힌 경우: 카드의 작업 기록에 막힌 이유와 다음 행동을 적는다.
 - 기존의 주제 선정 완료와 과제 통과 기준 충족은 별도로 관리한다. 제출물 확인 전인 통과 기준은 미체크로 둔다.

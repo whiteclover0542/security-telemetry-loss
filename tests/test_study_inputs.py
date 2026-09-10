@@ -46,6 +46,15 @@ class StudyInputsTests(unittest.TestCase):
         self.assertIn("frozen", detector["case_detection_rule"])
         self.assertIn("stop", detector["baseline_gate"])
 
+    def test_normal_archives_cover_training_and_validation_dates(self):
+        archives = self.config["normal_input_archives"]
+        self.assertEqual([item["date"] for item in archives], [
+            "2019-09-19", "2019-09-20", "2019-09-21", "2019-09-22"
+        ])
+        for archive in archives:
+            self.assertGreater(archive["archive_size"], 0)
+            self.assertEqual(len(archive["md5"]), 32)
+
 
 if __name__ == "__main__":
     unittest.main()

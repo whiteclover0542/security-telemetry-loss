@@ -27,6 +27,6 @@
 
 ## 실행 가능성 및 남은 관문
 
-현재 로컬 환경은 약 8GB 메모리이며 PostgreSQL과 NVIDIA 실행 환경이 준비되지 않았다. PIDSMaker 문서의 OpTC 전처리 자료도 호스트별 약 6.7~9GB이므로, 원시 로그 확보 후 GPU와 PostgreSQL을 갖춘 별도 실행 환경이 필요하다. 다음 관문은 세 공격 호스트 로그와 2019-09-22 정상 학습·검증 로그를 확보하고 무유실 기준 실행을 통과하는 것이다.
+현재 로컬 환경은 약 8GB 메모리이며 PostgreSQL과 NVIDIA 실행 환경이 준비되지 않았다. PIDSMaker 문서의 OpTC 전처리 자료도 호스트별 약 6.7~9GB이므로, 원시 로그 확보 후 GPU와 PostgreSQL을 갖춘 별도 실행 환경이 필요하다. 학습 2019-09-19~21 및 검증 2019-09-22 TAR의 파일 ID·크기·MD5는 고정했지만, 현재 Inria 서버가 HTTP 503을 반환하여 세 호스트의 개별 gzip 위치는 아직 색인화하지 못했다. 다음 관문은 이 12개 정상 호스트 파일과 세 공격 호스트 로그를 확보하고 무유실 기준 실행을 통과하는 것이다.
 
 검토 근거는 [고정 입력 설정](../config/study_inputs.json), [수정 코드 출처 manifest](correction_sources_manifest.json), 제외된 외부 코드 `external/PIDSMaker`와 `external/corrected-optc-review`에 있다. 외부 코드 자체는 저장소에 포함하지 않는다.

@@ -24,6 +24,12 @@
     "case_detection_rule": "A case is detected when at least one node in its frozen corrected ground truth has a node anomaly score strictly above the frozen validation threshold.",
     "state_policy": "Restore the same trained checkpoint and initial inference state for every no-loss and loss replay."
   },
+  "normal_input_archives": [
+    {"date": "2019-09-19", "file_id": 713570, "archive_size": 124590602240, "md5": "4c903ce91b0957a3b93b9bb20f7f358a"},
+    {"date": "2019-09-20", "file_id": 713571, "archive_size": 89917859840, "md5": "e1093a0626cc7607d934e26ecbb10330"},
+    {"date": "2019-09-21", "file_id": 713572, "archive_size": 123844270080, "md5": "8574319d053047f7ff829a0a5d9c4367"},
+    {"date": "2019-09-22", "file_id": 713573, "archive_size": 124306227200, "md5": "c691a26310e0105519c72517f1aa2dcb"}
+  ],
   "primary_cases": [
     {
       "case": "scenario-1",
