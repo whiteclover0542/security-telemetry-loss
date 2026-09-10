@@ -259,7 +259,7 @@ Q01~Q05·Q09는 로그와 공격 라벨을 확보하면 재생 실험으로 접�
 
 남길 산출물: 실험 설계 표, 원자료 파일, 실행 스크립트 또는 절차 설명, 재확인 방법, 설계 변경 기록.
 
-- 근거: [실험 설계 v0.1](research/EXPERIMENT_DESIGN.md)의 비교 조건 표(T10-C21~C24). [유실 위치 생성 코드](scripts/loss_masks.py), [단위 테스트](tests/test_loss_masks.py), [출처 접근 기록](research/source_checks/20260910T005048434081Z/manifest.json). 실제 로그 시험·본실험 기준은 미충족이다.
+- 근거: [실험 설계 v0.1](research/EXPERIMENT_DESIGN.md)의 비교 조건 표(T10-C21~C24). [유실 위치 생성 코드](scripts/loss_masks.py), [마스크 적용 코드](scripts/apply_loss_mask.py), [단위 테스트](tests/test_loss_masks.py), [출처 접근 기록](research/source_checks/20260910T005048434081Z/manifest.json). 실제 로그 시험·본실험 기준은 미충족이다.
 - 작업 기록: 2026-09-10 — PIDSMaker 코드를 확보하고 데이터·환경을 점검했다. 주비교 10%, 보조 1·5·20%, 조건별 시드 30개를 설계했다. 이벤트 삭제 후 노드 속성 재구축이 필요함을 확인했다. 공식 원본 파일 요청은 할당량 초과 HTML을 반환했고 Inria 선택 다운로드는 HTTP 503/504로 실패하여 실제 공격 로그 확보는 미완료다. 수정·라벨·KAIROS 소스의 고정 버전과 해시를 보존했다. PIDSMaker KAIROS의 검증 기반 고정 임계값과 무유실 기준 실행 중단 조건을 확정했다. 다음은 원본 자료 재시도, 정상 학습 자료 위치 고정, GPU·PostgreSQL 환경에서 기준 실행이다.
 
 <a id="card-4"></a>

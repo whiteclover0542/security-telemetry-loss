@@ -60,7 +60,7 @@ PIDSMaker 코드를 `external/PIDSMaker`에 확보했다. 확인 버전은 `ae1e
 
 ## 구현과 검증
 
-`scripts/loss_masks.py`는 고정된 순서의 이벤트 위치를 받아 삭제 인덱스를 만든다. 공격 라벨을 입력받지 않으며 입력 SHA-256·시드·Python 버전·삭제 개수를 기록하고 기존 출력 덮어쓰기를 거부한다. 현재 도구는 위치 생성기이며 원본 파서·속성 재구축·탐지기 실행기까지 구현된 것은 아니다.
+`scripts/loss_masks.py`는 고정된 순서의 이벤트 위치를 받아 삭제 인덱스를 만든다. 공격 라벨을 입력받지 않으며 입력 SHA-256·시드·Python 버전·삭제 개수를 기록하고 기존 출력 덮어쓰기를 거부한다. `scripts/apply_loss_mask.py`는 해당 마스크를 JSONL 또는 JSONL.GZ 스트림에 적용하고, 입력·마스크·출력 SHA-256과 전후 이벤트 수를 manifest에 남긴다. 두 도구 모두 탐지기 속성 재구축·KAIROS 실행기는 수행하지 않는다.
 
 ```powershell
 python -m unittest discover -s tests -v
