@@ -46,6 +46,32 @@ class StudyInputsTests(unittest.TestCase):
         self.assertIn("frozen", detector["case_detection_rule"])
         self.assertIn("stop", detector["baseline_gate"])
 
+    def test_both_metrics_and_the_saturation_rule_are_pinned(self):
+        metrics = self.config["metrics"]
+        self.assertEqual(metrics["primary"], "case_detection_rate")
+        self.assertEqual(metrics["co_primary"], "frozen_label_node_recall")
+        self.assertIn("saturated", metrics["saturation_rule"])
+        self.assertIn("withhold", metrics["disagreement_rule"])
+
+    def test_spread_hypothesis_and_severe_threshold_are_pinned(self):
+        metrics = self.config["metrics"]
+        self.assertIn("A-v2", metrics["hypothesis"])
+        self.assertIn("A-v1", metrics["hypothesis"], "the mean comparison stays co-registered")
+        self.assertEqual(metrics["spread_primary"], "stdev_of_frozen_label_node_recall_across_seeds")
+        self.assertIn("0.5", metrics["severe_seed_rule"])
+        self.assertIn("No F-test", metrics["spread_comparison"])
+
+    def test_reduction_rule_keeps_cases_patterns_and_baseline(self):
+        reduction = self.config["reduction_rule"]
+        self.assertEqual(len(reduction["steps"]), 3)
+        self.assertIn("never based on", reduction["note"])
+        self.assertIn("not reported as tested", reduction["floor"])
+
+    def test_deletions_are_scoped_to_the_evaluation_window(self):
+        loss = self.config["loss_conditions"]
+        self.assertIn("evaluation window", loss["deletion_scope"])
+        self.assertIn("same count from the same window", loss["deletion_scope"])
+
     def test_normal_archives_cover_training_and_validation_dates(self):
         archives = self.config["normal_input_archives"]
         self.assertEqual([item["date"] for item in archives], [

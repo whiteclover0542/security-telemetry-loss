@@ -3,11 +3,22 @@ import argparse
 import json
 from pathlib import Path
 import re
+import shutil
 import subprocess
 import tarfile
 from datetime import datetime, timezone
 
 ROOT = Path(__file__).resolve().parents[1]
+
+
+def curl_command():
+    """The GPU and PostgreSQL execution host is not necessarily Windows."""
+    found = shutil.which("curl.exe") or shutil.which("curl")
+    if found is None:
+        raise RuntimeError("curl was not found on PATH")
+    return found
+
+
 ARCHIVES = {"2019-09-19": (713570, 124590602240),
             "2019-09-20": (713571, 89917859840),
             "2019-09-21": (713572, 123844270080),
@@ -18,9 +29,12 @@ ARCHIVES = {"2019-09-19": (713570, 124590602240),
 
 
 def fetch_range(url, start, length, work):
-    header, body = work / "response.headers", work / "response.bin"
+    # Scratch responses are overwritten each call; keep them out of the evidence directory.
+    scratch = work / "scratch"
+    scratch.mkdir(exist_ok=True)
+    header, body = scratch / "response.headers", scratch / "response.bin"
     result = subprocess.run([
-        "curl.exe", "--silent", "--show-error", "--fail", "--location",
+        curl_command(), "--silent", "--show-error", "--fail", "--location",
         "--max-time", "45", "--range", f"{start}-{start + length - 1}",
         "--max-filesize", str(length), "--dump-header", str(header),
         "--output", str(body), url,

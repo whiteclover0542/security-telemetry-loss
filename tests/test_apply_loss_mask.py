@@ -22,8 +22,10 @@ class ApplyLossMaskTests(unittest.TestCase):
                 raw.write(b'{"id":"c","timestamp":"2019-09-23T00:00:02Z"}\n')
         mask = Path(directory) / "mask.json"
         mask.write_text(json.dumps({
-            "schema": "loss-mask-v1", "source_sha256": sha256_file(source),
-            "event_count": 3, "positions": [1]
+            "schema": "loss-mask-v2", "source_sha256": sha256_file(source),
+            "event_count": 3, "selection_start": 0, "selection_end": 3,
+            "requested_rate": "0.33", "realized_rate": 1 / 3,
+            "seed": 0, "pattern": "random", "positions": [1]
         }), encoding="utf-8")
         return source, mask
 
@@ -38,6 +40,15 @@ class ApplyLossMaskTests(unittest.TestCase):
             self.assertEqual(record["deleted_count"], 1)
             self.assertEqual(record["output_event_count"], 2)
             self.assertEqual(json.loads(manifest.read_text())["output_sha256"], hashlib.sha256(output.read_bytes()).hexdigest())
+
+    def test_rejects_position_outside_its_own_selection(self):
+        with tempfile.TemporaryDirectory() as directory:
+            source, mask = self.make_input_and_mask(directory)
+            record = json.loads(mask.read_text())
+            record["selection_start"], record["selection_end"] = 2, 3
+            mask.write_text(json.dumps(record), encoding="utf-8")
+            with self.assertRaisesRegex(ValueError, "outside its own selection"):
+                apply(source, mask, Path(directory) / "out.json", Path(directory) / "out.manifest.json")
 
     def test_rejects_mask_for_another_input(self):
         with tempfile.TemporaryDirectory() as directory:

@@ -31,7 +31,31 @@ def linux_memory_bytes(meminfo_path=Path("/proc/meminfo")):
     return values.get("MemTotal")
 
 
-def collect(cwd=Path.cwd()):
+def windows_memory_bytes():
+    import ctypes
+
+    class MemoryStatus(ctypes.Structure):
+        _fields_ = [(name, ctypes.c_ulong if name.startswith("dw") else ctypes.c_ulonglong)
+                    for name in ("dwLength", "dwMemoryLoad", "ullTotalPhys", "ullAvailPhys",
+                                 "ullTotalPageFile", "ullAvailPageFile", "ullTotalVirtual",
+                                 "ullAvailVirtual", "ullAvailExtendedVirtual")]
+
+    status = MemoryStatus()
+    status.dwLength = ctypes.sizeof(MemoryStatus)
+    if not ctypes.windll.kernel32.GlobalMemoryStatusEx(ctypes.byref(status)):
+        return None
+    return status.ullTotalPhys
+
+
+def memory_total_bytes():
+    """Memory is the constraint that decides whether this host can run the replay."""
+    if sys.platform == "win32":
+        return windows_memory_bytes()
+    return linux_memory_bytes()
+
+
+def collect(cwd=None):
+    cwd = Path.cwd() if cwd is None else cwd
     disk = shutil.disk_usage(cwd)
     return {
         "schema": "experiment-environment-v1",
@@ -39,7 +63,7 @@ def collect(cwd=Path.cwd()):
         "python": sys.version.split()[0],
         "workspace": str(cwd),
         "disk_free_bytes": disk.free,
-        "memory_total_bytes": linux_memory_bytes(),
+        "memory_total_bytes": memory_total_bytes(),
         "commands": {
             "psql": command_result(["psql", "--version"]),
             "docker": command_result(["docker", "version", "--format", "{{.Server.Version}}"]),

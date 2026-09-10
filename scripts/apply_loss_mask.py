@@ -27,7 +27,7 @@ def open_input(path):
 
 def load_mask(path, source_sha256):
     mask = json.loads(path.read_text(encoding="utf-8"))
-    if mask.get("schema") != "loss-mask-v1":
+    if mask.get("schema") != "loss-mask-v2":
         raise ValueError("unsupported mask schema")
     if mask.get("source_sha256") != source_sha256:
         raise ValueError("mask source SHA-256 does not match input")
@@ -36,6 +36,8 @@ def load_mask(path, source_sha256):
         raise ValueError("mask positions must be sorted and unique")
     if any(isinstance(i, bool) or not isinstance(i, int) or i < 0 for i in positions):
         raise ValueError("mask contains an invalid position")
+    if positions and not mask["selection_start"] <= positions[0] <= positions[-1] < mask["selection_end"]:
+        raise ValueError("mask position falls outside its own selection window")
     return mask, set(positions)
 
 
@@ -76,6 +78,12 @@ def apply(input_path, mask_path, output_path, manifest_path):
         "input_event_count": input_count,
         "mask_path": str(mask_path),
         "mask_sha256": sha256_file(mask_path),
+        "mask_pattern": mask["pattern"],
+        "mask_seed": mask["seed"],
+        "requested_rate": mask["requested_rate"],
+        "selection_start": mask["selection_start"],
+        "selection_end": mask["selection_end"],
+        "realized_rate_in_selection": mask["realized_rate"],
         "deleted_count": len(deleted),
         "output_path": str(output_path),
         "output_sha256": sha256_file(output_path),

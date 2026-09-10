@@ -22,7 +22,19 @@
     "evaluation_method": "node_evaluation",
     "baseline_gate": "Each primary case must detect at least one node from its frozen corrected ground truth before loss; otherwise stop before the loss comparison.",
     "case_detection_rule": "A case is detected when at least one node in its frozen corrected ground truth has a node anomaly score strictly above the frozen validation threshold.",
-    "state_policy": "Restore the same trained checkpoint and initial inference state for every no-loss and loss replay."
+    "state_policy": "Restore the same trained checkpoint and initial inference state for every no-loss and loss replay.",
+    "per_host_models": "One checkpoint and one validation threshold per attack host; frozen within a case, not shared across cases."
+  },
+  "metrics": {
+    "hypothesis": "A-v2: contiguous loss makes detection outcomes less predictable across seeds than uniform random loss at the same deletion count. A-v1 (larger mean drop) is co-registered and reported from the same runs.",
+    "spread_primary": "stdev_of_frozen_label_node_recall_across_seeds",
+    "severe_seed_rule": "A seed counts as severe when its label node recall is below 0.5 x the no-loss baseline recall. The 0.5 factor is arbitrary and fixed before results.",
+    "spread_comparison": "Report standard deviations, their ratio, ranges and per-seed distributions. No F-test: the 30 seeds are repeats on one attack input, not independent samples.",
+    "primary": "case_detection_rate",
+    "co_primary": "frozen_label_node_recall",
+    "co_primary_denominator": "Label node count fixed on the complete no-loss corrected input; nodes removed by loss count as undetected.",
+    "saturation_rule": "If baseline and both loss patterns give a case detection rate of 1.0 for every case at the primary rate, report the case detection rate as saturated and draw the conclusion from label node recall.",
+    "disagreement_rule": "If the two metrics point in opposite directions, report both and withhold judgement."
   },
   "normal_input_archives": [
     {"date": "2019-09-19", "file_id": 713570, "archive_size": 124590602240, "md5": "4c903ce91b0957a3b93b9bb20f7f358a"},
@@ -72,6 +84,17 @@
     "primary_rate": "0.10",
     "secondary_rates": ["0.01", "0.05", "0.20"],
     "patterns": ["random", "contiguous"],
-    "seeds": {"first": 0, "last": 29}
+    "seeds": {"first": 0, "last": 29},
+    "deletion_scope": "Positions inside the per-case evaluation window only, from scripts/window_positions.py; both patterns delete the same count from the same window.",
+    "variant_retention": "Variant inputs are not kept. Keep the mask, the application manifest and the run record; regenerate a variant from them when needed."
+  },
+  "reduction_rule": {
+    "note": "Fixed before results. Apply in order only when the measured runtime exceeds the available budget, never based on which condition looks favourable.",
+    "steps": [
+      "Drop secondary rates 0.01 and 0.20 (363 runs).",
+      "Drop secondary rate 0.05 (183 runs).",
+      "Reduce seeds from 0-29 to 0-9 (63 runs)."
+    ],
+    "floor": "Three cases, two loss patterns and the no-loss baseline are retained in every step. If any of those must be dropped, the hypothesis is not reported as tested."
   }
 }

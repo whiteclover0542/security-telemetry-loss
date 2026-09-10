@@ -1,7 +1,12 @@
+from pathlib import Path
 import random
+import sys
 import unittest
 
-from scripts.loss_masks import deletion_count, make_mask
+
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "scripts"))
+from loss_masks import deletion_count, make_mask, selection_bounds
 
 
 class LossMaskTests(unittest.TestCase):
@@ -40,6 +45,27 @@ class LossMaskTests(unittest.TestCase):
     def test_contiguous_can_reach_both_boundaries(self):
         starts = {make_mask(4, ".5", seed, "contiguous")[0] for seed in range(100)}
         self.assertEqual(starts, {0, 1, 2})
+
+    def test_both_patterns_delete_the_same_count_inside_the_selection(self):
+        selection = (1000, 2000)
+        for rate in ("0.01", "0.05", "0.10", "0.20"):
+            for seed in range(30):
+                masks = [make_mask(10000, rate, seed, p, selection) for p in ("random", "contiguous")]
+                self.assertEqual(len(masks[0]), len(masks[1]))
+                self.assertEqual(len(masks[0]), deletion_count(1000, rate))
+                for mask in masks:
+                    self.assertTrue(all(1000 <= x < 2000 for x in mask))
+
+    def test_selection_defaults_to_whole_input(self):
+        self.assertEqual(selection_bounds(500, None), (0, 500))
+        for pattern in ("random", "contiguous"):
+            self.assertEqual(make_mask(500, ".1", 7, pattern),
+                             make_mask(500, ".1", 7, pattern, (0, 500)))
+
+    def test_invalid_selections_are_rejected(self):
+        for selection in ((-1, 10), (10, 10), (5, 4), (0, 101), (True, 10), (0, 1.5)):
+            with self.assertRaises(ValueError):
+                make_mask(100, ".1", 0, "random", selection)
 
 
 if __name__ == "__main__":

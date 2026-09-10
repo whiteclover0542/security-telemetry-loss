@@ -1,0 +1,46 @@
+{
+  "schema": "run-record-contract-v1",
+  "note": "Field contract for one detector replay, fixed before any result exists. The pending KAIROS runner writes one JSON object per run; scripts/aggregate_results.py refuses records that do not satisfy this contract. Adding a field is allowed; removing or redefining one is a design change and belongs in the EXPERIMENT_DESIGN change log.",
+  "record_type": "object",
+  "required_fields": {
+    "run_id": "string",
+    "case": "string",
+    "host": "string",
+    "pattern": "string",
+    "requested_rate": "string",
+    "seed": "integer_or_null",
+    "input_sha256": "string",
+    "mask_sha256": "string_or_null",
+    "selection_start": "integer",
+    "selection_end": "integer",
+    "deleted_count": "integer",
+    "detector_commit": "string",
+    "checkpoint_sha256": "string",
+    "threshold": "number",
+    "case_detected": "boolean",
+    "detected_label_nodes": "integer",
+    "total_label_nodes": "integer",
+    "started_at_utc": "string",
+    "finished_at_utc": "string",
+    "exit_status": "string"
+  },
+  "optional_fields": {
+    "node_precision": "number",
+    "false_alerts_per_hour": "number",
+    "deleted_span_seconds": "number",
+    "fraction_of_attack_window_deleted": "number",
+    "reduction_step_applied": "integer",
+    "error_message": "string"
+  },
+  "value_rules": {
+    "pattern": ["baseline", "random", "contiguous"],
+    "exit_status": ["completed", "failed"],
+    "seed": "null only when pattern is baseline",
+    "mask_sha256": "null only when pattern is baseline",
+    "total_label_nodes": "Fixed per case on the complete no-loss input; identical across every run of that case.",
+    "detected_label_nodes": "0 <= detected_label_nodes <= total_label_nodes",
+    "case_detected": "true exactly when detected_label_nodes > 0",
+    "label_node_recall": "Derived, not stored: detected_label_nodes / total_label_nodes."
+  },
+  "retention": "Failed runs are recorded with exit_status \"failed\" and kept. They are excluded from metric averages and reported separately."
+}
