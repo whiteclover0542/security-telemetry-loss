@@ -10,6 +10,12 @@
 3. PostgreSQL과 CUDA를 사용할 수 있는 실행 환경이 필요합니다.
 4. [고정 입력](../config/study_inputs.json), [실험 설계](EXPERIMENT_DESIGN.md), [탐지기 선택](DETECTOR_SELECTION.md)을 변경하지 않은 상태여야 합니다.
 
+실행 호스트에서는 먼저 다음 명령으로 PostgreSQL·Docker·NVIDIA 도구, 메모리와 디스크 상태를 기록합니다. 기존 결과를 덮어쓰지 않도록 매번 새 파일명을 사용합니다.
+
+```powershell
+python scripts/check_experiment_environment.py --output environment-check.json
+```
+
 ## 1. 선택 로그 확보
 
 정상 학습·검증용으로 2019-09-19~22의 SysClient0201, SysClient0501, SysClient0051을 확보합니다. 공격 평가용으로는 `study_inputs.json`의 세 `primary_cases`를 사용합니다.

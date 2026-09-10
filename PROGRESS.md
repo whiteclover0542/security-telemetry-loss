@@ -128,6 +128,7 @@
 - 실제 데이터 확보부터 결과 재확인까지의 [실행 절차](research/RUNBOOK.md)를 작성했습니다.
 - 무유실 기준과 유실 조건에 사용할 [결과 기록 서식](research/RESULTS_TEMPLATE.md)을 작성했습니다.
 - 시드 반복을 독립 공격 사례로 해석하지 않는 [분석 계획](research/ANALYSIS_PLAN.md)을 고정했습니다.
+- GPU·PostgreSQL 실행 호스트를 확인할 [환경 점검 도구](scripts/check_experiment_environment.py)를 작성했습니다.
 
 ### 현재 막힌 일
 
