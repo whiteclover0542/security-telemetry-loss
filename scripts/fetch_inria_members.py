@@ -11,6 +11,18 @@ from datetime import datetime, timezone
 ROOT = Path(__file__).resolve().parents[1]
 
 
+def select_member(rows, host):
+    suffix = f"sysclient{host:04d}.json.gz"
+    matches = [x for x in rows if x["name"].endswith(suffix)]
+    unique = {
+        (x["name"], x["file_id"], x["data_offset"], x["size"]): x
+        for x in matches
+    }
+    if len(unique) != 1:
+        raise ValueError(f"expected one indexed member, found {len(unique)} distinct members")
+    return next(iter(unique.values()))
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--date", required=True)
@@ -18,11 +30,7 @@ def main():
     args = parser.parse_args()
     index = ROOT / "data" / "inria_index" / args.date / "index.jsonl"
     rows = [json.loads(x) for x in index.read_text().splitlines()]
-    suffix = f"sysclient{args.host:04d}.json.gz"
-    matches = [x for x in rows if x["name"].endswith(suffix)]
-    if len(matches) != 1:
-        raise ValueError(f"expected one indexed member, found {len(matches)}")
-    row = matches[0]
+    row = select_member(rows, args.host)
     start, size = row["data_offset"], row["size"]
     end = start + size - 1
     out_dir = ROOT / "data" / "inria_selected" / args.date
