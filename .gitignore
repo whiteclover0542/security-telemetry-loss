@@ -13,9 +13,13 @@ data/*
 !data/inria_selected/
 data/inria_index/*/*
 data/inria_selected/*/*
+!data/inria_index/
+!data/windows/
+data/windows/*
 !data/inria_index/*/index.jsonl
 !data/inria_selected/*/manifest.jsonl
 !data/inria_selected/*/attempts.jsonl
+!data/windows/*.json
 
 # Raw *.headers stay local: successful responses carry a pre-signed S3 URL.
 # attempts.jsonl records each failure instead.

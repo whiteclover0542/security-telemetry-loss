@@ -1,0 +1,14 @@
+{
+  "schema": "window-positions-v1",
+  "input_path": "D:/IT/git/SKT/security-telemetry-loss/data/inria_selected/2019-09-25/AIA-51-75.ecar-2019-09-25-sysclient0051.json.gz",
+  "input_sha256": "67c52f2644240364a824e798ecefa3cbcd2de7d03d502420ad46e5e996a10e0e",
+  "window_start": "2019-09-25T10:29:00-04:00",
+  "window_end": "2019-09-25T14:25:00-04:00",
+  "events_outside_window_inside_range": 0,
+  "event_count": 2524447,
+  "in_window_count": 787939,
+  "order_violations": 0,
+  "selection_start": 1706025,
+  "selection_end": 2493964,
+  "selection_event_count": 787939
+}
