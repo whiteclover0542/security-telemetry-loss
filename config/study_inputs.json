@@ -1,0 +1,58 @@
+{
+  "schema": "security-telemetry-loss-study-inputs-v1",
+  "dataset": {
+    "name": "Corrected version of the DARPA OpTC dataset",
+    "version": "1.0",
+    "doi": "10.57745/UXCWOC",
+    "release_date": "2026-01-28"
+  },
+  "correction_and_label_code": {
+    "repository": "https://gitlab.inria.fr/fmajorcz/a_new_hope_for_darpa_optc",
+    "commit": "644f41fb0a955e471f34bed016fb2bfd9c74dc04",
+    "label_margin_seconds": 90
+  },
+  "primary_cases": [
+    {
+      "case": "scenario-1",
+      "date": "2019-09-23",
+      "host": "SysClient0201",
+      "archive_file_id": 713574,
+      "archive_size": 120309340160,
+      "member": "2019-09-23/AIA-201-225/AIA-201-225.ecar-2019-09-23-sysclient0201.json.gz",
+      "member_data_offset": 11560115712,
+      "member_size": 260533164,
+      "label_file": "labelling/host/ground_truths/ground_truth_corrected_sc1_updated.csv",
+      "label_sha256": "87e53d592c661080c355b4bd3c3e9ad603b863ab7c1db242177e2afc401bec93"
+    },
+    {
+      "case": "scenario-2",
+      "date": "2019-09-24",
+      "host": "SysClient0501",
+      "archive_file_id": 713575,
+      "archive_size": 111941212160,
+      "member": "2019-09-24/AIA-501-525/AIA-501-525.ecar-2019-09-24-sysclient0501.json.gz",
+      "member_data_offset": 65416246272,
+      "member_size": 252545116,
+      "label_file": "labelling/host/ground_truths/ground_truth_corrected_sc2_updated.csv",
+      "label_sha256": "17d8286004e141db6b034f6acca4bf282429d32d092442b3188a3af0563fdba4"
+    },
+    {
+      "case": "scenario-3",
+      "date": "2019-09-25",
+      "host": "SysClient0051",
+      "archive_file_id": 713576,
+      "archive_size": 67718440960,
+      "member": "2019-09-25/AIA-51-75/AIA-51-75.ecar-2019-09-25-sysclient0051.json.gz",
+      "member_data_offset": 44406958080,
+      "member_size": 141878906,
+      "label_file": "labelling/host/ground_truths/ground_truth_corrected_sc3_updated.csv",
+      "label_sha256": "9e8a9b1f302b987c085d3efee9d8e787beca2cb4b59a194fb9d7043268aca0e1"
+    }
+  ],
+  "loss_conditions": {
+    "primary_rate": "0.10",
+    "secondary_rates": ["0.01", "0.05", "0.20"],
+    "patterns": ["random", "contiguous"],
+    "seeds": {"first": 0, "last": 29}
+  }
+}
