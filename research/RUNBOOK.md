@@ -33,6 +33,16 @@ docker exec postgres psql -U postgres -tAc "SELECT datname FROM pg_database WHER
 ```
 
 `optc_201`, `optc_501`, `optc_051`이 나와야 합니다.
+
+5. **테이블을 따로 만듭니다.** compose가 마운트하는 `init-create-empty-databases.sh`는 빈 데이터베이스만 만들고 테이블은 만들지 않습니다. 제공된 덤프를 복원하는 경로에서는 덤프에 테이블이 들어 있어 문제가 없지만, 원시 로그에서 DB를 채우는 이번 경로에서는 테이블이 없어 전처리가 마지막 단계에서 `relation "subject_node_table" does not exist`로 실패합니다. 입력을 11분 넘게 읽은 뒤에 실패하므로 미리 만들어 둡니다.
+
+```powershell
+docker cp external/PIDSMaker/postgres/init-create-databases.sh postgres:/tmp/create-tables.sh
+docker exec postgres bash -c "chmod +x /tmp/create-tables.sh && /tmp/create-tables.sh"
+docker exec postgres psql -U postgres -d optc_201 -tAc "SELECT tablename FROM pg_tables WHERE schemaname='public'"
+```
+
+`event_table`, `subject_node_table`, `file_node_table`, `netflow_node_table` 네 개가 나와야 합니다. 이미 존재하는 데이터베이스에 대한 `already exists` 오류는 무시해도 됩니다.
 4. [고정 입력](../config/study_inputs.json), [실험 설계](EXPERIMENT_DESIGN.md), [탐지기 선택](DETECTOR_SELECTION.md)을 변경하지 않은 상태여야 합니다.
 
 실행 호스트에서는 먼저 다음 명령으로 PostgreSQL·Docker·NVIDIA 도구, 메모리와 디스크 상태를 기록합니다. 기존 결과를 덮어쓰지 않도록 매번 새 파일명을 사용합니다.
