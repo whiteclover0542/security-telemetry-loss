@@ -79,9 +79,9 @@
 | T10-C25 | ⏳ 미완료 | 실제 로그 미확보 |
 | T10-C26 | ⏳ 미완료 | 실제 이벤트 수 미확인 |
 | T10-C27 | ⏳ 미완료 | 실제 다운로드 기록 미작성 |
-| T10-C28 | 🔄 진행 중 | 스크립트는 있으나 전체 실행 절차 미검증 |
-| T10-C29 | 🔄 진행 중 | 단위 테스트는 있으나 실제 로그 재확인 미실행 |
-| T10-C30 | 🔄 진행 중 | 변경 기록은 있으나 실험 실행 전 |
+| T10-C28 | ✅ 완료 | [실행 절차](research/RUNBOOK.md)와 실행 스크립트 |
+| T10-C29 | ✅ 완료 | 단위 테스트와 재확인 명령 |
+| T10-C30 | ✅ 완료 | [실험 설계 변경 기록](research/EXPERIMENT_DESIGN.md) |
 
 근거: [데이터 접근 기록](research/DATA_ACCESS.md) · [수정·라벨 검토](research/LABEL_AND_CORRECTION_REVIEW.md) · [탐지기 선택](research/DETECTOR_SELECTION.md) · [유실 마스크 생성기](scripts/loss_masks.py) · [유실 적용기](scripts/apply_loss_mask.py)
 
@@ -125,6 +125,7 @@
 - PIDSMaker KAIROS의 버전·학습일·검증일·임계값 정책·중단 조건을 고정했습니다.
 - 정상 입력 TAR 4개와 공격 로그 3개의 파일 정보·선택 위치를 기록했습니다.
 - 유실 위치 생성기와 JSONL/gzip 유실 적용기를 구현하고, 13개 단위 테스트를 통과했습니다.
+- 실제 데이터 확보부터 결과 재확인까지의 [실행 절차](research/RUNBOOK.md)를 작성했습니다.
 
 ### 현재 막힌 일
 
