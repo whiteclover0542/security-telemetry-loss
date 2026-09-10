@@ -1,0 +1,41 @@
+[
+  {
+    "name": "h201_attack_folder",
+    "url": "https://drive.google.com/drive/folders/15nia2-dLBVw1ieLHz-JMKXCXvO226Ktx",
+    "checked_at_utc": "2026-09-10T00:55:08.288734+00:00",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "bytes_saved": 262144,
+    "truncated": true,
+    "sha256": "ad6ecab9ad8b7c44d13579a90583d35e678baea22ffb58301e0749a66c23036b",
+    "postgres_dump_magic": false
+  },
+  {
+    "name": "h501_attack_folder",
+    "url": "https://drive.google.com/drive/folders/1FEx6FMXf3BrVgrmiaQNeObtKAJF3VElY",
+    "checked_at_utc": "2026-09-10T00:55:08.288734+00:00",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "bytes_saved": 262144,
+    "truncated": true,
+    "sha256": "ca772ff5a0cc5f2166cfccec3a46a86249f23b237a4536a8d379a518b440bd60",
+    "postgres_dump_magic": false
+  },
+  {
+    "name": "inria_description",
+    "url": "https://correctedoptc.inria.fr/",
+    "checked_at_utc": "2026-09-10T00:55:08.288734+00:00",
+    "error": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1032)>"
+  },
+  {
+    "name": "inria_metadata",
+    "url": "https://entrepot.recherche.data.gouv.fr/api/datasets/:persistentId/?persistentId=doi:10.57745/UXCWOC",
+    "checked_at_utc": "2026-09-10T00:55:08.288734+00:00",
+    "status": 200,
+    "content_type": "application/json;charset=UTF-8",
+    "bytes_saved": 13705,
+    "truncated": false,
+    "sha256": "3ba1e41aa58d6fc55ed3f5576f6ce2039a56136e88e5198a52b7580544e0af03",
+    "postgres_dump_magic": false
+  }
+]

@@ -1,0 +1,58 @@
+[
+  {
+    "name": "h201_first",
+    "url": "https://drive.usercontent.google.com/download?id=1pJLxJsDV8sngiedbfVajMetczIgM3PQd&export=download&confirm=t",
+    "checked_at_utc": "2026-09-10T00:56:00.958901+00:00",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "bytes_saved": 2009,
+    "truncated": false,
+    "sha256": "1399cb63dacc5307c60f409738a5266f4e5f6f29a909312273f734c6f273ea7c",
+    "postgres_dump_magic": false
+  },
+  {
+    "name": "h201_last",
+    "url": "https://drive.usercontent.google.com/download?id=1HFSyvmgH0jvdnnnTdKfWRjZYOrLWoIkv&export=download&confirm=t",
+    "checked_at_utc": "2026-09-10T00:56:00.958901+00:00",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "bytes_saved": 2009,
+    "truncated": false,
+    "sha256": "86c5c2f9e49ad4c8014b0e552b1d9f6405ccad038a8720e4a12c6a2e9857c5c8",
+    "postgres_dump_magic": false
+  },
+  {
+    "name": "h501_first",
+    "url": "https://drive.usercontent.google.com/download?id=1VfyGr8wfSe8LBIHBWuYBlU8c2CyEgO5C&export=download&confirm=t",
+    "checked_at_utc": "2026-09-10T00:56:00.958901+00:00",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "bytes_saved": 2009,
+    "truncated": false,
+    "sha256": "2d0e067172cd996fbd0727c78350f9c5221081d91424f3b51d5604facf4e6f5a",
+    "postgres_dump_magic": false
+  },
+  {
+    "name": "h501_last",
+    "url": "https://drive.usercontent.google.com/download?id=1fRQqc68r8-z5BL7H_eAKIDOeHp7okDuM&export=download&confirm=t",
+    "checked_at_utc": "2026-09-10T00:56:00.958901+00:00",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "bytes_saved": 2009,
+    "truncated": false,
+    "sha256": "3a79def37743567f740f345bb0681ed4b5dc6dac90c8c6edca02a22dfae78e3a",
+    "postgres_dump_magic": false
+  },
+  {
+    "name": "inria_readme",
+    "url": "https://entrepot.recherche.data.gouv.fr/api/access/datafile/717349",
+    "checked_at_utc": "2026-09-10T00:56:00.958901+00:00",
+    "error": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)>"
+  },
+  {
+    "name": "inria_0925_tar_prefix",
+    "url": "https://entrepot.recherche.data.gouv.fr/api/access/datafile/713576",
+    "checked_at_utc": "2026-09-10T00:56:00.958901+00:00",
+    "error": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)>"
+  }
+]

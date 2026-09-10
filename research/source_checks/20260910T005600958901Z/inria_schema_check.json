@@ -1,0 +1,27 @@
+{
+  "sample_only": true,
+  "archive": "2019-09-25.tar",
+  "member": "2019-09-25/AIA-251-275/AIA-251-275.ecar-2019-09-25-sysclient0269.json.gz",
+  "member_size": 139309660,
+  "member_complete": false,
+  "prefix_bytes": 262144,
+  "prefix_sha256": "3ff3957430ad0ff258769e84998d9bd449a071a39928b8d435fce0c498038b92",
+  "parsed_events": 1837,
+  "hostnames": [
+    "SysClient0269.systemia.com"
+  ],
+  "keys": [
+    "action",
+    "actorID",
+    "hostname",
+    "id",
+    "object",
+    "objectID",
+    "pid",
+    "ppid",
+    "principal",
+    "properties",
+    "tid",
+    "timestamp"
+  ]
+}

@@ -13,11 +13,14 @@ This research studies how the timing and type of missing security events affect 
 
 ## Status
 
-Topic selected. Literature review, final hypotheses, experiment design, implementation, and evaluation are pending. The questions above are research proposals, not established findings or claims of novelty.
+Topic, primary hypothesis, and literature review completed. Experiment design and feasibility checks are in progress; empirical evaluation and paper writing have not started. The questions above are research proposals, not established findings or claims of novelty.
 
 ## Project documents
 
 - [Assignment requirements](ASSIGNMENT.md)
 - [Research progress](PROGRESS.md)
+- [Experiment design and feasibility](research/EXPERIMENT_DESIGN.md)
+- [Data access](research/DATA_ACCESS.md)
+- [Correction and label review](research/LABEL_AND_CORRECTION_REVIEW.md)
 
 Experiment code, raw data, evaluation results, the paper, and reproduction instructions will be added as the research progresses.

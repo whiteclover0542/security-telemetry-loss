@@ -1,0 +1,7 @@
+HTTP/1.1 303 See Other
+content-length: 0
+HTTP/1.1 206 Partial Content
+content-length: 262144
+content-range: bytes 0-262143/67718440960
+accept-ranges: bytes
+content-type: application/x-tar

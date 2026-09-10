@@ -1,0 +1,57 @@
+[
+  {
+    "name": "optc_readme",
+    "url": "https://raw.githubusercontent.com/FiveDirections/OpTC-data/master/README.md",
+    "checked_at_utc": "2026-09-10T00:48:35.905079+00:00",
+    "status": 200,
+    "content_type": "text/plain; charset=utf-8",
+    "bytes_saved": 4681,
+    "truncated": false,
+    "sha256": "bbbeca5d5a861ffc765a6d42ddd19cb84acb93861226b4b93887bb950e121074",
+    "postgres_dump_magic": false
+  },
+  {
+    "name": "optc_schema",
+    "url": "https://raw.githubusercontent.com/FiveDirections/OpTC-data/master/ecar.md",
+    "checked_at_utc": "2026-09-10T00:48:35.905079+00:00",
+    "status": 200,
+    "content_type": "text/plain; charset=utf-8",
+    "bytes_saved": 2336,
+    "truncated": false,
+    "sha256": "1df4539c49963cc49b783580033fe1ec68bbae68434abf29da83c47b5d26d16b",
+    "postgres_dump_magic": false
+  },
+  {
+    "name": "optc_errata",
+    "url": "https://raw.githubusercontent.com/FiveDirections/OpTC-data/master/errata.md",
+    "checked_at_utc": "2026-09-10T00:48:35.905079+00:00",
+    "status": 200,
+    "content_type": "text/plain; charset=utf-8",
+    "bytes_saved": 722,
+    "truncated": false,
+    "sha256": "4044970eae0db4f67055fa2c0e5bb99824628c13d991fcef01dcc5ec06e8d062",
+    "postgres_dump_magic": false
+  },
+  {
+    "name": "h051_evaluation_folder",
+    "url": "https://drive.google.com/drive/folders/1WnVHzCyZ8uwQfTVvHknwcugCOLn25hD5",
+    "checked_at_utc": "2026-09-10T00:48:35.905079+00:00",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "bytes_saved": 262144,
+    "truncated": true,
+    "sha256": "695d6edda4a6566b6a6bfcb47547d7e067cb4e60bb4dfa9b10c5d60905c481a9",
+    "postgres_dump_magic": false
+  },
+  {
+    "name": "h501_dump_sample",
+    "url": "https://drive.google.com/uc?export=download&id=1046BVjpMql1bb5WHr9yQeB6Uq6RpngbM",
+    "checked_at_utc": "2026-09-10T00:48:35.905079+00:00",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "bytes_saved": 2430,
+    "truncated": false,
+    "sha256": "d332202890d5f647210fcd9565decfaef5435de1c6988c74fd69cbb1f88a1e25",
+    "postgres_dump_magic": false
+  }
+]

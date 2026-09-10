@@ -1,0 +1,6 @@
+{
+  "method": "curl.exe with Windows Schannel, TLS verification enabled",
+  "readme_md5": "14224bcfaa98642b9021095f88a8e9d5",
+  "readme_matches_provider": true,
+  "tar_sample_only": true
+}
