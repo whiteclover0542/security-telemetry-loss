@@ -76,7 +76,17 @@ PIDSMaker KAIROS는 2019-09-19~21 정상 자료로 학습하고, 2019-09-22 정�
 
 이 기준 실행에서 1회 소요 시간과 디스크 사용량을 측정합니다. 측정값으로 723회의 총 소요를 추정하고, 확보 가능한 시간을 넘으면 [실험 설계](EXPERIMENT_DESIGN.md)의 축소 규칙을 단계 순서대로만 적용합니다. 어느 단계까지 적용했는지 실행 기록의 `reduction_step_applied`에 남깁니다.
 
-## 6. 결과 보관과 재확인
+## 6. 실행 결과를 기록으로 변환
+
+탐지기가 노드별 이상 점수를 내면 아래 도구가 사례 판정과 라벨 노드 재현율을 계산해 실행 기록을 만듭니다. `--labels`에는 완전한 무유실 입력에서 고정한 정답 노드 집합을 넣습니다.
+
+```powershell
+python scripts/score_run.py --predictions preds.jsonl --labels frozen/scenario-1.json --threshold THRESHOLD --run-id scenario-1-random-10-seed-0 --case scenario-1 --host SysClient0201 --pattern random --requested-rate 0.10 --seed 0 --input-sha256 SOURCE_SHA256 --mask-sha256 MASK_SHA256 --selection-start START --selection-end END --deleted-count K --detector-commit ae1e9fd42604c769c01b2eaed6fb7f65e27f3cac --checkpoint-sha256 CKPT --started-at-utc STARTED --output records/scenario-1-random-10-seed-0.json
+```
+
+분모는 고정한 정답 노드 수이며 이 실행에서 살아남은 노드 수가 아닙니다. 유실로 사라진 정답 노드는 미탐지로 셉니다. 무유실 기준 실행은 `--pattern baseline`을 쓰고 `--seed`와 `--mask-sha256`을 넣지 않습니다.
+
+## 7. 결과 보관과 재확인
 
 각 실행은 [실행 기록 계약](../config/run_record_schema.json)의 필드를 갖춘 JSON 한 줄로 남깁니다. 입력·코드·가중치 해시, 사례·구간 위치, 시드, 유실률, 삭제 수, 탐지 여부, 탐지한 라벨 노드 수와 총수, 시작·종료 시각, 종료 상태가 필수입니다. 실패한 실행은 `exit_status`를 `failed`로 기록하고 삭제하지 않습니다.
 
@@ -95,7 +105,8 @@ python -W error::ResourceWarning -m unittest discover -s tests -v
 python scripts/loss_masks.py --help
 python scripts/apply_loss_mask.py --help
 python scripts/window_positions.py --help
+python scripts/score_run.py --help
 python scripts/aggregate_results.py --help
 ```
 
-첫 명령은 유실 마스크·마스크 적용·구간 산출·겹침 측정·집계·고정 입력 검증을 실행합니다. 나머지는 실행 인자를 확인합니다. 실제 로그가 확보된 뒤에는 선택 로그 manifest와 변형 manifest의 SHA-256·이벤트 수를 함께 대조합니다.
+첫 명령은 유실 마스크·마스크 적용·구간 산출·겹침 측정·채점·집계·고정 입력 검증을 실행합니다. 나머지는 실행 인자를 확인합니다. 실제 로그가 확보된 뒤에는 선택 로그 manifest와 변형 manifest의 SHA-256·이벤트 수를 함께 대조합니다.
