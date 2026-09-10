@@ -9,7 +9,8 @@
   "correction_and_label_code": {
     "repository": "https://gitlab.inria.fr/fmajorcz/a_new_hope_for_darpa_optc",
     "commit": "644f41fb0a955e471f34bed016fb2bfd9c74dc04",
-    "label_margin_seconds": 90
+    "label_margin_seconds": 90,
+    "label_hash_rule": "sha256 over the label file with CRLF normalised to LF. The repository stores LF, but Git checks these CSVs out as CRLF wherever core.autocrlf is on, so hashing the bytes as they land on disk would verify on Linux and fail on Windows. Check with scripts/verify_labels.py."
   },
   "detector": {
     "implementation": "PIDSMaker KAIROS",

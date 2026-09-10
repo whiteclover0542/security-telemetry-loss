@@ -38,7 +38,15 @@ python scripts/fetch_inria_members.py --date 2019-09-20 --host 201 --verify-only
 ## 2. 입력과 정답 검증
 
 1. 각 선택 로그의 manifest에서 `gzip_and_jsonl_valid=true`와 이벤트 수를 확인합니다.
-2. 세 공격 사례의 라벨 SHA-256이 `study_inputs.json`과 같은지 확인합니다.
+2. 세 공격 사례의 라벨 SHA-256이 `study_inputs.json`과 같은지 확인합니다. 해시는 줄바꿈을 LF로 정규화한 바이트 기준입니다. 저장소는 LF로 보관하지만 `core.autocrlf`가 켜진 환경에서는 Git이 CRLF로 바꿔 내려받으므로, 디스크의 바이트를 그대로 해시하면 같은 커밋이 Linux에서는 통과하고 Windows에서는 실패합니다.
+
+```powershell
+git clone https://gitlab.inria.fr/fmajorcz/a_new_hope_for_darpa_optc external/corrected-optc-review
+git -C external/corrected-optc-review checkout 644f41fb0a955e471f34bed016fb2bfd9c74dc04
+python scripts/verify_labels.py
+```
+
+세 사례가 모두 `ok`여야 하며 종료 코드가 0입니다. 하나라도 어긋나면 라벨을 고정 입력으로 사용하지 않습니다.
 3. 실제 이벤트의 timestamp, 이벤트 ID, 원본 파일·행 번호로 정렬 규칙을 확정하고 입력 SHA-256과 이벤트 수를 기록합니다.
 4. 유실 입력을 만들기 전에 완전한 수정 입력으로만 정답을 고정합니다. 유실 뒤 라벨을 다시 생성하지 않습니다.
 

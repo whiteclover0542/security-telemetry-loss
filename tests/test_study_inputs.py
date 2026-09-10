@@ -1,10 +1,14 @@
 import hashlib
 import json
 from pathlib import Path
+import sys
+import tempfile
 import unittest
 
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "scripts"))
+from verify_labels import normalised_sha256, verify
 
 
 class StudyInputsTests(unittest.TestCase):
@@ -26,9 +30,20 @@ class StudyInputsTests(unittest.TestCase):
         review = ROOT / "external" / "corrected-optc-review"
         if not review.exists():
             self.skipTest("review source is intentionally excluded from Git")
-        for case in self.config["primary_cases"]:
-            path = review / case["label_file"]
-            self.assertEqual(hashlib.sha256(path.read_bytes()).hexdigest(), case["label_sha256"])
+        for result in verify(self.config, review):
+            with self.subTest(case=result["case"]):
+                self.assertEqual(result["status"], "ok", result)
+
+    def test_hash_rule_ignores_the_checkout_line_ending(self):
+        """Git rewrites these CSVs to CRLF where core.autocrlf is on."""
+        with tempfile.TemporaryDirectory() as directory:
+            lf = Path(directory) / "lf.csv"
+            crlf = Path(directory) / "crlf.csv"
+            lf.write_bytes(b"a,b\n1,2\n")
+            crlf.write_bytes(b"a,b\r\n1,2\r\n")
+            self.assertEqual(normalised_sha256(lf), normalised_sha256(crlf))
+            self.assertEqual(normalised_sha256(lf),
+                             hashlib.sha256(b"a,b\n1,2\n").hexdigest())
 
     def test_prespecified_loss_conditions(self):
         loss = self.config["loss_conditions"]
