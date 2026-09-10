@@ -3,7 +3,7 @@
 - 갱신일: 2026-09-10
 - 현재 카드: 카드 3 — 실험 설계와 실행
 - 현재 상태: 카드 1·2 완료, 카드 3 진행 중
-- 연구 내용 문서: [연구 기반](research/RESEARCH_FOUNDATION.md) · [선행 연구 검토](research/LITERATURE_REVIEW.md) · [실험 설계](research/EXPERIMENT_DESIGN.md) · [탐지기 선택](research/DETECTOR_SELECTION.md)
+- 연구 내용 문서: [연구 기반](RESEARCH_FOUNDATION.md) · [선행 연구 검토](../research/LITERATURE_REVIEW.md) · [실험 설계](../research/EXPERIMENT_DESIGN.md) · [탐지기 선택](../research/DETECTOR_SELECTION.md)
 
 ## 해야 할 일
 
@@ -39,7 +39,7 @@
 | --- | --- |
 | T10-C01~T10-C10 | ✅ 완료 |
 
-근거: [연구 기반](research/RESEARCH_FOUNDATION.md)
+근거: [연구 기반](RESEARCH_FOUNDATION.md)
 
 <a id="card-2"></a>
 
@@ -54,7 +54,7 @@
 | --- | --- |
 | T10-C11~T10-C20 | ✅ 완료 |
 
-근거: [선행 연구 검토](research/LITERATURE_REVIEW.md)
+근거: [선행 연구 검토](../research/LITERATURE_REVIEW.md)
 
 <a id="card-3"></a>
 
@@ -72,18 +72,18 @@
 
 | 통과 기준 | 상태 | 현재 근거 또는 남은 조건 |
 | --- | --- | --- |
-| T10-C21 | ✅ 완료 | [실험 설계](research/EXPERIMENT_DESIGN.md) |
+| T10-C21 | ✅ 완료 | [실험 설계](../research/EXPERIMENT_DESIGN.md) |
 | T10-C22 | ✅ 완료 | 비교·고정 조건 표 |
 | T10-C23 | ✅ 완료 | 조건별 시드 30개 |
 | T10-C24 | ✅ 완료 | 사례 탐지율 감소와 보조 지표 |
 | T10-C25 | ⏳ 미완료 | 실제 로그 미확보 |
 | T10-C26 | ⏳ 미완료 | 실제 이벤트 수 미확인 |
 | T10-C27 | ⏳ 미완료 | 실제 다운로드 기록 미작성 |
-| T10-C28 | ✅ 완료 | [실행 절차](research/RUNBOOK.md)와 실행 스크립트 |
+| T10-C28 | ✅ 완료 | [실행 절차](../research/RUNBOOK.md)와 실행 스크립트 |
 | T10-C29 | ✅ 완료 | 단위 테스트와 재확인 명령 |
-| T10-C30 | ✅ 완료 | [실험 설계 변경 기록](research/EXPERIMENT_DESIGN.md) |
+| T10-C30 | ✅ 완료 | [실험 설계 변경 기록](../research/EXPERIMENT_DESIGN.md) |
 
-근거: [데이터 접근 기록](research/DATA_ACCESS.md) · [수정·라벨 검토](research/LABEL_AND_CORRECTION_REVIEW.md) · [탐지기 선택](research/DETECTOR_SELECTION.md) · [유실 마스크 생성기](scripts/loss_masks.py) · [유실 적용기](scripts/apply_loss_mask.py)
+근거: [데이터 접근 기록](../research/DATA_ACCESS.md) · [수정·라벨 검토](../research/LABEL_AND_CORRECTION_REVIEW.md) · [탐지기 선택](../research/DETECTOR_SELECTION.md) · [유실 마스크 생성기](../scripts/loss_masks.py) · [유실 적용기](../scripts/apply_loss_mask.py)
 
 <a id="card-4"></a>
 
@@ -116,7 +116,7 @@
 
 - 연구 질문 10개, 후보 가설 4개, 최종 가설과 반증 기준을 정리했습니다.
 - 선행 연구 7편과 데이터 제공자 문서를 원문 기준으로 검토했습니다.
-- 연구 내용은 [연구 기반](research/RESEARCH_FOUNDATION.md)과 [선행 연구 검토](research/LITERATURE_REVIEW.md)에 분리해 보관했습니다.
+- 연구 내용은 [연구 기반](RESEARCH_FOUNDATION.md)과 [선행 연구 검토](../research/LITERATURE_REVIEW.md)에 분리해 보관했습니다.
 
 ### 2026-09-10 — 카드 3 설계·구현 준비
 
@@ -125,10 +125,10 @@
 - PIDSMaker KAIROS의 버전·학습일·검증일·임계값 정책·중단 조건을 고정했습니다.
 - 정상 입력 TAR 4개와 공격 로그 3개의 파일 정보·선택 위치를 기록했습니다.
 - 유실 위치 생성기와 JSONL/gzip 유실 적용기를 구현하고, 13개 단위 테스트를 통과했습니다.
-- 실제 데이터 확보부터 결과 재확인까지의 [실행 절차](research/RUNBOOK.md)를 작성했습니다.
-- 무유실 기준과 유실 조건에 사용할 [결과 기록 서식](research/RESULTS_TEMPLATE.md)을 작성했습니다.
-- 시드 반복을 독립 공격 사례로 해석하지 않는 [분석 계획](research/ANALYSIS_PLAN.md)을 고정했습니다.
-- GPU·PostgreSQL 실행 호스트를 확인할 [환경 점검 도구](scripts/check_experiment_environment.py)를 작성했습니다.
+- 실제 데이터 확보부터 결과 재확인까지의 [실행 절차](../research/RUNBOOK.md)를 작성했습니다.
+- 무유실 기준과 유실 조건에 사용할 [결과 기록 서식](../research/RESULTS_TEMPLATE.md)을 작성했습니다.
+- 시드 반복을 독립 공격 사례로 해석하지 않는 [분석 계획](../research/ANALYSIS_PLAN.md)을 고정했습니다.
+- GPU·PostgreSQL 실행 호스트를 확인할 [환경 점검 도구](../scripts/check_experiment_environment.py)를 작성했습니다.
 
 ### 현재 막힌 일
 

@@ -17,8 +17,9 @@ Topic, primary hypothesis, and literature review completed. Experiment design an
 
 ## Project documents
 
-- [Assignment requirements](ASSIGNMENT.md)
-- [Research progress](PROGRESS.md)
+- [Assignment requirements](docs/ASSIGNMENT.md)
+- [Research progress](docs/PROGRESS.md)
+- [Research foundation](docs/RESEARCH_FOUNDATION.md)
 - [Experiment design and feasibility](research/EXPERIMENT_DESIGN.md)
 - [Data access](research/DATA_ACCESS.md)
 - [Correction and label review](research/LABEL_AND_CORRECTION_REVIEW.md)
