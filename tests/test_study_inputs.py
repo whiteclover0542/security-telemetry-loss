@@ -36,6 +36,16 @@ class StudyInputsTests(unittest.TestCase):
         self.assertEqual(loss["patterns"], ["random", "contiguous"])
         self.assertGreaterEqual(loss["seeds"]["last"] - loss["seeds"]["first"] + 1, 10)
 
+    def test_detector_is_pinned_and_uses_validation_threshold(self):
+        detector = self.config["detector"]
+        self.assertEqual(len(detector["commit"]), 40)
+        self.assertEqual(detector["training_dates"], ["2019-09-19", "2019-09-20", "2019-09-21"])
+        self.assertEqual(detector["validation_date"], "2019-09-22")
+        self.assertEqual(detector["threshold_method"], "max_val_loss")
+        self.assertEqual(detector["evaluation_method"], "node_evaluation")
+        self.assertIn("frozen", detector["case_detection_rule"])
+        self.assertIn("stop", detector["baseline_gate"])
+
 
 if __name__ == "__main__":
     unittest.main()

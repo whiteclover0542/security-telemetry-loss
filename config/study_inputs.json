@@ -11,6 +11,19 @@
     "commit": "644f41fb0a955e471f34bed016fb2bfd9c74dc04",
     "label_margin_seconds": 90
   },
+  "detector": {
+    "implementation": "PIDSMaker KAIROS",
+    "repository": "https://github.com/ubc-provenance/PIDSMaker",
+    "commit": "ae1e9fd42604c769c01b2eaed6fb7f65e27f3cac",
+    "configuration": "config/kairos.yml with the published tuned OpTC host overrides",
+    "training_dates": ["2019-09-19", "2019-09-20", "2019-09-21"],
+    "validation_date": "2019-09-22",
+    "threshold_method": "max_val_loss",
+    "evaluation_method": "node_evaluation",
+    "baseline_gate": "Each primary case must detect at least one node from its frozen corrected ground truth before loss; otherwise stop before the loss comparison.",
+    "case_detection_rule": "A case is detected when at least one node in its frozen corrected ground truth has a node anomaly score strictly above the frozen validation threshold.",
+    "state_policy": "Restore the same trained checkpoint and initial inference state for every no-loss and loss replay."
+  },
   "primary_cases": [
     {
       "case": "scenario-1",

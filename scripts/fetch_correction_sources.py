@@ -21,7 +21,11 @@ def main():
     root = ROOT / "external" / "corrected-optc-review"
     root.mkdir(parents=True, exist_ok=True)
     records = []
-    for directory in ("corrections", "labelling/host", "labelling/host/ground_truths"):
+    for directory in (
+        "corrections", "labelling/host", "labelling/host/ground_truths",
+        "experiments/Kairos", "experiments/Kairos/kairos/DARPA/settings",
+        "experiments/Kairos/kairos/DARPA/OpTC",
+    ):
         tree = root / (directory.replace("/", "_") + "_tree.json")
         fetch(f"{BASE}/tree?path={quote(directory, safe='')}&per_page=100&ref={REV}", tree)
         entries = json.loads(tree.read_text())
@@ -29,7 +33,7 @@ def main():
             raise ValueError("pagination required; subset incomplete")
         for entry in entries:
             path = entry["path"]
-            if entry["type"] != "blob" or Path(path).suffix.lower() not in (".py", ".md", ".txt", ".csv", ".json", ".sh"):
+            if entry["type"] != "blob" or Path(path).suffix.lower() not in (".py", ".md", ".txt", ".csv", ".json", ".sh", ".ipynb"):
                 continue
             target = root / path
             if not target.resolve().is_relative_to(root.resolve()):

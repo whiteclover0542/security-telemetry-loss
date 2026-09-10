@@ -236,5 +236,54 @@
     "url": "https://gitlab.inria.fr/api/v4/projects/fmajorcz%2Fa_new_hope_for_darpa_optc/repository/files/labelling%2Fhost%2Fground_truths%2Fground_truth_sc3_updated.csv/raw?ref=644f41fb0a955e471f34bed016fb2bfd9c74dc04",
     "bytes": 5260,
     "sha256": "9e8a9b1f302b987c085d3efee9d8e787beca2cb4b59a194fb9d7043268aca0e1"
+  },
+  {
+    "path": "experiments/Kairos/Readme.md",
+    "commit": "644f41fb0a955e471f34bed016fb2bfd9c74dc04",
+    "url": "https://gitlab.inria.fr/api/v4/projects/fmajorcz%2Fa_new_hope_for_darpa_optc/repository/files/experiments%2FKairos%2FReadme.md/raw?ref=644f41fb0a955e471f34bed016fb2bfd9c74dc04",
+    "bytes": 1017,
+    "sha256": "dcd3c150b656ca381a4e7cf40b029933f02092402b3a0b07251cbdb9d2da24a9"
+  },
+  {
+    "path": "experiments/Kairos/json_to_csv.py",
+    "commit": "644f41fb0a955e471f34bed016fb2bfd9c74dc04",
+    "url": "https://gitlab.inria.fr/api/v4/projects/fmajorcz%2Fa_new_hope_for_darpa_optc/repository/files/experiments%2FKairos%2Fjson_to_csv.py/raw?ref=644f41fb0a955e471f34bed016fb2bfd9c74dc04",
+    "bytes": 1728,
+    "sha256": "919d264c7cd8aa1e6abdbd808b2fce8295628a300ea9dd32bf49f4ac03f2f333"
+  },
+  {
+    "path": "experiments/Kairos/kairos/DARPA/settings/database.md",
+    "commit": "644f41fb0a955e471f34bed016fb2bfd9c74dc04",
+    "url": "https://gitlab.inria.fr/api/v4/projects/fmajorcz%2Fa_new_hope_for_darpa_optc/repository/files/experiments%2FKairos%2Fkairos%2FDARPA%2Fsettings%2Fdatabase.md/raw?ref=644f41fb0a955e471f34bed016fb2bfd9c74dc04",
+    "bytes": 13993,
+    "sha256": "f61150207454d0b3a518e1f27c523341476bcdf9b893b3eda65a1daf0a69233c"
+  },
+  {
+    "path": "experiments/Kairos/kairos/DARPA/settings/environment-settings.md",
+    "commit": "644f41fb0a955e471f34bed016fb2bfd9c74dc04",
+    "url": "https://gitlab.inria.fr/api/v4/projects/fmajorcz%2Fa_new_hope_for_darpa_optc/repository/files/experiments%2FKairos%2Fkairos%2FDARPA%2Fsettings%2Fenvironment-settings.md/raw?ref=644f41fb0a955e471f34bed016fb2bfd9c74dc04",
+    "bytes": 2245,
+    "sha256": "06224e0df880cea81368f557462afef981dc1f9eddab45e4ce96a48519471fd0"
+  },
+  {
+    "path": "experiments/Kairos/kairos/DARPA/settings/requirements.txt",
+    "commit": "644f41fb0a955e471f34bed016fb2bfd9c74dc04",
+    "url": "https://gitlab.inria.fr/api/v4/projects/fmajorcz%2Fa_new_hope_for_darpa_optc/repository/files/experiments%2FKairos%2Fkairos%2FDARPA%2Fsettings%2Frequirements.txt/raw?ref=644f41fb0a955e471f34bed016fb2bfd9c74dc04",
+    "bytes": 1508,
+    "sha256": "343a6f9f8707530850bf647e4eb5d32fce1ea1015e628825f225833b785df725"
+  },
+  {
+    "path": "experiments/Kairos/kairos/DARPA/OpTC/optc_datapreprocess.ipynb",
+    "commit": "644f41fb0a955e471f34bed016fb2bfd9c74dc04",
+    "url": "https://gitlab.inria.fr/api/v4/projects/fmajorcz%2Fa_new_hope_for_darpa_optc/repository/files/experiments%2FKairos%2Fkairos%2FDARPA%2FOpTC%2Foptc_datapreprocess.ipynb/raw?ref=644f41fb0a955e471f34bed016fb2bfd9c74dc04",
+    "bytes": 128613,
+    "sha256": "47cc3ae888f6f294ce84a2bd2748cb6112a34fc1ce9b5ad9389703ff170bc012"
+  },
+  {
+    "path": "experiments/Kairos/kairos/DARPA/OpTC/optc_graph_learning.ipynb",
+    "commit": "644f41fb0a955e471f34bed016fb2bfd9c74dc04",
+    "url": "https://gitlab.inria.fr/api/v4/projects/fmajorcz%2Fa_new_hope_for_darpa_optc/repository/files/experiments%2FKairos%2Fkairos%2FDARPA%2FOpTC%2Foptc_graph_learning.ipynb/raw?ref=644f41fb0a955e471f34bed016fb2bfd9c74dc04",
+    "bytes": 289474,
+    "sha256": "9025c527c26fb829dcbb662b0a5647f429dcd0e5987384418c39f3ac19cbdd68"
   }
 ]
