@@ -5,9 +5,34 @@
 
 ## 실행 전 조건
 
-1. Inria 수정 OpTC 서버가 범위 요청에 HTTP 206을 반환해야 합니다.
-2. PIDSMaker가 고정된 commit `ae1e9fd42604c769c01b2eaed6fb7f65e27f3cac`으로 준비되어야 합니다.
-3. PostgreSQL과 CUDA를 사용할 수 있는 실행 환경이 필요합니다.
+1. Inria 수정 OpTC 서버가 범위 요청에 HTTP 206을 반환해야 합니다. 서버는 간헐적으로만 응답하므로 작은 범위 요청으로 먼저 확인합니다.
+2. PIDSMaker가 고정된 commit `ae1e9fd42604c769c01b2eaed6fb7f65e27f3cac`으로 준비되어야 합니다. **Windows에서는 `core.autocrlf`를 끄고 체크아웃해야 합니다.** 켜져 있으면 셸 스크립트 22개가 CRLF로 바뀌어 리눅스 컨테이너에서 실행되지 않고, `entrypoint.sh`가 깨져 이미지가 기동하지 않습니다.
+
+```powershell
+git clone https://github.com/ubc-provenance/PIDSMaker.git external/PIDSMaker
+git -C external/PIDSMaker checkout ae1e9fd42604c769c01b2eaed6fb7f65e27f3cac
+git -C external/PIDSMaker config core.autocrlf false
+git -C external/PIDSMaker rm --cached -r . -q
+git -C external/PIDSMaker reset --hard
+file external/PIDSMaker/entrypoint.sh
+```
+
+마지막 명령이 `CRLF line terminators`를 보고하면 안 됩니다.
+
+3. Docker와 GPU 접근이 필요합니다. 아래로 확인합니다.
+
+```powershell
+docker run --rm --gpus all nvidia/cuda:11.7.1-base-ubuntu22.04 nvidia-smi --query-gpu=name,memory.total,compute_cap --format=csv
+```
+
+4. 데이터베이스 컨테이너를 올립니다. `.env.local`을 `.env`로 복사하고 `INPUT_DIR`·`ARTIFACTS_DIR`를 지정한 뒤 실행합니다. 기본 `DOCKER_PORT`는 8888이라 호스트 PostgreSQL의 5432와 충돌하지 않습니다.
+
+```powershell
+docker compose -p postgres -f compose-postgres.yml up -d
+docker exec postgres psql -U postgres -tAc "SELECT datname FROM pg_database WHERE datname LIKE '%optc%'"
+```
+
+`optc_201`, `optc_501`, `optc_051`이 나와야 합니다.
 4. [고정 입력](../config/study_inputs.json), [실험 설계](EXPERIMENT_DESIGN.md), [탐지기 선택](DETECTOR_SELECTION.md)을 변경하지 않은 상태여야 합니다.
 
 실행 호스트에서는 먼저 다음 명령으로 PostgreSQL·Docker·NVIDIA 도구, 메모리와 디스크 상태를 기록합니다. 기존 결과를 덮어쓰지 않도록 매번 새 파일명을 사용합니다.

@@ -67,6 +67,54 @@ PIDSMaker 코드를 `external/PIDSMaker`에 확보했다. 확인 버전은 `ae1e
 
 시드를 줄이면 사례별 탐지율의 분해능이 30분의 1에서 10분의 1로 낮아진다. 축소를 적용하면 어느 단계까지 적용했는지와 그때의 측정값을 결과에 함께 기록한다. 축소해도 세 사례와 두 유실 방식, 무유실 기준은 유지한다. 이 셋 중 하나라도 포기해야 한다면 가설을 검증한 것으로 보고하지 않는다.
 
+## 실행 환경 구축과 입력 주입 경로
+
+2026-09-10에 Docker 경로를 구축하고 검증했다. Docker Desktop이 설치되어 있으나 실행 중이 아니었을 뿐이며, 기동 후 엔진(29.4.0, Linux 컨테이너, CPU 12개, 메모리 16.7GB 할당)이 정상 응답한다. Windows 네이티브 설치는 `pyg_lib`·`torch_scatter` 등 컴파일 확장의 휠이 Linux 위주여서 택하지 않는다.
+
+이미지를 고정 커밋에서 빌드하고(8.26GB) 컨테이너 안에서 아래를 직접 확인했다.
+
+| 확인 항목 | 결과 |
+| --- | --- |
+| 컨테이너 기동 | `entrypoint.sh` 정상, 사용자 `pids`, Python 3.9.25 |
+| Torch | 1.13.1+cu117, CUDA 빌드 11.7 |
+| GPU 인식 | `torch.cuda.is_available()` = True, RTX 3080, capability (8, 6) |
+| GPU 연산 | 1000×1000 행렬곱 실행 성공 |
+| PyG | torch_geometric 2.5.3, torch_scatter·torch_sparse 임포트 성공 |
+| DB 연결 | 컨테이너에서 PostgreSQL 17.11에 psycopg2로 접속 성공 |
+| 대상 DB | `optc_201`, `optc_501`, `optc_051` 생성 확인 |
+
+VRAM 10,240MiB가 호스트별 6.7~9GB 전처리 자료를 다루기에 충분한지는 실제 학습 전에는 알 수 없다. 이 항목은 무유실 기준 실행에서 확인한다.
+
+### Windows에서 재현할 때의 전제 조건
+
+Git의 `core.autocrlf`가 켜진 상태에서 PIDSMaker를 체크아웃하면 저장소의 셸 스크립트 22개가 CRLF로 변환되어 리눅스 컨테이너에서 실행되지 않는다. shebang이 `#!/bin/bash\r`가 되어 인터프리터를 찾지 못하기 때문이다. 실제로 이 상태에서 postgres 컨테이너를 올리면 초기화 스크립트가 `cannot execute: required file not found`로 실패하고 컨테이너가 종료된다. 컨테이너의 `ENTRYPOINT`인 `entrypoint.sh`도 같은 이유로 깨지므로 이미지 자체가 기동하지 않는다.
+
+같은 원인이 정답 라벨의 SHA-256 검증도 어긋나게 했다. 원인은 저장소 내용이 아니라 체크아웃 설정이므로, 재현 시 다음을 지킨다.
+
+```powershell
+git -C external/PIDSMaker config core.autocrlf false
+git -C external/PIDSMaker rm --cached -r . -q
+git -C external/PIDSMaker reset --hard
+```
+
+체크아웃 후 `file entrypoint.sh`가 `CRLF line terminators`를 보고하지 않아야 한다. 라벨 해시는 [검증 도구](../scripts/verify_labels.py)가 줄바꿈을 정규화해 비교하므로 이 설정과 무관하게 통과한다.
+
+입력 주입 경로는 다음과 같다. `dataset_preprocessing/optc/extract_data.sh`는 대상 폴더의 `.gz`를 모두 풀고, `create_database_optc.py`가 `/data/`를 읽어 PostgreSQL을 채운다. 파일 수집은 `get_all_filelist`가 담당하는데 **`/data/` 아래의 모든 파일을 재귀적으로 모은다.** 따라서 다음을 지킨다.
+
+- 각 실행의 `/data/`에는 그 실행에 사용할 파일만 둔다. 원본과 유실 변형이 같은 트리에 함께 있으면 둘 다 읽혀 조건이 오염된다. 실행마다 격리된 입력 디렉터리를 만들고 실행 후 비운다.
+- `create_database_optc.py`는 `open(file, "r")`로 평문을 읽는다. 유실 적용기가 만든 `.json.gz`는 주입 전에 풀어야 한다.
+- 파일 수집은 정렬되지 않는다(`os.walk` 순서). 사례별 입력이 하루치 파일 하나이므로 이번 설계에서는 영향이 없지만, 여러 파일을 한 번에 넣는 경우에는 순서를 가정하지 않는다.
+
+확보한 로그를 표본으로 재어 본 압축 해제 크기는 아래와 같다. 압축률은 약 10배다.
+
+| 사례 | 압축 | 압축 해제(추정) | 복원 DB |
+| --- | ---: | ---: | ---: |
+| scenario-1 | 248MiB | 2.45GiB | 9GB |
+| scenario-2 | 241MiB | 2.44GiB | 6.7GB |
+| scenario-3 | 135MiB | 1.41GiB | 7.7GB |
+
+즉 한 실행이 변형 파일·압축 해제본·DB를 합쳐 약 12GB를 점유한다. 변형과 마찬가지로 압축 해제본과 DB도 실행이 끝나면 정리하고 마스크·manifest·실행 기록만 남긴다. 전처리부터 추론까지의 1회 소요는 아직 측정하지 못했으며, 유실 변형마다 DB를 다시 만들어야 하므로 이 값이 723회 실행의 실현 가능성을 결정한다. 무유실 기준 실행에서 반드시 측정한다.
+
 ## 축소 대안과 중단 기준
 
 주실험은 KAIROS 재생을 전제한다. 탐지기 환경이 끝내 서지 않거나 기준 실행이 중단 조건에 걸리면 무엇을 결과물로 삼을지 결과 확인 전에 정한다. 아래 순서로만 후퇴하며, 어느 조건이 유리해 보이는지에 따라 고르지 않는다.
