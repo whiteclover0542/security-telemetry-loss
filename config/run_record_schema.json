@@ -25,6 +25,8 @@
     "exit_status": "string"
   },
   "optional_fields": {
+    "processed_dates": "list of the dates whose graphs this run actually loaded",
+    "graph_file_count": "integer",
     "node_precision": "number",
     "false_alerts_per_hour": "number",
     "deleted_span_seconds": "number",
@@ -42,5 +44,6 @@
     "case_detected": "true exactly when detected_label_nodes > 0",
     "label_node_recall": "Derived, not stored: detected_label_nodes / total_label_nodes."
   },
-  "retention": "Failed runs are recorded with exit_status \"failed\" and kept. They are excluded from metric averages and reported separately."
+  "retention": "Failed runs are recorded with exit_status \"failed\" and kept. They are excluded from metric averages and reported separately.",
+  "comparability": "PIDSMaker silently skips a test date whose graphs are absent, so a missing input weakens the evaluation without raising an error. Record processed_dates and graph_file_count on every run and confirm they are identical across the baseline and every loss variant of a case before comparing results."
 }
