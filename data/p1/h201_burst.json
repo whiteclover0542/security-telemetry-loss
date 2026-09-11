@@ -1,0 +1,59 @@
+{
+  "schema": "p1-verification-v1",
+  "input": "data/inria_selected/2019-09-23/AIA-201-225.ecar-2019-09-23-sysclient0201.json.gz",
+  "window": [
+    "2019-09-23T11:23:00-04:00",
+    "2019-09-23T13:25:00-04:00"
+  ],
+  "events_in_window": 413207,
+  "rule": {
+    "window_seconds": 60.0,
+    "threshold": 50
+  },
+  "baseline_alerts": 7321,
+  "baseline_keys": 213,
+  "scenarios": [
+    {
+      "delayed_fraction": 0.01,
+      "delay_seconds": 300,
+      "alerts": 7240,
+      "alerts_vs_baseline": -81,
+      "distinct_keys": 213,
+      "dropped_late": 4185
+    },
+    {
+      "delayed_fraction": 0.05,
+      "delay_seconds": 300,
+      "alerts": 6931,
+      "alerts_vs_baseline": -390,
+      "distinct_keys": 208,
+      "dropped_late": 20664
+    },
+    {
+      "delayed_fraction": 0.2,
+      "delay_seconds": 300,
+      "alerts": 5747,
+      "alerts_vs_baseline": -1574,
+      "distinct_keys": 179,
+      "dropped_late": 82616
+    },
+    {
+      "delayed_fraction": 0.05,
+      "delay_seconds": 60.0,
+      "alerts": 4551,
+      "alerts_vs_baseline": -2770,
+      "distinct_keys": 212,
+      "dropped_late": 0
+    },
+    {
+      "delayed_fraction": 0.05,
+      "delay_seconds": 900,
+      "alerts": 6931,
+      "alerts_vs_baseline": -390,
+      "distinct_keys": 208,
+      "dropped_late": 20664
+    }
+  ],
+  "p1_supported": true,
+  "note": "No event is removed in any scenario; only arrival order changes."
+}
