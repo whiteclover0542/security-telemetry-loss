@@ -1,0 +1,23 @@
+{
+  "schema": "evidence-sweep-v1",
+  "python": "3.11.9",
+  "cases": [
+    "scenario-1",
+    "scenario-2",
+    "scenario-3"
+  ],
+  "rates": [
+    "0.01",
+    "0.05",
+    "0.10",
+    "0.20"
+  ],
+  "patterns": [
+    "random",
+    "contiguous"
+  ],
+  "seeds": 300,
+  "records_written": 7200,
+  "seconds": 401.6,
+  "note": "Masks are regenerated from seed, rate and window; they are not stored."
+}

@@ -1,0 +1,855 @@
+{
+  "schema": "evidence-aggregate-v1",
+  "records": 7200,
+  "rows": [
+    {
+      "case": "scenario-1",
+      "requested_rate": "0.01",
+      "seeds": 300,
+      "deleted_count": 4132,
+      "event_loss_rate": {
+        "random": {
+          "n": 300,
+          "mean": 0.010026162669010841,
+          "sd": 0.0005184527494580552,
+          "min": 0.008382519151073716,
+          "max": 0.012244129097073966,
+          "range": 0.0038616099460002506
+        },
+        "contiguous": {
+          "n": 300,
+          "mean": 0.010244150027209176,
+          "sd": 0.021196812809230522,
+          "min": 0.0,
+          "max": 0.11682154966721085,
+          "range": 0.11682154966721085
+        }
+      },
+      "event_loss_rate__EV": 0.020678360059772468,
+      "event_loss_rate__mean_diff": 0.00021798735819833492,
+      "event_loss_rate__sd_ratio": 40.884753396308156,
+      "process_silence_rate": {
+        "random": {
+          "n": 300,
+          "mean": 0.0,
+          "sd": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "range": 0.0
+        },
+        "contiguous": {
+          "n": 300,
+          "mean": 0.00830246913580247,
+          "sd": 0.04032924751199214,
+          "min": 0.0,
+          "max": 0.25925925925925924,
+          "range": 0.25925925925925924
+        }
+      },
+      "process_silence_rate__EV": 0.04032924751199214,
+      "process_silence_rate__mean_diff": 0.00830246913580247,
+      "process_silence_rate__sd_ratio": null,
+      "creation_loss_rate": {
+        "random": {
+          "n": 300,
+          "mean": 0.00963235294117647,
+          "sd": 0.00589478938150554,
+          "min": 0.0,
+          "max": 0.029411764705882353,
+          "range": 0.029411764705882353
+        },
+        "contiguous": {
+          "n": 300,
+          "mean": 0.010992647058823529,
+          "sd": 0.05123156767155034,
+          "min": 0.0,
+          "max": 0.3161764705882353,
+          "range": 0.3161764705882353
+        }
+      },
+      "creation_loss_rate__EV": 0.0453367782900448,
+      "creation_loss_rate__mean_diff": 0.0013602941176470585,
+      "creation_loss_rate__sd_ratio": 8.690992053471078
+    },
+    {
+      "case": "scenario-1",
+      "requested_rate": "0.05",
+      "seeds": 300,
+      "deleted_count": 20660,
+      "event_loss_rate": {
+        "random": {
+          "n": 300,
+          "mean": 0.050101825107790196,
+          "sd": 0.0011269260956434913,
+          "min": 0.04618234333793796,
+          "max": 0.054470676880572645,
+          "range": 0.008288333542634682
+        },
+        "contiguous": {
+          "n": 300,
+          "mean": 0.05069142701661853,
+          "sd": 0.07901181356719723,
+          "min": 0.0044581187994474445,
+          "max": 0.3727866382016828,
+          "range": 0.3683285194022353
+        }
+      },
+      "event_loss_rate__EV": 0.07788488747155374,
+      "event_loss_rate__mean_diff": 0.0005896019088283341,
+      "event_loss_rate__sd_ratio": 70.11268429459905,
+      "process_silence_rate": {
+        "random": {
+          "n": 300,
+          "mean": 0.0,
+          "sd": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "range": 0.0
+        },
+        "contiguous": {
+          "n": 300,
+          "mean": 0.05530864197530864,
+          "sd": 0.19765244488036762,
+          "min": 0.0,
+          "max": 0.9444444444444444,
+          "range": 0.9444444444444444
+        }
+      },
+      "process_silence_rate__EV": 0.19765244488036762,
+      "process_silence_rate__mean_diff": 0.05530864197530864,
+      "process_silence_rate__sd_ratio": null,
+      "creation_loss_rate": {
+        "random": {
+          "n": 300,
+          "mean": 0.04828431372549019,
+          "sd": 0.01282879781328941,
+          "min": 0.01838235294117647,
+          "max": 0.09191176470588236,
+          "range": 0.07352941176470588
+        },
+        "contiguous": {
+          "n": 300,
+          "mean": 0.060061274509803926,
+          "sd": 0.20672826257568058,
+          "min": 0.0,
+          "max": 0.9558823529411765,
+          "range": 0.9558823529411765
+        }
+      },
+      "creation_loss_rate__EV": 0.19389946476239117,
+      "creation_loss_rate__mean_diff": 0.011776960784313735,
+      "creation_loss_rate__sd_ratio": 16.114390887159345
+    },
+    {
+      "case": "scenario-1",
+      "requested_rate": "0.10",
+      "seeds": 300,
+      "deleted_count": 41320,
+      "event_loss_rate": {
+        "random": {
+          "n": 300,
+          "mean": 0.1002350454183934,
+          "sd": 0.0015506561440751783,
+          "min": 0.09575536857968102,
+          "max": 0.10501695340951903,
+          "range": 0.009261584829838007
+        },
+        "contiguous": {
+          "n": 300,
+          "mean": 0.080209929256143,
+          "sd": 0.09195343904419527,
+          "min": 0.015572020595253045,
+          "max": 0.4024865000627904,
+          "range": 0.3869144794675374
+        }
+      },
+      "event_loss_rate__EV": 0.09040278290012009,
+      "event_loss_rate__mean_diff": -0.020025116162250403,
+      "event_loss_rate__sd_ratio": 59.29969670938035,
+      "process_silence_rate": {
+        "random": {
+          "n": 300,
+          "mean": 0.0,
+          "sd": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "range": 0.0
+        },
+        "contiguous": {
+          "n": 300,
+          "mean": 0.06395061728395061,
+          "sd": 0.219643014319975,
+          "min": 0.0,
+          "max": 0.9444444444444444,
+          "range": 0.9444444444444444
+        }
+      },
+      "process_silence_rate__EV": 0.219643014319975,
+      "process_silence_rate__mean_diff": 0.06395061728395061,
+      "process_silence_rate__sd_ratio": null,
+      "creation_loss_rate": {
+        "random": {
+          "n": 300,
+          "mean": 0.09714460784313726,
+          "sd": 0.01853936079366058,
+          "min": 0.04779411764705882,
+          "max": 0.15808823529411764,
+          "range": 0.11029411764705882
+        },
+        "contiguous": {
+          "n": 300,
+          "mean": 0.06871323529411764,
+          "sd": 0.22704142103499536,
+          "min": 0.0,
+          "max": 0.9558823529411765,
+          "range": 0.9558823529411765
+        }
+      },
+      "creation_loss_rate__EV": 0.20850206024133477,
+      "creation_loss_rate__mean_diff": -0.028431372549019618,
+      "creation_loss_rate__sd_ratio": 12.24645356233807
+    },
+    {
+      "case": "scenario-1",
+      "requested_rate": "0.20",
+      "seeds": 300,
+      "deleted_count": 82641,
+      "event_loss_rate": {
+        "random": {
+          "n": 300,
+          "mean": 0.20022991753526728,
+          "sd": 0.0020853853497853677,
+          "min": 0.19395956297877684,
+          "max": 0.20551299761396458,
+          "range": 0.011553434635187737
+        },
+        "contiguous": {
+          "n": 300,
+          "mean": 0.14561660178324753,
+          "sd": 0.12016465983010927,
+          "min": 0.050546276528946374,
+          "max": 0.44650257440663066,
+          "range": 0.39595629787768427
+        }
+      },
+      "event_loss_rate__EV": 0.1180792744803239,
+      "event_loss_rate__mean_diff": -0.05461331575201975,
+      "event_loss_rate__sd_ratio": 57.62228062188932,
+      "process_silence_rate": {
+        "random": {
+          "n": 300,
+          "mean": 0.0,
+          "sd": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "range": 0.0
+        },
+        "contiguous": {
+          "n": 300,
+          "mean": 0.11350308641975308,
+          "sd": 0.30230959899596743,
+          "min": 0.0,
+          "max": 0.9537037037037037,
+          "range": 0.9537037037037037
+        }
+      },
+      "process_silence_rate__EV": 0.30230959899596743,
+      "process_silence_rate__mean_diff": 0.11350308641975308,
+      "process_silence_rate__sd_ratio": null,
+      "creation_loss_rate": {
+        "random": {
+          "n": 300,
+          "mean": 0.19703431372549018,
+          "sd": 0.0235210977630611,
+          "min": 0.13602941176470587,
+          "max": 0.25735294117647056,
+          "range": 0.12132352941176469
+        },
+        "contiguous": {
+          "n": 300,
+          "mean": 0.11725490196078432,
+          "sd": 0.3060413916211499,
+          "min": 0.0,
+          "max": 0.9632352941176471,
+          "range": 0.9632352941176471
+        }
+      },
+      "creation_loss_rate__EV": 0.2825202938580888,
+      "creation_loss_rate__mean_diff": -0.07977941176470586,
+      "creation_loss_rate__sd_ratio": 13.011356642621292
+    },
+    {
+      "case": "scenario-2",
+      "requested_rate": "0.01",
+      "seeds": 300,
+      "deleted_count": 12665,
+      "event_loss_rate": {
+        "random": {
+          "n": 300,
+          "mean": 0.010013925890046016,
+          "sd": 0.0004101314738725156,
+          "min": 0.00910228465326552,
+          "max": 0.011322354080891257,
+          "range": 0.0022200694276257368
+        },
+        "contiguous": {
+          "n": 300,
+          "mean": 0.008340329915771912,
+          "sd": 0.015457279288990648,
+          "min": 0.0,
+          "max": 0.11903608621942359,
+          "range": 0.11903608621942359
+        }
+      },
+      "event_loss_rate__EV": 0.015047147815118133,
+      "event_loss_rate__mean_diff": -0.001673595974274104,
+      "event_loss_rate__sd_ratio": 37.688595666752846,
+      "process_silence_rate": {
+        "random": {
+          "n": 300,
+          "mean": 0.0,
+          "sd": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "range": 0.0
+        },
+        "contiguous": {
+          "n": 300,
+          "mean": 0.004338624338624338,
+          "sd": 0.021124788892341827,
+          "min": 0.0,
+          "max": 0.20634920634920634,
+          "range": 0.20634920634920634
+        }
+      },
+      "process_silence_rate__EV": 0.021124788892341827,
+      "process_silence_rate__mean_diff": 0.004338624338624338,
+      "process_silence_rate__sd_ratio": null,
+      "creation_loss_rate": {
+        "random": {
+          "n": 300,
+          "mean": 0.011262626262626262,
+          "sd": 0.013721865954951343,
+          "min": 0.0,
+          "max": 0.06060606060606061,
+          "range": 0.06060606060606061
+        },
+        "contiguous": {
+          "n": 300,
+          "mean": 0.009242424242424243,
+          "sd": 0.03858787001563925,
+          "min": 0.0,
+          "max": 0.3787878787878788,
+          "range": 0.3787878787878788
+        }
+      },
+      "creation_loss_rate__EV": 0.024866004060687907,
+      "creation_loss_rate__mean_diff": -0.0020202020202020193,
+      "creation_loss_rate__sd_ratio": 2.8121445102526565
+    },
+    {
+      "case": "scenario-2",
+      "requested_rate": "0.05",
+      "seeds": 300,
+      "deleted_count": 63327,
+      "event_loss_rate": {
+        "random": {
+          "n": 300,
+          "mean": 0.05005213799413363,
+          "sd": 0.0009472715604292255,
+          "min": 0.0477920400419795,
+          "max": 0.05243400339065149,
+          "range": 0.004641963348671993
+        },
+        "contiguous": {
+          "n": 300,
+          "mean": 0.04779654745566589,
+          "sd": 0.05428382077024768,
+          "min": 0.004601598449987891,
+          "max": 0.260434326309841,
+          "range": 0.2558327278598531
+        }
+      },
+      "event_loss_rate__EV": 0.05333654920981846,
+      "event_loss_rate__mean_diff": -0.0022555905384677444,
+      "event_loss_rate__sd_ratio": 57.305447601161724,
+      "process_silence_rate": {
+        "random": {
+          "n": 300,
+          "mean": 0.0,
+          "sd": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "range": 0.0
+        },
+        "contiguous": {
+          "n": 300,
+          "mean": 0.03507936507936508,
+          "sd": 0.06411129000186036,
+          "min": 0.0,
+          "max": 0.23809523809523808,
+          "range": 0.23809523809523808
+        }
+      },
+      "process_silence_rate__EV": 0.06411129000186036,
+      "process_silence_rate__mean_diff": 0.03507936507936508,
+      "process_silence_rate__sd_ratio": null,
+      "creation_loss_rate": {
+        "random": {
+          "n": 300,
+          "mean": 0.05287878787878788,
+          "sd": 0.028189303857121144,
+          "min": 0.0,
+          "max": 0.16666666666666666,
+          "range": 0.16666666666666666
+        },
+        "contiguous": {
+          "n": 300,
+          "mean": 0.05101010101010101,
+          "sd": 0.0982386420767096,
+          "min": 0.0,
+          "max": 0.3939393939393939,
+          "range": 0.3939393939393939
+        }
+      },
+      "creation_loss_rate__EV": 0.07004933821958845,
+      "creation_loss_rate__mean_diff": -0.0018686868686868668,
+      "creation_loss_rate__sd_ratio": 3.4849616214233925
+    },
+    {
+      "case": "scenario-2",
+      "requested_rate": "0.10",
+      "seeds": 300,
+      "deleted_count": 126654,
+      "event_loss_rate": {
+        "random": {
+          "n": 300,
+          "mean": 0.10005947095072791,
+          "sd": 0.0013514560755543267,
+          "min": 0.09647210785500929,
+          "max": 0.103717607168806,
+          "range": 0.007245499313796713
+        },
+        "contiguous": {
+          "n": 300,
+          "mean": 0.102328180081268,
+          "sd": 0.09428314870318963,
+          "min": 0.023007992249939452,
+          "max": 0.38643335755227254,
+          "range": 0.3634253653023331
+        }
+      },
+      "event_loss_rate__EV": 0.0929316926276353,
+      "event_loss_rate__mean_diff": 0.0022687091305400864,
+      "event_loss_rate__sd_ratio": 69.76412360610205,
+      "process_silence_rate": {
+        "random": {
+          "n": 300,
+          "mean": 0.0,
+          "sd": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "range": 0.0
+        },
+        "contiguous": {
+          "n": 300,
+          "mean": 0.07809523809523809,
+          "sd": 0.10037331380646733,
+          "min": 0.0,
+          "max": 0.3333333333333333,
+          "range": 0.3333333333333333
+        }
+      },
+      "process_silence_rate__EV": 0.10037331380646733,
+      "process_silence_rate__mean_diff": 0.07809523809523809,
+      "process_silence_rate__sd_ratio": null,
+      "creation_loss_rate": {
+        "random": {
+          "n": 300,
+          "mean": 0.10247474747474747,
+          "sd": 0.03711551517215237,
+          "min": 0.015151515151515152,
+          "max": 0.21212121212121213,
+          "range": 0.19696969696969696
+        },
+        "contiguous": {
+          "n": 300,
+          "mean": 0.10954545454545453,
+          "sd": 0.15097483979101944,
+          "min": 0.0,
+          "max": 0.5151515151515151,
+          "range": 0.5151515151515151
+        }
+      },
+      "creation_loss_rate__EV": 0.11385932461886708,
+      "creation_loss_rate__mean_diff": 0.007070707070707061,
+      "creation_loss_rate__sd_ratio": 4.067701582229291
+    },
+    {
+      "case": "scenario-2",
+      "requested_rate": "0.20",
+      "seeds": 300,
+      "deleted_count": 253308,
+      "event_loss_rate": {
+        "random": {
+          "n": 300,
+          "mean": 0.1999028551438336,
+          "sd": 0.0018245690227476708,
+          "min": 0.19548720432711714,
+          "max": 0.2040647452974893,
+          "range": 0.008577540970372166
+        },
+        "contiguous": {
+          "n": 300,
+          "mean": 0.18158230402841688,
+          "sd": 0.11234122061547826,
+          "min": 0.052958747073544844,
+          "max": 0.5175183660289012,
+          "range": 0.46455961895535636
+        }
+      },
+      "event_loss_rate__EV": 0.11051665159273058,
+      "event_loss_rate__mean_diff": -0.018320551115416722,
+      "event_loss_rate__sd_ratio": 61.57137341195259,
+      "process_silence_rate": {
+        "random": {
+          "n": 300,
+          "mean": 0.0,
+          "sd": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "range": 0.0
+        },
+        "contiguous": {
+          "n": 300,
+          "mean": 0.16952380952380952,
+          "sd": 0.16206425664981414,
+          "min": 0.0,
+          "max": 0.5555555555555556,
+          "range": 0.5555555555555556
+        }
+      },
+      "process_silence_rate__EV": 0.16206425664981414,
+      "process_silence_rate__mean_diff": 0.16952380952380952,
+      "process_silence_rate__sd_ratio": null,
+      "creation_loss_rate": {
+        "random": {
+          "n": 300,
+          "mean": 0.20404040404040405,
+          "sd": 0.04770988892808224,
+          "min": 0.09090909090909091,
+          "max": 0.3484848484848485,
+          "range": 0.25757575757575757
+        },
+        "contiguous": {
+          "n": 300,
+          "mean": 0.22156565656565655,
+          "sd": 0.21592820244505953,
+          "min": 0.0,
+          "max": 0.6515151515151515,
+          "range": 0.6515151515151515
+        }
+      },
+      "creation_loss_rate__EV": 0.1682183135169773,
+      "creation_loss_rate__mean_diff": 0.0175252525252525,
+      "creation_loss_rate__sd_ratio": 4.525858418378402
+    },
+    {
+      "case": "scenario-3",
+      "requested_rate": "0.01",
+      "seeds": 300,
+      "deleted_count": 7879,
+      "event_loss_rate": {
+        "random": {
+          "n": 300,
+          "mean": 0.010083936233518118,
+          "sd": 0.0009170928530380338,
+          "min": 0.007516677628488208,
+          "max": 0.012496476557361646,
+          "range": 0.004979798928873438
+        },
+        "contiguous": {
+          "n": 300,
+          "mean": 0.007225406370384291,
+          "sd": 0.026801886010511387,
+          "min": 0.0,
+          "max": 0.36737761909236116,
+          "range": 0.36737761909236116
+        }
+      },
+      "event_loss_rate__EV": 0.025884793157473353,
+      "event_loss_rate__mean_diff": -0.002858529863133827,
+      "event_loss_rate__sd_ratio": 29.224833583344758,
+      "process_silence_rate": {
+        "random": {
+          "n": 300,
+          "mean": 6.0606060606060605e-05,
+          "sd": 0.0010497277621629559,
+          "min": 0.0,
+          "max": 0.01818181818181818,
+          "range": 0.01818181818181818
+        },
+        "contiguous": {
+          "n": 300,
+          "mean": 0.004909090909090909,
+          "sd": 0.025608059001263866,
+          "min": 0.0,
+          "max": 0.2727272727272727,
+          "range": 0.2727272727272727
+        }
+      },
+      "process_silence_rate__EV": 0.024558331239100912,
+      "process_silence_rate__mean_diff": 0.0048484848484848485,
+      "process_silence_rate__sd_ratio": 24.394952600375795,
+      "creation_loss_rate": {
+        "random": {
+          "n": 300,
+          "mean": 0.010370370370370368,
+          "sd": 0.014042157738808592,
+          "min": 0.0,
+          "max": 0.05555555555555555,
+          "range": 0.05555555555555555
+        },
+        "contiguous": {
+          "n": 300,
+          "mean": 0.005679012345679012,
+          "sd": 0.028004702284036335,
+          "min": 0.0,
+          "max": 0.2962962962962963,
+          "range": 0.2962962962962963
+        }
+      },
+      "creation_loss_rate__EV": 0.013962544545227744,
+      "creation_loss_rate__mean_diff": -0.004691358024691356,
+      "creation_loss_rate__sd_ratio": 1.9943304159473427
+    },
+    {
+      "case": "scenario-3",
+      "requested_rate": "0.05",
+      "seeds": 300,
+      "deleted_count": 39396,
+      "event_loss_rate": {
+        "random": {
+          "n": 300,
+          "mean": 0.050104293902095275,
+          "sd": 0.002018110833363027,
+          "min": 0.04444235647843653,
+          "max": 0.05581133139152494,
+          "range": 0.011368974913088414
+        },
+        "contiguous": {
+          "n": 300,
+          "mean": 0.02775220019418084,
+          "sd": 0.047958190498173014,
+          "min": 0.00216104481819036,
+          "max": 0.4868927933853237,
+          "range": 0.48473174856713336
+        }
+      },
+      "event_loss_rate__EV": 0.04594007966480999,
+      "event_loss_rate__mean_diff": -0.022352093707914435,
+      "event_loss_rate__sd_ratio": 23.763903203598765,
+      "process_silence_rate": {
+        "random": {
+          "n": 300,
+          "mean": 0.0008484848484848484,
+          "sd": 0.0038413875402670715,
+          "min": 0.0,
+          "max": 0.01818181818181818,
+          "range": 0.01818181818181818
+        },
+        "contiguous": {
+          "n": 300,
+          "mean": 0.022484848484848483,
+          "sd": 0.07275916499475536,
+          "min": 0.0,
+          "max": 0.45454545454545453,
+          "range": 0.45454545454545453
+        }
+      },
+      "process_silence_rate__EV": 0.0689177774544883,
+      "process_silence_rate__mean_diff": 0.021636363636363634,
+      "process_silence_rate__sd_ratio": 18.940855155087217,
+      "creation_loss_rate": {
+        "random": {
+          "n": 300,
+          "mean": 0.050432098765432094,
+          "sd": 0.03144369068810902,
+          "min": 0.0,
+          "max": 0.14814814814814814,
+          "range": 0.14814814814814814
+        },
+        "contiguous": {
+          "n": 300,
+          "mean": 0.02641975308641975,
+          "sd": 0.08035283166729904,
+          "min": 0.0,
+          "max": 0.48148148148148145,
+          "range": 0.48148148148148145
+        }
+      },
+      "creation_loss_rate__EV": 0.04890914097919002,
+      "creation_loss_rate__mean_diff": -0.024012345679012344,
+      "creation_loss_rate__sd_ratio": 2.5554516632389426
+    },
+    {
+      "case": "scenario-3",
+      "requested_rate": "0.10",
+      "seeds": 300,
+      "deleted_count": 78793,
+      "event_loss_rate": {
+        "random": {
+          "n": 300,
+          "mean": 0.10015816342509944,
+          "sd": 0.0026924639595016886,
+          "min": 0.09320680259325378,
+          "max": 0.10842807479094241,
+          "range": 0.015221272197688623
+        },
+        "contiguous": {
+          "n": 300,
+          "mean": 0.05497885934416987,
+          "sd": 0.0799945707925905,
+          "min": 0.013999812083059287,
+          "max": 0.5678849948322842,
+          "range": 0.5538851827492248
+        }
+      },
+      "event_loss_rate__EV": 0.0773021068330888,
+      "event_loss_rate__mean_diff": -0.045179304080929565,
+      "event_loss_rate__sd_ratio": 29.710544689109078,
+      "process_silence_rate": {
+        "random": {
+          "n": 300,
+          "mean": 0.0015757575757575756,
+          "sd": 0.005123928304963304,
+          "min": 0.0,
+          "max": 0.01818181818181818,
+          "range": 0.01818181818181818
+        },
+        "contiguous": {
+          "n": 300,
+          "mean": 0.058727272727272725,
+          "sd": 0.16750974654738435,
+          "min": 0.0,
+          "max": 0.7090909090909091,
+          "range": 0.7090909090909091
+        }
+      },
+      "process_silence_rate__EV": 0.16238581824242104,
+      "process_silence_rate__mean_diff": 0.05715151515151515,
+      "process_silence_rate__sd_ratio": 32.69166478873751,
+      "creation_loss_rate": {
+        "random": {
+          "n": 300,
+          "mean": 0.10067901234567901,
+          "sd": 0.041364279329574045,
+          "min": 0.0,
+          "max": 0.2222222222222222,
+          "range": 0.2222222222222222
+        },
+        "contiguous": {
+          "n": 300,
+          "mean": 0.06524691358024691,
+          "sd": 0.18212143147473875,
+          "min": 0.0,
+          "max": 0.7592592592592593,
+          "range": 0.7592592592592593
+        }
+      },
+      "creation_loss_rate__EV": 0.1407571521451647,
+      "creation_loss_rate__mean_diff": -0.0354320987654321,
+      "creation_loss_rate__sd_ratio": 4.402867266794811
+    },
+    {
+      "case": "scenario-3",
+      "requested_rate": "0.20",
+      "seeds": 300,
+      "deleted_count": 157587,
+      "event_loss_rate": {
+        "random": {
+          "n": 300,
+          "mean": 0.20019449403363712,
+          "sd": 0.0038074185485323766,
+          "min": 0.18857465000469792,
+          "max": 0.21103072441980644,
+          "range": 0.022456074415108523
+        },
+        "contiguous": {
+          "n": 300,
+          "mean": 0.10464687274891164,
+          "sd": 0.11569046938449917,
+          "min": 0.039744432960631404,
+          "max": 0.7688621629239876,
+          "range": 0.7291177299633562
+        }
+      },
+      "event_loss_rate__EV": 0.1118830508359668,
+      "event_loss_rate__mean_diff": -0.09554762128472548,
+      "event_loss_rate__sd_ratio": 30.385540205211665,
+      "process_silence_rate": {
+        "random": {
+          "n": 300,
+          "mean": 0.002909090909090909,
+          "sd": 0.006676701772179969,
+          "min": 0.0,
+          "max": 0.01818181818181818,
+          "range": 0.01818181818181818
+        },
+        "contiguous": {
+          "n": 300,
+          "mean": 0.11787878787878786,
+          "sd": 0.2774336327236813,
+          "min": 0.0,
+          "max": 0.9090909090909091,
+          "range": 0.9090909090909091
+        }
+      },
+      "process_silence_rate__EV": 0.27075693095150133,
+      "process_silence_rate__mean_diff": 0.11496969696969696,
+      "process_silence_rate__sd_ratio": 41.55249735425852,
+      "creation_loss_rate": {
+        "random": {
+          "n": 300,
+          "mean": 0.20216049382716048,
+          "sd": 0.05430185251672436,
+          "min": 0.09259259259259259,
+          "max": 0.37037037037037035,
+          "range": 0.2777777777777778
+        },
+        "contiguous": {
+          "n": 300,
+          "mean": 0.13049382716049382,
+          "sd": 0.30446241456290385,
+          "min": 0.0,
+          "max": 1.0,
+          "range": 1.0
+        }
+      },
+      "creation_loss_rate__EV": 0.2501605620461795,
+      "creation_loss_rate__mean_diff": -0.07166666666666666,
+      "creation_loss_rate__sd_ratio": 5.606851340276703
+    }
+  ],
+  "primary_rate": "0.10",
+  "overall_at_primary_rate": {
+    "event_loss_rate": {
+      "cases": 3,
+      "mean_EV": 0.08687886078694806,
+      "EV_positive_in_all_cases": true,
+      "mean_difference": -0.020978570370879957
+    },
+    "process_silence_rate": {
+      "cases": 3,
+      "mean_EV": 0.1608007154562878,
+      "EV_positive_in_all_cases": true,
+      "mean_difference": 0.06639912351023462
+    },
+    "creation_loss_rate": {
+      "cases": 3,
+      "mean_EV": 0.15437284566845552,
+      "EV_positive_in_all_cases": true,
+      "mean_difference": -0.018930921414581553
+    }
+  }
+}

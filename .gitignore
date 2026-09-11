@@ -15,11 +15,20 @@ data/inria_index/*/*
 data/inria_selected/*/*
 !data/inria_index/
 !data/windows/
+!data/labels/
+!data/results/
 data/windows/*
+data/labels/*
+data/results/*
 !data/inria_index/*/index.jsonl
 !data/inria_selected/*/manifest.jsonl
 !data/inria_selected/*/attempts.jsonl
 !data/windows/*.json
+# Raw measurements and the label position index are the study's own output and
+# belong in the reproduction package.
+!data/labels/*.json
+!data/results/*.json
+!data/results/*.jsonl
 
 # Raw *.headers stay local: successful responses carry a pre-signed S3 URL.
 # attempts.jsonl records each failure instead.
