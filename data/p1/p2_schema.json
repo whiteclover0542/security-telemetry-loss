@@ -1,0 +1,50 @@
+{
+  "schema": "p2-verification-v1",
+  "input": "data/inria_selected/2019-09-23/AIA-201-225.ecar-2019-09-23-sysclient0201.json.gz",
+  "events_inspected": 500000,
+  "top_level_keys": [
+    "action",
+    "actorID",
+    "hostname",
+    "id",
+    "object",
+    "objectID",
+    "pid",
+    "ppid",
+    "principal",
+    "properties",
+    "tid",
+    "timestamp"
+  ],
+  "keys_in_every_event": [
+    "action",
+    "actorID",
+    "hostname",
+    "id",
+    "object",
+    "objectID",
+    "pid",
+    "ppid",
+    "principal",
+    "properties",
+    "tid",
+    "timestamp"
+  ],
+  "distinct_properties_keys": 45,
+  "time_like_properties_keys": {
+    "end_time": 11085,
+    "start_time": 11085
+  },
+  "timestamp_fractional_digit_counts": {
+    "6": 43974,
+    "7": 451211,
+    "5": 4277,
+    "0": 538
+  },
+  "first_timestamp": "2019-09-23T00:00:00.07-04:00",
+  "last_timestamp": "2019-09-23T02:35:42.773-04:00",
+  "out_of_order_adjacent_pairs": 0,
+  "occurrence_time_only": true,
+  "raw_stream_monotonic": true,
+  "note": "start_time and end_time describe an entity's activity span, not log collection time; no ingest or arrival field is present."
+}
