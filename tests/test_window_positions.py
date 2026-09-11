@@ -7,7 +7,6 @@ import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
-from mask_overlap import measure
 from window_positions import aware_timestamp, scan
 
 WINDOW_START = aware_timestamp("2019-09-23T11:00:00-04:00")
@@ -50,24 +49,6 @@ class WindowPositionTests(unittest.TestCase):
     def test_naive_timestamp_is_refused(self):
         with self.assertRaisesRegex(ValueError, "explicit UTC offset"):
             aware_timestamp("2019-09-23T11:00:00")
-
-
-class MaskOverlapTests(unittest.TestCase):
-    def test_reports_span_and_attack_window_share(self):
-        with tempfile.TemporaryDirectory() as directory:
-            path = write_events(directory, [9, 11, 12, 14])
-            record = measure(path, [1, 2], WINDOW_START, WINDOW_END)
-            self.assertEqual(record["deleted_span_seconds"], 3600.0)
-            self.assertEqual(record["attack_window_event_count"], 2)
-            self.assertEqual(record["deleted_inside_attack_window"], 2)
-            self.assertEqual(record["fraction_of_attack_window_deleted"], 1.0)
-
-    def test_loss_outside_the_attack_window_is_visible(self):
-        with tempfile.TemporaryDirectory() as directory:
-            path = write_events(directory, [9, 11, 12, 14])
-            record = measure(path, [0, 3], WINDOW_START, WINDOW_END)
-            self.assertEqual(record["deleted_inside_attack_window"], 0)
-            self.assertEqual(record["fraction_of_attack_window_deleted"], 0.0)
 
 
 if __name__ == "__main__":

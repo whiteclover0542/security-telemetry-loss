@@ -8,6 +8,8 @@ import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
+# verify_labels stayed in the root toolset; it is reused by the current study.
+sys.path.insert(0, str(ROOT.parent / "scripts"))
 from verify_labels import normalised_sha256, verify
 
 
