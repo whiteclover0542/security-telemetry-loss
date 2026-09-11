@@ -1,0 +1,25 @@
+{
+  "schema": "rule-catalog-v1",
+  "note": "Fixed before the sweep. Thresholds calibrated so each rule fires on every case baseline without firing on nearly every window. No authentication events exist in OpTC, so all rules are host-behaviour based.",
+  "rules": [
+    {"name": "net_scan",      "object": "FLOW",   "action": "START",         "key": "pid",     "window_seconds": 60,  "threshold": 100, "attack": "T1046", "character": "dense-burst"},
+    {"name": "mass_file",     "object": "FILE",   "action": ["READ","WRITE","MODIFY"], "key": "pid", "window_seconds": 60, "threshold": 50, "attack": "T1005/T1486", "character": "medium"},
+    {"name": "remote_thread", "object": "THREAD", "action": "REMOTE_CREATE", "key": "pid",     "window_seconds": 300, "threshold": 5,   "attack": "T1055", "character": "sparse"},
+    {"name": "module_load",   "object": "MODULE", "action": "LOAD",          "key": "pid",     "window_seconds": 60,  "threshold": 20,  "attack": "T1129", "character": "medium"},
+    {"name": "beacon",        "object": "FLOW",   "action": "START",         "key": "dest_ip", "window_seconds": 300, "threshold": 30,  "attack": "T1071", "character": "periodic-dstkey"}
+  ],
+  "sweep": {
+    "cases": ["h201", "h501", "h051"],
+    "delay_fractions": [0.01, 0.05, 0.20],
+    "delay_multiples_of_window": [0.5, 1, 2, 5, 10],
+    "delay_structures": ["random", "targeted"],
+    "seeds": 30
+  },
+  "calibration": {
+    "net_scan":      {"h201": 1762, "h501": 4230,  "h051": 3834},
+    "mass_file":     {"h201": 710,  "h501": 2779,  "h051": 1130},
+    "remote_thread": {"h201": 289,  "h501": 919,   "h051": 345},
+    "module_load":   {"h201": 888,  "h501": 3668,  "h051": 1370},
+    "beacon":        {"h201": 6210, "h501": 14904, "h051": 13318}
+  }
+}
