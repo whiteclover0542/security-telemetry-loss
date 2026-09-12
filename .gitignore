@@ -25,6 +25,7 @@ data/p1/*
 !data/windows/*.json
 # Raw measurements are the study's own output and belong in the reproduction package.
 !data/p1/*.json
+!data/p1/*.jsonl
 
 # Raw *.headers stay local: successful responses carry a pre-signed S3 URL.
 # attempts.jsonl records each failure instead.

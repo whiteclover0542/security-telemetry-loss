@@ -1,0 +1,31 @@
+{
+  "schema": "ordering-sweep-manifest-v1",
+  "python": "3.11.9",
+  "records_written": 13500,
+  "seconds": 10780.0,
+  "sweep": {
+    "cases": [
+      "h201",
+      "h501",
+      "h051"
+    ],
+    "delay_fractions": [
+      0.01,
+      0.05,
+      0.2
+    ],
+    "delay_multiples_of_window": [
+      0.5,
+      1,
+      2,
+      5,
+      10
+    ],
+    "delay_structures": [
+      "random",
+      "targeted"
+    ],
+    "seeds": 30
+  },
+  "note": "No event removed; only arrival order changes. Delayed events re-sorted into arrival order."
+}
