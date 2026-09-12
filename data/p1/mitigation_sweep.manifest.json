@@ -1,0 +1,15 @@
+{
+  "schema": "mitigation-sweep-manifest-v1",
+  "python": "3.11.9",
+  "records_written": 5400,
+  "seconds": 6415.5,
+  "buffer_multiples": [
+    0,
+    0.5,
+    1,
+    2,
+    5,
+    10
+  ],
+  "note": "Occurrence time preserved through delay; buffer sorts toward occurrence order. Buffer cost is equal detection latency."
+}

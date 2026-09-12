@@ -1,0 +1,8648 @@
+{
+  "schema": "mitigation-aggregate-v1",
+  "records": 5400,
+  "cells": [
+    {
+      "case": "h201",
+      "rule": "net_scan",
+      "fraction": 0.01,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 0,
+      "evasion_remaining": -0.0002
+    },
+    {
+      "case": "h201",
+      "rule": "net_scan",
+      "fraction": 0.01,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "net_scan",
+      "fraction": 0.01,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "net_scan",
+      "fraction": 0.01,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "net_scan",
+      "fraction": 0.01,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "net_scan",
+      "fraction": 0.01,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "net_scan",
+      "fraction": 0.01,
+      "delay_multiple": 1,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.2123
+    },
+    {
+      "case": "h201",
+      "rule": "net_scan",
+      "fraction": 0.01,
+      "delay_multiple": 1,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": -0.0002
+    },
+    {
+      "case": "h201",
+      "rule": "net_scan",
+      "fraction": 0.01,
+      "delay_multiple": 1,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "net_scan",
+      "fraction": 0.01,
+      "delay_multiple": 1,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "net_scan",
+      "fraction": 0.01,
+      "delay_multiple": 1,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "net_scan",
+      "fraction": 0.01,
+      "delay_multiple": 1,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "net_scan",
+      "fraction": 0.01,
+      "delay_multiple": 2,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.0114
+    },
+    {
+      "case": "h201",
+      "rule": "net_scan",
+      "fraction": 0.01,
+      "delay_multiple": 2,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0114
+    },
+    {
+      "case": "h201",
+      "rule": "net_scan",
+      "fraction": 0.01,
+      "delay_multiple": 2,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.1543
+    },
+    {
+      "case": "h201",
+      "rule": "net_scan",
+      "fraction": 0.01,
+      "delay_multiple": 2,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "net_scan",
+      "fraction": 0.01,
+      "delay_multiple": 2,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "net_scan",
+      "fraction": 0.01,
+      "delay_multiple": 2,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "net_scan",
+      "fraction": 0.01,
+      "delay_multiple": 5,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.0114
+    },
+    {
+      "case": "h201",
+      "rule": "net_scan",
+      "fraction": 0.01,
+      "delay_multiple": 5,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0114
+    },
+    {
+      "case": "h201",
+      "rule": "net_scan",
+      "fraction": 0.01,
+      "delay_multiple": 5,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0114
+    },
+    {
+      "case": "h201",
+      "rule": "net_scan",
+      "fraction": 0.01,
+      "delay_multiple": 5,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0114
+    },
+    {
+      "case": "h201",
+      "rule": "net_scan",
+      "fraction": 0.01,
+      "delay_multiple": 5,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "net_scan",
+      "fraction": 0.01,
+      "delay_multiple": 5,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "net_scan",
+      "fraction": 0.01,
+      "delay_multiple": 10,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.0114
+    },
+    {
+      "case": "h201",
+      "rule": "net_scan",
+      "fraction": 0.01,
+      "delay_multiple": 10,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0114
+    },
+    {
+      "case": "h201",
+      "rule": "net_scan",
+      "fraction": 0.01,
+      "delay_multiple": 10,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0114
+    },
+    {
+      "case": "h201",
+      "rule": "net_scan",
+      "fraction": 0.01,
+      "delay_multiple": 10,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0114
+    },
+    {
+      "case": "h201",
+      "rule": "net_scan",
+      "fraction": 0.01,
+      "delay_multiple": 10,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0114
+    },
+    {
+      "case": "h201",
+      "rule": "net_scan",
+      "fraction": 0.01,
+      "delay_multiple": 10,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "net_scan",
+      "fraction": 0.05,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 0,
+      "evasion_remaining": -0.0002
+    },
+    {
+      "case": "h201",
+      "rule": "net_scan",
+      "fraction": 0.05,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "net_scan",
+      "fraction": 0.05,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "net_scan",
+      "fraction": 0.05,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "net_scan",
+      "fraction": 0.05,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "net_scan",
+      "fraction": 0.05,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "net_scan",
+      "fraction": 0.05,
+      "delay_multiple": 1,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.4377
+    },
+    {
+      "case": "h201",
+      "rule": "net_scan",
+      "fraction": 0.05,
+      "delay_multiple": 1,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": -0.0002
+    },
+    {
+      "case": "h201",
+      "rule": "net_scan",
+      "fraction": 0.05,
+      "delay_multiple": 1,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "net_scan",
+      "fraction": 0.05,
+      "delay_multiple": 1,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "net_scan",
+      "fraction": 0.05,
+      "delay_multiple": 1,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "net_scan",
+      "fraction": 0.05,
+      "delay_multiple": 1,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "net_scan",
+      "fraction": 0.05,
+      "delay_multiple": 2,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.0505
+    },
+    {
+      "case": "h201",
+      "rule": "net_scan",
+      "fraction": 0.05,
+      "delay_multiple": 2,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0505
+    },
+    {
+      "case": "h201",
+      "rule": "net_scan",
+      "fraction": 0.05,
+      "delay_multiple": 2,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.362
+    },
+    {
+      "case": "h201",
+      "rule": "net_scan",
+      "fraction": 0.05,
+      "delay_multiple": 2,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "net_scan",
+      "fraction": 0.05,
+      "delay_multiple": 2,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "net_scan",
+      "fraction": 0.05,
+      "delay_multiple": 2,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "net_scan",
+      "fraction": 0.05,
+      "delay_multiple": 5,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.0505
+    },
+    {
+      "case": "h201",
+      "rule": "net_scan",
+      "fraction": 0.05,
+      "delay_multiple": 5,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0505
+    },
+    {
+      "case": "h201",
+      "rule": "net_scan",
+      "fraction": 0.05,
+      "delay_multiple": 5,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0505
+    },
+    {
+      "case": "h201",
+      "rule": "net_scan",
+      "fraction": 0.05,
+      "delay_multiple": 5,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0505
+    },
+    {
+      "case": "h201",
+      "rule": "net_scan",
+      "fraction": 0.05,
+      "delay_multiple": 5,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "net_scan",
+      "fraction": 0.05,
+      "delay_multiple": 5,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "net_scan",
+      "fraction": 0.05,
+      "delay_multiple": 10,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.0505
+    },
+    {
+      "case": "h201",
+      "rule": "net_scan",
+      "fraction": 0.05,
+      "delay_multiple": 10,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0505
+    },
+    {
+      "case": "h201",
+      "rule": "net_scan",
+      "fraction": 0.05,
+      "delay_multiple": 10,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0505
+    },
+    {
+      "case": "h201",
+      "rule": "net_scan",
+      "fraction": 0.05,
+      "delay_multiple": 10,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0505
+    },
+    {
+      "case": "h201",
+      "rule": "net_scan",
+      "fraction": 0.05,
+      "delay_multiple": 10,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0505
+    },
+    {
+      "case": "h201",
+      "rule": "net_scan",
+      "fraction": 0.05,
+      "delay_multiple": 10,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "net_scan",
+      "fraction": 0.2,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.0006
+    },
+    {
+      "case": "h201",
+      "rule": "net_scan",
+      "fraction": 0.2,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "net_scan",
+      "fraction": 0.2,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "net_scan",
+      "fraction": 0.2,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "net_scan",
+      "fraction": 0.2,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "net_scan",
+      "fraction": 0.2,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "net_scan",
+      "fraction": 0.2,
+      "delay_multiple": 1,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.6235
+    },
+    {
+      "case": "h201",
+      "rule": "net_scan",
+      "fraction": 0.2,
+      "delay_multiple": 1,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0005
+    },
+    {
+      "case": "h201",
+      "rule": "net_scan",
+      "fraction": 0.2,
+      "delay_multiple": 1,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "net_scan",
+      "fraction": 0.2,
+      "delay_multiple": 1,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "net_scan",
+      "fraction": 0.2,
+      "delay_multiple": 1,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "net_scan",
+      "fraction": 0.2,
+      "delay_multiple": 1,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "net_scan",
+      "fraction": 0.2,
+      "delay_multiple": 2,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.2035
+    },
+    {
+      "case": "h201",
+      "rule": "net_scan",
+      "fraction": 0.2,
+      "delay_multiple": 2,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.2035
+    },
+    {
+      "case": "h201",
+      "rule": "net_scan",
+      "fraction": 0.2,
+      "delay_multiple": 2,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.5715
+    },
+    {
+      "case": "h201",
+      "rule": "net_scan",
+      "fraction": 0.2,
+      "delay_multiple": 2,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "net_scan",
+      "fraction": 0.2,
+      "delay_multiple": 2,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "net_scan",
+      "fraction": 0.2,
+      "delay_multiple": 2,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "net_scan",
+      "fraction": 0.2,
+      "delay_multiple": 5,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.2035
+    },
+    {
+      "case": "h201",
+      "rule": "net_scan",
+      "fraction": 0.2,
+      "delay_multiple": 5,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.2035
+    },
+    {
+      "case": "h201",
+      "rule": "net_scan",
+      "fraction": 0.2,
+      "delay_multiple": 5,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.2035
+    },
+    {
+      "case": "h201",
+      "rule": "net_scan",
+      "fraction": 0.2,
+      "delay_multiple": 5,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.2035
+    },
+    {
+      "case": "h201",
+      "rule": "net_scan",
+      "fraction": 0.2,
+      "delay_multiple": 5,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "net_scan",
+      "fraction": 0.2,
+      "delay_multiple": 5,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "net_scan",
+      "fraction": 0.2,
+      "delay_multiple": 10,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.2035
+    },
+    {
+      "case": "h201",
+      "rule": "net_scan",
+      "fraction": 0.2,
+      "delay_multiple": 10,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.2035
+    },
+    {
+      "case": "h201",
+      "rule": "net_scan",
+      "fraction": 0.2,
+      "delay_multiple": 10,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.2035
+    },
+    {
+      "case": "h201",
+      "rule": "net_scan",
+      "fraction": 0.2,
+      "delay_multiple": 10,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.2035
+    },
+    {
+      "case": "h201",
+      "rule": "net_scan",
+      "fraction": 0.2,
+      "delay_multiple": 10,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.2035
+    },
+    {
+      "case": "h201",
+      "rule": "net_scan",
+      "fraction": 0.2,
+      "delay_multiple": 10,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "mass_file",
+      "fraction": 0.01,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.0014
+    },
+    {
+      "case": "h201",
+      "rule": "mass_file",
+      "fraction": 0.01,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "mass_file",
+      "fraction": 0.01,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "mass_file",
+      "fraction": 0.01,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "mass_file",
+      "fraction": 0.01,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "mass_file",
+      "fraction": 0.01,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "mass_file",
+      "fraction": 0.01,
+      "delay_multiple": 1,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.1682
+    },
+    {
+      "case": "h201",
+      "rule": "mass_file",
+      "fraction": 0.01,
+      "delay_multiple": 1,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0014
+    },
+    {
+      "case": "h201",
+      "rule": "mass_file",
+      "fraction": 0.01,
+      "delay_multiple": 1,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "mass_file",
+      "fraction": 0.01,
+      "delay_multiple": 1,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "mass_file",
+      "fraction": 0.01,
+      "delay_multiple": 1,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "mass_file",
+      "fraction": 0.01,
+      "delay_multiple": 1,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "mass_file",
+      "fraction": 0.01,
+      "delay_multiple": 2,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.0141
+    },
+    {
+      "case": "h201",
+      "rule": "mass_file",
+      "fraction": 0.01,
+      "delay_multiple": 2,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0141
+    },
+    {
+      "case": "h201",
+      "rule": "mass_file",
+      "fraction": 0.01,
+      "delay_multiple": 2,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.1321
+    },
+    {
+      "case": "h201",
+      "rule": "mass_file",
+      "fraction": 0.01,
+      "delay_multiple": 2,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "mass_file",
+      "fraction": 0.01,
+      "delay_multiple": 2,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "mass_file",
+      "fraction": 0.01,
+      "delay_multiple": 2,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "mass_file",
+      "fraction": 0.01,
+      "delay_multiple": 5,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.0141
+    },
+    {
+      "case": "h201",
+      "rule": "mass_file",
+      "fraction": 0.01,
+      "delay_multiple": 5,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0141
+    },
+    {
+      "case": "h201",
+      "rule": "mass_file",
+      "fraction": 0.01,
+      "delay_multiple": 5,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0141
+    },
+    {
+      "case": "h201",
+      "rule": "mass_file",
+      "fraction": 0.01,
+      "delay_multiple": 5,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0141
+    },
+    {
+      "case": "h201",
+      "rule": "mass_file",
+      "fraction": 0.01,
+      "delay_multiple": 5,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "mass_file",
+      "fraction": 0.01,
+      "delay_multiple": 5,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "mass_file",
+      "fraction": 0.01,
+      "delay_multiple": 10,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.0141
+    },
+    {
+      "case": "h201",
+      "rule": "mass_file",
+      "fraction": 0.01,
+      "delay_multiple": 10,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0141
+    },
+    {
+      "case": "h201",
+      "rule": "mass_file",
+      "fraction": 0.01,
+      "delay_multiple": 10,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0141
+    },
+    {
+      "case": "h201",
+      "rule": "mass_file",
+      "fraction": 0.01,
+      "delay_multiple": 10,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0141
+    },
+    {
+      "case": "h201",
+      "rule": "mass_file",
+      "fraction": 0.01,
+      "delay_multiple": 10,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0141
+    },
+    {
+      "case": "h201",
+      "rule": "mass_file",
+      "fraction": 0.01,
+      "delay_multiple": 10,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "mass_file",
+      "fraction": 0.05,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.0034
+    },
+    {
+      "case": "h201",
+      "rule": "mass_file",
+      "fraction": 0.05,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "mass_file",
+      "fraction": 0.05,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "mass_file",
+      "fraction": 0.05,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "mass_file",
+      "fraction": 0.05,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "mass_file",
+      "fraction": 0.05,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "mass_file",
+      "fraction": 0.05,
+      "delay_multiple": 1,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.5704
+    },
+    {
+      "case": "h201",
+      "rule": "mass_file",
+      "fraction": 0.05,
+      "delay_multiple": 1,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0042
+    },
+    {
+      "case": "h201",
+      "rule": "mass_file",
+      "fraction": 0.05,
+      "delay_multiple": 1,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "mass_file",
+      "fraction": 0.05,
+      "delay_multiple": 1,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "mass_file",
+      "fraction": 0.05,
+      "delay_multiple": 1,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "mass_file",
+      "fraction": 0.05,
+      "delay_multiple": 1,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "mass_file",
+      "fraction": 0.05,
+      "delay_multiple": 2,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.0727
+    },
+    {
+      "case": "h201",
+      "rule": "mass_file",
+      "fraction": 0.05,
+      "delay_multiple": 2,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0727
+    },
+    {
+      "case": "h201",
+      "rule": "mass_file",
+      "fraction": 0.05,
+      "delay_multiple": 2,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.489
+    },
+    {
+      "case": "h201",
+      "rule": "mass_file",
+      "fraction": 0.05,
+      "delay_multiple": 2,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "mass_file",
+      "fraction": 0.05,
+      "delay_multiple": 2,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "mass_file",
+      "fraction": 0.05,
+      "delay_multiple": 2,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "mass_file",
+      "fraction": 0.05,
+      "delay_multiple": 5,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.0727
+    },
+    {
+      "case": "h201",
+      "rule": "mass_file",
+      "fraction": 0.05,
+      "delay_multiple": 5,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0727
+    },
+    {
+      "case": "h201",
+      "rule": "mass_file",
+      "fraction": 0.05,
+      "delay_multiple": 5,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0727
+    },
+    {
+      "case": "h201",
+      "rule": "mass_file",
+      "fraction": 0.05,
+      "delay_multiple": 5,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0727
+    },
+    {
+      "case": "h201",
+      "rule": "mass_file",
+      "fraction": 0.05,
+      "delay_multiple": 5,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "mass_file",
+      "fraction": 0.05,
+      "delay_multiple": 5,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "mass_file",
+      "fraction": 0.05,
+      "delay_multiple": 10,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.0727
+    },
+    {
+      "case": "h201",
+      "rule": "mass_file",
+      "fraction": 0.05,
+      "delay_multiple": 10,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0727
+    },
+    {
+      "case": "h201",
+      "rule": "mass_file",
+      "fraction": 0.05,
+      "delay_multiple": 10,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0727
+    },
+    {
+      "case": "h201",
+      "rule": "mass_file",
+      "fraction": 0.05,
+      "delay_multiple": 10,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0727
+    },
+    {
+      "case": "h201",
+      "rule": "mass_file",
+      "fraction": 0.05,
+      "delay_multiple": 10,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0727
+    },
+    {
+      "case": "h201",
+      "rule": "mass_file",
+      "fraction": 0.05,
+      "delay_multiple": 10,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "mass_file",
+      "fraction": 0.2,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.0031
+    },
+    {
+      "case": "h201",
+      "rule": "mass_file",
+      "fraction": 0.2,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "mass_file",
+      "fraction": 0.2,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "mass_file",
+      "fraction": 0.2,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "mass_file",
+      "fraction": 0.2,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "mass_file",
+      "fraction": 0.2,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "mass_file",
+      "fraction": 0.2,
+      "delay_multiple": 1,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.7885
+    },
+    {
+      "case": "h201",
+      "rule": "mass_file",
+      "fraction": 0.2,
+      "delay_multiple": 1,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0037
+    },
+    {
+      "case": "h201",
+      "rule": "mass_file",
+      "fraction": 0.2,
+      "delay_multiple": 1,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "mass_file",
+      "fraction": 0.2,
+      "delay_multiple": 1,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "mass_file",
+      "fraction": 0.2,
+      "delay_multiple": 1,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "mass_file",
+      "fraction": 0.2,
+      "delay_multiple": 1,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "mass_file",
+      "fraction": 0.2,
+      "delay_multiple": 2,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.2699
+    },
+    {
+      "case": "h201",
+      "rule": "mass_file",
+      "fraction": 0.2,
+      "delay_multiple": 2,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.2699
+    },
+    {
+      "case": "h201",
+      "rule": "mass_file",
+      "fraction": 0.2,
+      "delay_multiple": 2,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.7628
+    },
+    {
+      "case": "h201",
+      "rule": "mass_file",
+      "fraction": 0.2,
+      "delay_multiple": 2,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "mass_file",
+      "fraction": 0.2,
+      "delay_multiple": 2,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "mass_file",
+      "fraction": 0.2,
+      "delay_multiple": 2,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "mass_file",
+      "fraction": 0.2,
+      "delay_multiple": 5,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.2699
+    },
+    {
+      "case": "h201",
+      "rule": "mass_file",
+      "fraction": 0.2,
+      "delay_multiple": 5,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.2699
+    },
+    {
+      "case": "h201",
+      "rule": "mass_file",
+      "fraction": 0.2,
+      "delay_multiple": 5,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.2699
+    },
+    {
+      "case": "h201",
+      "rule": "mass_file",
+      "fraction": 0.2,
+      "delay_multiple": 5,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.2699
+    },
+    {
+      "case": "h201",
+      "rule": "mass_file",
+      "fraction": 0.2,
+      "delay_multiple": 5,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "mass_file",
+      "fraction": 0.2,
+      "delay_multiple": 5,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "mass_file",
+      "fraction": 0.2,
+      "delay_multiple": 10,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.2699
+    },
+    {
+      "case": "h201",
+      "rule": "mass_file",
+      "fraction": 0.2,
+      "delay_multiple": 10,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.2699
+    },
+    {
+      "case": "h201",
+      "rule": "mass_file",
+      "fraction": 0.2,
+      "delay_multiple": 10,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.2699
+    },
+    {
+      "case": "h201",
+      "rule": "mass_file",
+      "fraction": 0.2,
+      "delay_multiple": 10,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.2699
+    },
+    {
+      "case": "h201",
+      "rule": "mass_file",
+      "fraction": 0.2,
+      "delay_multiple": 10,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.2699
+    },
+    {
+      "case": "h201",
+      "rule": "mass_file",
+      "fraction": 0.2,
+      "delay_multiple": 10,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "remote_thread",
+      "fraction": 0.01,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "remote_thread",
+      "fraction": 0.01,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "remote_thread",
+      "fraction": 0.01,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "remote_thread",
+      "fraction": 0.01,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "remote_thread",
+      "fraction": 0.01,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "remote_thread",
+      "fraction": 0.01,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "remote_thread",
+      "fraction": 0.01,
+      "delay_multiple": 1,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.0076
+    },
+    {
+      "case": "h201",
+      "rule": "remote_thread",
+      "fraction": 0.01,
+      "delay_multiple": 1,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "remote_thread",
+      "fraction": 0.01,
+      "delay_multiple": 1,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "remote_thread",
+      "fraction": 0.01,
+      "delay_multiple": 1,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "remote_thread",
+      "fraction": 0.01,
+      "delay_multiple": 1,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "remote_thread",
+      "fraction": 0.01,
+      "delay_multiple": 1,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "remote_thread",
+      "fraction": 0.01,
+      "delay_multiple": 2,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.0111
+    },
+    {
+      "case": "h201",
+      "rule": "remote_thread",
+      "fraction": 0.01,
+      "delay_multiple": 2,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0111
+    },
+    {
+      "case": "h201",
+      "rule": "remote_thread",
+      "fraction": 0.01,
+      "delay_multiple": 2,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0042
+    },
+    {
+      "case": "h201",
+      "rule": "remote_thread",
+      "fraction": 0.01,
+      "delay_multiple": 2,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "remote_thread",
+      "fraction": 0.01,
+      "delay_multiple": 2,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "remote_thread",
+      "fraction": 0.01,
+      "delay_multiple": 2,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "remote_thread",
+      "fraction": 0.01,
+      "delay_multiple": 5,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.0111
+    },
+    {
+      "case": "h201",
+      "rule": "remote_thread",
+      "fraction": 0.01,
+      "delay_multiple": 5,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0111
+    },
+    {
+      "case": "h201",
+      "rule": "remote_thread",
+      "fraction": 0.01,
+      "delay_multiple": 5,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0104
+    },
+    {
+      "case": "h201",
+      "rule": "remote_thread",
+      "fraction": 0.01,
+      "delay_multiple": 5,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0104
+    },
+    {
+      "case": "h201",
+      "rule": "remote_thread",
+      "fraction": 0.01,
+      "delay_multiple": 5,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "remote_thread",
+      "fraction": 0.01,
+      "delay_multiple": 5,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "remote_thread",
+      "fraction": 0.01,
+      "delay_multiple": 10,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.0111
+    },
+    {
+      "case": "h201",
+      "rule": "remote_thread",
+      "fraction": 0.01,
+      "delay_multiple": 10,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0111
+    },
+    {
+      "case": "h201",
+      "rule": "remote_thread",
+      "fraction": 0.01,
+      "delay_multiple": 10,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0111
+    },
+    {
+      "case": "h201",
+      "rule": "remote_thread",
+      "fraction": 0.01,
+      "delay_multiple": 10,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0111
+    },
+    {
+      "case": "h201",
+      "rule": "remote_thread",
+      "fraction": 0.01,
+      "delay_multiple": 10,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0104
+    },
+    {
+      "case": "h201",
+      "rule": "remote_thread",
+      "fraction": 0.01,
+      "delay_multiple": 10,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "remote_thread",
+      "fraction": 0.05,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.0021
+    },
+    {
+      "case": "h201",
+      "rule": "remote_thread",
+      "fraction": 0.05,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "remote_thread",
+      "fraction": 0.05,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "remote_thread",
+      "fraction": 0.05,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "remote_thread",
+      "fraction": 0.05,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "remote_thread",
+      "fraction": 0.05,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "remote_thread",
+      "fraction": 0.05,
+      "delay_multiple": 1,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.0478
+    },
+    {
+      "case": "h201",
+      "rule": "remote_thread",
+      "fraction": 0.05,
+      "delay_multiple": 1,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0021
+    },
+    {
+      "case": "h201",
+      "rule": "remote_thread",
+      "fraction": 0.05,
+      "delay_multiple": 1,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "remote_thread",
+      "fraction": 0.05,
+      "delay_multiple": 1,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "remote_thread",
+      "fraction": 0.05,
+      "delay_multiple": 1,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "remote_thread",
+      "fraction": 0.05,
+      "delay_multiple": 1,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "remote_thread",
+      "fraction": 0.05,
+      "delay_multiple": 2,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.0567
+    },
+    {
+      "case": "h201",
+      "rule": "remote_thread",
+      "fraction": 0.05,
+      "delay_multiple": 2,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0567
+    },
+    {
+      "case": "h201",
+      "rule": "remote_thread",
+      "fraction": 0.05,
+      "delay_multiple": 2,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0332
+    },
+    {
+      "case": "h201",
+      "rule": "remote_thread",
+      "fraction": 0.05,
+      "delay_multiple": 2,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "remote_thread",
+      "fraction": 0.05,
+      "delay_multiple": 2,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "remote_thread",
+      "fraction": 0.05,
+      "delay_multiple": 2,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "remote_thread",
+      "fraction": 0.05,
+      "delay_multiple": 5,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.0567
+    },
+    {
+      "case": "h201",
+      "rule": "remote_thread",
+      "fraction": 0.05,
+      "delay_multiple": 5,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0567
+    },
+    {
+      "case": "h201",
+      "rule": "remote_thread",
+      "fraction": 0.05,
+      "delay_multiple": 5,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0567
+    },
+    {
+      "case": "h201",
+      "rule": "remote_thread",
+      "fraction": 0.05,
+      "delay_multiple": 5,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0567
+    },
+    {
+      "case": "h201",
+      "rule": "remote_thread",
+      "fraction": 0.05,
+      "delay_multiple": 5,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "remote_thread",
+      "fraction": 0.05,
+      "delay_multiple": 5,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "remote_thread",
+      "fraction": 0.05,
+      "delay_multiple": 10,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.0567
+    },
+    {
+      "case": "h201",
+      "rule": "remote_thread",
+      "fraction": 0.05,
+      "delay_multiple": 10,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0567
+    },
+    {
+      "case": "h201",
+      "rule": "remote_thread",
+      "fraction": 0.05,
+      "delay_multiple": 10,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0567
+    },
+    {
+      "case": "h201",
+      "rule": "remote_thread",
+      "fraction": 0.05,
+      "delay_multiple": 10,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0567
+    },
+    {
+      "case": "h201",
+      "rule": "remote_thread",
+      "fraction": 0.05,
+      "delay_multiple": 10,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0567
+    },
+    {
+      "case": "h201",
+      "rule": "remote_thread",
+      "fraction": 0.05,
+      "delay_multiple": 10,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "remote_thread",
+      "fraction": 0.2,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.0076
+    },
+    {
+      "case": "h201",
+      "rule": "remote_thread",
+      "fraction": 0.2,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "remote_thread",
+      "fraction": 0.2,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "remote_thread",
+      "fraction": 0.2,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "remote_thread",
+      "fraction": 0.2,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "remote_thread",
+      "fraction": 0.2,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "remote_thread",
+      "fraction": 0.2,
+      "delay_multiple": 1,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.1862
+    },
+    {
+      "case": "h201",
+      "rule": "remote_thread",
+      "fraction": 0.2,
+      "delay_multiple": 1,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0076
+    },
+    {
+      "case": "h201",
+      "rule": "remote_thread",
+      "fraction": 0.2,
+      "delay_multiple": 1,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "remote_thread",
+      "fraction": 0.2,
+      "delay_multiple": 1,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "remote_thread",
+      "fraction": 0.2,
+      "delay_multiple": 1,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "remote_thread",
+      "fraction": 0.2,
+      "delay_multiple": 1,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "remote_thread",
+      "fraction": 0.2,
+      "delay_multiple": 2,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.2284
+    },
+    {
+      "case": "h201",
+      "rule": "remote_thread",
+      "fraction": 0.2,
+      "delay_multiple": 2,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.2277
+    },
+    {
+      "case": "h201",
+      "rule": "remote_thread",
+      "fraction": 0.2,
+      "delay_multiple": 2,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.1439
+    },
+    {
+      "case": "h201",
+      "rule": "remote_thread",
+      "fraction": 0.2,
+      "delay_multiple": 2,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "remote_thread",
+      "fraction": 0.2,
+      "delay_multiple": 2,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "remote_thread",
+      "fraction": 0.2,
+      "delay_multiple": 2,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "remote_thread",
+      "fraction": 0.2,
+      "delay_multiple": 5,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.2284
+    },
+    {
+      "case": "h201",
+      "rule": "remote_thread",
+      "fraction": 0.2,
+      "delay_multiple": 5,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.2284
+    },
+    {
+      "case": "h201",
+      "rule": "remote_thread",
+      "fraction": 0.2,
+      "delay_multiple": 5,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.2284
+    },
+    {
+      "case": "h201",
+      "rule": "remote_thread",
+      "fraction": 0.2,
+      "delay_multiple": 5,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.2284
+    },
+    {
+      "case": "h201",
+      "rule": "remote_thread",
+      "fraction": 0.2,
+      "delay_multiple": 5,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "remote_thread",
+      "fraction": 0.2,
+      "delay_multiple": 5,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "remote_thread",
+      "fraction": 0.2,
+      "delay_multiple": 10,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.2284
+    },
+    {
+      "case": "h201",
+      "rule": "remote_thread",
+      "fraction": 0.2,
+      "delay_multiple": 10,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.2284
+    },
+    {
+      "case": "h201",
+      "rule": "remote_thread",
+      "fraction": 0.2,
+      "delay_multiple": 10,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.2284
+    },
+    {
+      "case": "h201",
+      "rule": "remote_thread",
+      "fraction": 0.2,
+      "delay_multiple": 10,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.2284
+    },
+    {
+      "case": "h201",
+      "rule": "remote_thread",
+      "fraction": 0.2,
+      "delay_multiple": 10,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.2284
+    },
+    {
+      "case": "h201",
+      "rule": "remote_thread",
+      "fraction": 0.2,
+      "delay_multiple": 10,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "module_load",
+      "fraction": 0.01,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "module_load",
+      "fraction": 0.01,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "module_load",
+      "fraction": 0.01,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "module_load",
+      "fraction": 0.01,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "module_load",
+      "fraction": 0.01,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "module_load",
+      "fraction": 0.01,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "module_load",
+      "fraction": 0.01,
+      "delay_multiple": 1,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.0002
+    },
+    {
+      "case": "h201",
+      "rule": "module_load",
+      "fraction": 0.01,
+      "delay_multiple": 1,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "module_load",
+      "fraction": 0.01,
+      "delay_multiple": 1,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "module_load",
+      "fraction": 0.01,
+      "delay_multiple": 1,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "module_load",
+      "fraction": 0.01,
+      "delay_multiple": 1,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "module_load",
+      "fraction": 0.01,
+      "delay_multiple": 1,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "module_load",
+      "fraction": 0.01,
+      "delay_multiple": 2,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.0061
+    },
+    {
+      "case": "h201",
+      "rule": "module_load",
+      "fraction": 0.01,
+      "delay_multiple": 2,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0041
+    },
+    {
+      "case": "h201",
+      "rule": "module_load",
+      "fraction": 0.01,
+      "delay_multiple": 2,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0002
+    },
+    {
+      "case": "h201",
+      "rule": "module_load",
+      "fraction": 0.01,
+      "delay_multiple": 2,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "module_load",
+      "fraction": 0.01,
+      "delay_multiple": 2,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "module_load",
+      "fraction": 0.01,
+      "delay_multiple": 2,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "module_load",
+      "fraction": 0.01,
+      "delay_multiple": 5,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.0061
+    },
+    {
+      "case": "h201",
+      "rule": "module_load",
+      "fraction": 0.01,
+      "delay_multiple": 5,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0061
+    },
+    {
+      "case": "h201",
+      "rule": "module_load",
+      "fraction": 0.01,
+      "delay_multiple": 5,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0061
+    },
+    {
+      "case": "h201",
+      "rule": "module_load",
+      "fraction": 0.01,
+      "delay_multiple": 5,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0061
+    },
+    {
+      "case": "h201",
+      "rule": "module_load",
+      "fraction": 0.01,
+      "delay_multiple": 5,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "module_load",
+      "fraction": 0.01,
+      "delay_multiple": 5,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "module_load",
+      "fraction": 0.01,
+      "delay_multiple": 10,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.0061
+    },
+    {
+      "case": "h201",
+      "rule": "module_load",
+      "fraction": 0.01,
+      "delay_multiple": 10,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0061
+    },
+    {
+      "case": "h201",
+      "rule": "module_load",
+      "fraction": 0.01,
+      "delay_multiple": 10,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0061
+    },
+    {
+      "case": "h201",
+      "rule": "module_load",
+      "fraction": 0.01,
+      "delay_multiple": 10,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0061
+    },
+    {
+      "case": "h201",
+      "rule": "module_load",
+      "fraction": 0.01,
+      "delay_multiple": 10,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0061
+    },
+    {
+      "case": "h201",
+      "rule": "module_load",
+      "fraction": 0.01,
+      "delay_multiple": 10,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "module_load",
+      "fraction": 0.05,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "module_load",
+      "fraction": 0.05,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "module_load",
+      "fraction": 0.05,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "module_load",
+      "fraction": 0.05,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "module_load",
+      "fraction": 0.05,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "module_load",
+      "fraction": 0.05,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "module_load",
+      "fraction": 0.05,
+      "delay_multiple": 1,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.002
+    },
+    {
+      "case": "h201",
+      "rule": "module_load",
+      "fraction": 0.05,
+      "delay_multiple": 1,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "module_load",
+      "fraction": 0.05,
+      "delay_multiple": 1,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "module_load",
+      "fraction": 0.05,
+      "delay_multiple": 1,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "module_load",
+      "fraction": 0.05,
+      "delay_multiple": 1,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "module_load",
+      "fraction": 0.05,
+      "delay_multiple": 1,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "module_load",
+      "fraction": 0.05,
+      "delay_multiple": 2,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.03
+    },
+    {
+      "case": "h201",
+      "rule": "module_load",
+      "fraction": 0.05,
+      "delay_multiple": 2,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0236
+    },
+    {
+      "case": "h201",
+      "rule": "module_load",
+      "fraction": 0.05,
+      "delay_multiple": 2,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.002
+    },
+    {
+      "case": "h201",
+      "rule": "module_load",
+      "fraction": 0.05,
+      "delay_multiple": 2,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "module_load",
+      "fraction": 0.05,
+      "delay_multiple": 2,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "module_load",
+      "fraction": 0.05,
+      "delay_multiple": 2,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "module_load",
+      "fraction": 0.05,
+      "delay_multiple": 5,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.03
+    },
+    {
+      "case": "h201",
+      "rule": "module_load",
+      "fraction": 0.05,
+      "delay_multiple": 5,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.03
+    },
+    {
+      "case": "h201",
+      "rule": "module_load",
+      "fraction": 0.05,
+      "delay_multiple": 5,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.03
+    },
+    {
+      "case": "h201",
+      "rule": "module_load",
+      "fraction": 0.05,
+      "delay_multiple": 5,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.03
+    },
+    {
+      "case": "h201",
+      "rule": "module_load",
+      "fraction": 0.05,
+      "delay_multiple": 5,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "module_load",
+      "fraction": 0.05,
+      "delay_multiple": 5,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "module_load",
+      "fraction": 0.05,
+      "delay_multiple": 10,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.03
+    },
+    {
+      "case": "h201",
+      "rule": "module_load",
+      "fraction": 0.05,
+      "delay_multiple": 10,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.03
+    },
+    {
+      "case": "h201",
+      "rule": "module_load",
+      "fraction": 0.05,
+      "delay_multiple": 10,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.03
+    },
+    {
+      "case": "h201",
+      "rule": "module_load",
+      "fraction": 0.05,
+      "delay_multiple": 10,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.03
+    },
+    {
+      "case": "h201",
+      "rule": "module_load",
+      "fraction": 0.05,
+      "delay_multiple": 10,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.03
+    },
+    {
+      "case": "h201",
+      "rule": "module_load",
+      "fraction": 0.05,
+      "delay_multiple": 10,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "module_load",
+      "fraction": 0.2,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "module_load",
+      "fraction": 0.2,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "module_load",
+      "fraction": 0.2,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "module_load",
+      "fraction": 0.2,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "module_load",
+      "fraction": 0.2,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "module_load",
+      "fraction": 0.2,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "module_load",
+      "fraction": 0.2,
+      "delay_multiple": 1,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.0437
+    },
+    {
+      "case": "h201",
+      "rule": "module_load",
+      "fraction": 0.2,
+      "delay_multiple": 1,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "module_load",
+      "fraction": 0.2,
+      "delay_multiple": 1,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "module_load",
+      "fraction": 0.2,
+      "delay_multiple": 1,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "module_load",
+      "fraction": 0.2,
+      "delay_multiple": 1,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "module_load",
+      "fraction": 0.2,
+      "delay_multiple": 1,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "module_load",
+      "fraction": 0.2,
+      "delay_multiple": 2,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.2459
+    },
+    {
+      "case": "h201",
+      "rule": "module_load",
+      "fraction": 0.2,
+      "delay_multiple": 2,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.2106
+    },
+    {
+      "case": "h201",
+      "rule": "module_load",
+      "fraction": 0.2,
+      "delay_multiple": 2,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0347
+    },
+    {
+      "case": "h201",
+      "rule": "module_load",
+      "fraction": 0.2,
+      "delay_multiple": 2,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "module_load",
+      "fraction": 0.2,
+      "delay_multiple": 2,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "module_load",
+      "fraction": 0.2,
+      "delay_multiple": 2,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "module_load",
+      "fraction": 0.2,
+      "delay_multiple": 5,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.2462
+    },
+    {
+      "case": "h201",
+      "rule": "module_load",
+      "fraction": 0.2,
+      "delay_multiple": 5,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.2462
+    },
+    {
+      "case": "h201",
+      "rule": "module_load",
+      "fraction": 0.2,
+      "delay_multiple": 5,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.2462
+    },
+    {
+      "case": "h201",
+      "rule": "module_load",
+      "fraction": 0.2,
+      "delay_multiple": 5,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.2462
+    },
+    {
+      "case": "h201",
+      "rule": "module_load",
+      "fraction": 0.2,
+      "delay_multiple": 5,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "module_load",
+      "fraction": 0.2,
+      "delay_multiple": 5,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h201",
+      "rule": "module_load",
+      "fraction": 0.2,
+      "delay_multiple": 10,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.2462
+    },
+    {
+      "case": "h201",
+      "rule": "module_load",
+      "fraction": 0.2,
+      "delay_multiple": 10,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.2462
+    },
+    {
+      "case": "h201",
+      "rule": "module_load",
+      "fraction": 0.2,
+      "delay_multiple": 10,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.2462
+    },
+    {
+      "case": "h201",
+      "rule": "module_load",
+      "fraction": 0.2,
+      "delay_multiple": 10,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.2462
+    },
+    {
+      "case": "h201",
+      "rule": "module_load",
+      "fraction": 0.2,
+      "delay_multiple": 10,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.2462
+    },
+    {
+      "case": "h201",
+      "rule": "module_load",
+      "fraction": 0.2,
+      "delay_multiple": 10,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "net_scan",
+      "fraction": 0.01,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "net_scan",
+      "fraction": 0.01,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "net_scan",
+      "fraction": 0.01,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "net_scan",
+      "fraction": 0.01,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "net_scan",
+      "fraction": 0.01,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "net_scan",
+      "fraction": 0.01,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "net_scan",
+      "fraction": 0.01,
+      "delay_multiple": 1,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.1915
+    },
+    {
+      "case": "h501",
+      "rule": "net_scan",
+      "fraction": 0.01,
+      "delay_multiple": 1,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "net_scan",
+      "fraction": 0.01,
+      "delay_multiple": 1,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "net_scan",
+      "fraction": 0.01,
+      "delay_multiple": 1,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "net_scan",
+      "fraction": 0.01,
+      "delay_multiple": 1,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "net_scan",
+      "fraction": 0.01,
+      "delay_multiple": 1,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "net_scan",
+      "fraction": 0.01,
+      "delay_multiple": 2,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.0108
+    },
+    {
+      "case": "h501",
+      "rule": "net_scan",
+      "fraction": 0.01,
+      "delay_multiple": 2,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0108
+    },
+    {
+      "case": "h501",
+      "rule": "net_scan",
+      "fraction": 0.01,
+      "delay_multiple": 2,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.1447
+    },
+    {
+      "case": "h501",
+      "rule": "net_scan",
+      "fraction": 0.01,
+      "delay_multiple": 2,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "net_scan",
+      "fraction": 0.01,
+      "delay_multiple": 2,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "net_scan",
+      "fraction": 0.01,
+      "delay_multiple": 2,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "net_scan",
+      "fraction": 0.01,
+      "delay_multiple": 5,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.0108
+    },
+    {
+      "case": "h501",
+      "rule": "net_scan",
+      "fraction": 0.01,
+      "delay_multiple": 5,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0108
+    },
+    {
+      "case": "h501",
+      "rule": "net_scan",
+      "fraction": 0.01,
+      "delay_multiple": 5,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0108
+    },
+    {
+      "case": "h501",
+      "rule": "net_scan",
+      "fraction": 0.01,
+      "delay_multiple": 5,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0108
+    },
+    {
+      "case": "h501",
+      "rule": "net_scan",
+      "fraction": 0.01,
+      "delay_multiple": 5,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "net_scan",
+      "fraction": 0.01,
+      "delay_multiple": 5,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "net_scan",
+      "fraction": 0.01,
+      "delay_multiple": 10,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.0108
+    },
+    {
+      "case": "h501",
+      "rule": "net_scan",
+      "fraction": 0.01,
+      "delay_multiple": 10,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0108
+    },
+    {
+      "case": "h501",
+      "rule": "net_scan",
+      "fraction": 0.01,
+      "delay_multiple": 10,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0108
+    },
+    {
+      "case": "h501",
+      "rule": "net_scan",
+      "fraction": 0.01,
+      "delay_multiple": 10,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0108
+    },
+    {
+      "case": "h501",
+      "rule": "net_scan",
+      "fraction": 0.01,
+      "delay_multiple": 10,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0108
+    },
+    {
+      "case": "h501",
+      "rule": "net_scan",
+      "fraction": 0.01,
+      "delay_multiple": 10,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "net_scan",
+      "fraction": 0.05,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 0,
+      "evasion_remaining": -0.0009
+    },
+    {
+      "case": "h501",
+      "rule": "net_scan",
+      "fraction": 0.05,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "net_scan",
+      "fraction": 0.05,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "net_scan",
+      "fraction": 0.05,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "net_scan",
+      "fraction": 0.05,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "net_scan",
+      "fraction": 0.05,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "net_scan",
+      "fraction": 0.05,
+      "delay_multiple": 1,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.3923
+    },
+    {
+      "case": "h501",
+      "rule": "net_scan",
+      "fraction": 0.05,
+      "delay_multiple": 1,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": -0.0008
+    },
+    {
+      "case": "h501",
+      "rule": "net_scan",
+      "fraction": 0.05,
+      "delay_multiple": 1,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "net_scan",
+      "fraction": 0.05,
+      "delay_multiple": 1,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "net_scan",
+      "fraction": 0.05,
+      "delay_multiple": 1,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "net_scan",
+      "fraction": 0.05,
+      "delay_multiple": 1,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "net_scan",
+      "fraction": 0.05,
+      "delay_multiple": 2,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.051
+    },
+    {
+      "case": "h501",
+      "rule": "net_scan",
+      "fraction": 0.05,
+      "delay_multiple": 2,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0506
+    },
+    {
+      "case": "h501",
+      "rule": "net_scan",
+      "fraction": 0.05,
+      "delay_multiple": 2,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.3258
+    },
+    {
+      "case": "h501",
+      "rule": "net_scan",
+      "fraction": 0.05,
+      "delay_multiple": 2,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "net_scan",
+      "fraction": 0.05,
+      "delay_multiple": 2,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "net_scan",
+      "fraction": 0.05,
+      "delay_multiple": 2,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "net_scan",
+      "fraction": 0.05,
+      "delay_multiple": 5,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.0513
+    },
+    {
+      "case": "h501",
+      "rule": "net_scan",
+      "fraction": 0.05,
+      "delay_multiple": 5,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0513
+    },
+    {
+      "case": "h501",
+      "rule": "net_scan",
+      "fraction": 0.05,
+      "delay_multiple": 5,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0513
+    },
+    {
+      "case": "h501",
+      "rule": "net_scan",
+      "fraction": 0.05,
+      "delay_multiple": 5,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0513
+    },
+    {
+      "case": "h501",
+      "rule": "net_scan",
+      "fraction": 0.05,
+      "delay_multiple": 5,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "net_scan",
+      "fraction": 0.05,
+      "delay_multiple": 5,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "net_scan",
+      "fraction": 0.05,
+      "delay_multiple": 10,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.0513
+    },
+    {
+      "case": "h501",
+      "rule": "net_scan",
+      "fraction": 0.05,
+      "delay_multiple": 10,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0513
+    },
+    {
+      "case": "h501",
+      "rule": "net_scan",
+      "fraction": 0.05,
+      "delay_multiple": 10,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0513
+    },
+    {
+      "case": "h501",
+      "rule": "net_scan",
+      "fraction": 0.05,
+      "delay_multiple": 10,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0513
+    },
+    {
+      "case": "h501",
+      "rule": "net_scan",
+      "fraction": 0.05,
+      "delay_multiple": 10,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0513
+    },
+    {
+      "case": "h501",
+      "rule": "net_scan",
+      "fraction": 0.05,
+      "delay_multiple": 10,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "net_scan",
+      "fraction": 0.2,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 0,
+      "evasion_remaining": -0.0007
+    },
+    {
+      "case": "h501",
+      "rule": "net_scan",
+      "fraction": 0.2,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "net_scan",
+      "fraction": 0.2,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "net_scan",
+      "fraction": 0.2,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "net_scan",
+      "fraction": 0.2,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "net_scan",
+      "fraction": 0.2,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "net_scan",
+      "fraction": 0.2,
+      "delay_multiple": 1,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.5638
+    },
+    {
+      "case": "h501",
+      "rule": "net_scan",
+      "fraction": 0.2,
+      "delay_multiple": 1,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": -0.0006
+    },
+    {
+      "case": "h501",
+      "rule": "net_scan",
+      "fraction": 0.2,
+      "delay_multiple": 1,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "net_scan",
+      "fraction": 0.2,
+      "delay_multiple": 1,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "net_scan",
+      "fraction": 0.2,
+      "delay_multiple": 1,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "net_scan",
+      "fraction": 0.2,
+      "delay_multiple": 1,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "net_scan",
+      "fraction": 0.2,
+      "delay_multiple": 2,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.2046
+    },
+    {
+      "case": "h501",
+      "rule": "net_scan",
+      "fraction": 0.2,
+      "delay_multiple": 2,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.204
+    },
+    {
+      "case": "h501",
+      "rule": "net_scan",
+      "fraction": 0.2,
+      "delay_multiple": 2,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.5121
+    },
+    {
+      "case": "h501",
+      "rule": "net_scan",
+      "fraction": 0.2,
+      "delay_multiple": 2,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "net_scan",
+      "fraction": 0.2,
+      "delay_multiple": 2,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "net_scan",
+      "fraction": 0.2,
+      "delay_multiple": 2,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "net_scan",
+      "fraction": 0.2,
+      "delay_multiple": 5,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.2051
+    },
+    {
+      "case": "h501",
+      "rule": "net_scan",
+      "fraction": 0.2,
+      "delay_multiple": 5,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.2051
+    },
+    {
+      "case": "h501",
+      "rule": "net_scan",
+      "fraction": 0.2,
+      "delay_multiple": 5,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.2051
+    },
+    {
+      "case": "h501",
+      "rule": "net_scan",
+      "fraction": 0.2,
+      "delay_multiple": 5,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.2051
+    },
+    {
+      "case": "h501",
+      "rule": "net_scan",
+      "fraction": 0.2,
+      "delay_multiple": 5,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "net_scan",
+      "fraction": 0.2,
+      "delay_multiple": 5,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "net_scan",
+      "fraction": 0.2,
+      "delay_multiple": 10,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.2051
+    },
+    {
+      "case": "h501",
+      "rule": "net_scan",
+      "fraction": 0.2,
+      "delay_multiple": 10,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.2051
+    },
+    {
+      "case": "h501",
+      "rule": "net_scan",
+      "fraction": 0.2,
+      "delay_multiple": 10,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.2051
+    },
+    {
+      "case": "h501",
+      "rule": "net_scan",
+      "fraction": 0.2,
+      "delay_multiple": 10,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.2051
+    },
+    {
+      "case": "h501",
+      "rule": "net_scan",
+      "fraction": 0.2,
+      "delay_multiple": 10,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.2051
+    },
+    {
+      "case": "h501",
+      "rule": "net_scan",
+      "fraction": 0.2,
+      "delay_multiple": 10,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "mass_file",
+      "fraction": 0.01,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 0,
+      "evasion_remaining": -0.0006
+    },
+    {
+      "case": "h501",
+      "rule": "mass_file",
+      "fraction": 0.01,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "mass_file",
+      "fraction": 0.01,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "mass_file",
+      "fraction": 0.01,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "mass_file",
+      "fraction": 0.01,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "mass_file",
+      "fraction": 0.01,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "mass_file",
+      "fraction": 0.01,
+      "delay_multiple": 1,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.1154
+    },
+    {
+      "case": "h501",
+      "rule": "mass_file",
+      "fraction": 0.01,
+      "delay_multiple": 1,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": -0.0007
+    },
+    {
+      "case": "h501",
+      "rule": "mass_file",
+      "fraction": 0.01,
+      "delay_multiple": 1,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "mass_file",
+      "fraction": 0.01,
+      "delay_multiple": 1,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "mass_file",
+      "fraction": 0.01,
+      "delay_multiple": 1,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "mass_file",
+      "fraction": 0.01,
+      "delay_multiple": 1,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "mass_file",
+      "fraction": 0.01,
+      "delay_multiple": 2,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.0122
+    },
+    {
+      "case": "h501",
+      "rule": "mass_file",
+      "fraction": 0.01,
+      "delay_multiple": 2,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0122
+    },
+    {
+      "case": "h501",
+      "rule": "mass_file",
+      "fraction": 0.01,
+      "delay_multiple": 2,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0903
+    },
+    {
+      "case": "h501",
+      "rule": "mass_file",
+      "fraction": 0.01,
+      "delay_multiple": 2,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "mass_file",
+      "fraction": 0.01,
+      "delay_multiple": 2,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "mass_file",
+      "fraction": 0.01,
+      "delay_multiple": 2,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "mass_file",
+      "fraction": 0.01,
+      "delay_multiple": 5,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.0122
+    },
+    {
+      "case": "h501",
+      "rule": "mass_file",
+      "fraction": 0.01,
+      "delay_multiple": 5,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0122
+    },
+    {
+      "case": "h501",
+      "rule": "mass_file",
+      "fraction": 0.01,
+      "delay_multiple": 5,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0122
+    },
+    {
+      "case": "h501",
+      "rule": "mass_file",
+      "fraction": 0.01,
+      "delay_multiple": 5,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0122
+    },
+    {
+      "case": "h501",
+      "rule": "mass_file",
+      "fraction": 0.01,
+      "delay_multiple": 5,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "mass_file",
+      "fraction": 0.01,
+      "delay_multiple": 5,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "mass_file",
+      "fraction": 0.01,
+      "delay_multiple": 10,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.0122
+    },
+    {
+      "case": "h501",
+      "rule": "mass_file",
+      "fraction": 0.01,
+      "delay_multiple": 10,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0122
+    },
+    {
+      "case": "h501",
+      "rule": "mass_file",
+      "fraction": 0.01,
+      "delay_multiple": 10,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0122
+    },
+    {
+      "case": "h501",
+      "rule": "mass_file",
+      "fraction": 0.01,
+      "delay_multiple": 10,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0122
+    },
+    {
+      "case": "h501",
+      "rule": "mass_file",
+      "fraction": 0.01,
+      "delay_multiple": 10,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0122
+    },
+    {
+      "case": "h501",
+      "rule": "mass_file",
+      "fraction": 0.01,
+      "delay_multiple": 10,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "mass_file",
+      "fraction": 0.05,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 0,
+      "evasion_remaining": -0.0009
+    },
+    {
+      "case": "h501",
+      "rule": "mass_file",
+      "fraction": 0.05,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "mass_file",
+      "fraction": 0.05,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "mass_file",
+      "fraction": 0.05,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "mass_file",
+      "fraction": 0.05,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "mass_file",
+      "fraction": 0.05,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "mass_file",
+      "fraction": 0.05,
+      "delay_multiple": 1,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.3542
+    },
+    {
+      "case": "h501",
+      "rule": "mass_file",
+      "fraction": 0.05,
+      "delay_multiple": 1,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": -0.0009
+    },
+    {
+      "case": "h501",
+      "rule": "mass_file",
+      "fraction": 0.05,
+      "delay_multiple": 1,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "mass_file",
+      "fraction": 0.05,
+      "delay_multiple": 1,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "mass_file",
+      "fraction": 0.05,
+      "delay_multiple": 1,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "mass_file",
+      "fraction": 0.05,
+      "delay_multiple": 1,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "mass_file",
+      "fraction": 0.05,
+      "delay_multiple": 2,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.058
+    },
+    {
+      "case": "h501",
+      "rule": "mass_file",
+      "fraction": 0.05,
+      "delay_multiple": 2,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.058
+    },
+    {
+      "case": "h501",
+      "rule": "mass_file",
+      "fraction": 0.05,
+      "delay_multiple": 2,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.2995
+    },
+    {
+      "case": "h501",
+      "rule": "mass_file",
+      "fraction": 0.05,
+      "delay_multiple": 2,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "mass_file",
+      "fraction": 0.05,
+      "delay_multiple": 2,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "mass_file",
+      "fraction": 0.05,
+      "delay_multiple": 2,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "mass_file",
+      "fraction": 0.05,
+      "delay_multiple": 5,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.058
+    },
+    {
+      "case": "h501",
+      "rule": "mass_file",
+      "fraction": 0.05,
+      "delay_multiple": 5,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.058
+    },
+    {
+      "case": "h501",
+      "rule": "mass_file",
+      "fraction": 0.05,
+      "delay_multiple": 5,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.058
+    },
+    {
+      "case": "h501",
+      "rule": "mass_file",
+      "fraction": 0.05,
+      "delay_multiple": 5,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.058
+    },
+    {
+      "case": "h501",
+      "rule": "mass_file",
+      "fraction": 0.05,
+      "delay_multiple": 5,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "mass_file",
+      "fraction": 0.05,
+      "delay_multiple": 5,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "mass_file",
+      "fraction": 0.05,
+      "delay_multiple": 10,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.058
+    },
+    {
+      "case": "h501",
+      "rule": "mass_file",
+      "fraction": 0.05,
+      "delay_multiple": 10,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.058
+    },
+    {
+      "case": "h501",
+      "rule": "mass_file",
+      "fraction": 0.05,
+      "delay_multiple": 10,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.058
+    },
+    {
+      "case": "h501",
+      "rule": "mass_file",
+      "fraction": 0.05,
+      "delay_multiple": 10,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.058
+    },
+    {
+      "case": "h501",
+      "rule": "mass_file",
+      "fraction": 0.05,
+      "delay_multiple": 10,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.058
+    },
+    {
+      "case": "h501",
+      "rule": "mass_file",
+      "fraction": 0.05,
+      "delay_multiple": 10,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "mass_file",
+      "fraction": 0.2,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 0,
+      "evasion_remaining": -0.0001
+    },
+    {
+      "case": "h501",
+      "rule": "mass_file",
+      "fraction": 0.2,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "mass_file",
+      "fraction": 0.2,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "mass_file",
+      "fraction": 0.2,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "mass_file",
+      "fraction": 0.2,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "mass_file",
+      "fraction": 0.2,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "mass_file",
+      "fraction": 0.2,
+      "delay_multiple": 1,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.5464
+    },
+    {
+      "case": "h501",
+      "rule": "mass_file",
+      "fraction": 0.2,
+      "delay_multiple": 1,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": -0.0003
+    },
+    {
+      "case": "h501",
+      "rule": "mass_file",
+      "fraction": 0.2,
+      "delay_multiple": 1,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "mass_file",
+      "fraction": 0.2,
+      "delay_multiple": 1,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "mass_file",
+      "fraction": 0.2,
+      "delay_multiple": 1,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "mass_file",
+      "fraction": 0.2,
+      "delay_multiple": 1,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "mass_file",
+      "fraction": 0.2,
+      "delay_multiple": 2,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.2299
+    },
+    {
+      "case": "h501",
+      "rule": "mass_file",
+      "fraction": 0.2,
+      "delay_multiple": 2,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.2299
+    },
+    {
+      "case": "h501",
+      "rule": "mass_file",
+      "fraction": 0.2,
+      "delay_multiple": 2,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.5151
+    },
+    {
+      "case": "h501",
+      "rule": "mass_file",
+      "fraction": 0.2,
+      "delay_multiple": 2,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "mass_file",
+      "fraction": 0.2,
+      "delay_multiple": 2,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "mass_file",
+      "fraction": 0.2,
+      "delay_multiple": 2,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "mass_file",
+      "fraction": 0.2,
+      "delay_multiple": 5,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.2299
+    },
+    {
+      "case": "h501",
+      "rule": "mass_file",
+      "fraction": 0.2,
+      "delay_multiple": 5,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.2299
+    },
+    {
+      "case": "h501",
+      "rule": "mass_file",
+      "fraction": 0.2,
+      "delay_multiple": 5,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.2299
+    },
+    {
+      "case": "h501",
+      "rule": "mass_file",
+      "fraction": 0.2,
+      "delay_multiple": 5,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.2299
+    },
+    {
+      "case": "h501",
+      "rule": "mass_file",
+      "fraction": 0.2,
+      "delay_multiple": 5,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "mass_file",
+      "fraction": 0.2,
+      "delay_multiple": 5,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "mass_file",
+      "fraction": 0.2,
+      "delay_multiple": 10,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.2299
+    },
+    {
+      "case": "h501",
+      "rule": "mass_file",
+      "fraction": 0.2,
+      "delay_multiple": 10,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.2299
+    },
+    {
+      "case": "h501",
+      "rule": "mass_file",
+      "fraction": 0.2,
+      "delay_multiple": 10,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.2299
+    },
+    {
+      "case": "h501",
+      "rule": "mass_file",
+      "fraction": 0.2,
+      "delay_multiple": 10,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.2299
+    },
+    {
+      "case": "h501",
+      "rule": "mass_file",
+      "fraction": 0.2,
+      "delay_multiple": 10,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.2299
+    },
+    {
+      "case": "h501",
+      "rule": "mass_file",
+      "fraction": 0.2,
+      "delay_multiple": 10,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "remote_thread",
+      "fraction": 0.01,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.0004
+    },
+    {
+      "case": "h501",
+      "rule": "remote_thread",
+      "fraction": 0.01,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "remote_thread",
+      "fraction": 0.01,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "remote_thread",
+      "fraction": 0.01,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "remote_thread",
+      "fraction": 0.01,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "remote_thread",
+      "fraction": 0.01,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "remote_thread",
+      "fraction": 0.01,
+      "delay_multiple": 1,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.0163
+    },
+    {
+      "case": "h501",
+      "rule": "remote_thread",
+      "fraction": 0.01,
+      "delay_multiple": 1,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0004
+    },
+    {
+      "case": "h501",
+      "rule": "remote_thread",
+      "fraction": 0.01,
+      "delay_multiple": 1,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "remote_thread",
+      "fraction": 0.01,
+      "delay_multiple": 1,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "remote_thread",
+      "fraction": 0.01,
+      "delay_multiple": 1,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "remote_thread",
+      "fraction": 0.01,
+      "delay_multiple": 1,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "remote_thread",
+      "fraction": 0.01,
+      "delay_multiple": 2,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.0107
+    },
+    {
+      "case": "h501",
+      "rule": "remote_thread",
+      "fraction": 0.01,
+      "delay_multiple": 2,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0107
+    },
+    {
+      "case": "h501",
+      "rule": "remote_thread",
+      "fraction": 0.01,
+      "delay_multiple": 2,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0122
+    },
+    {
+      "case": "h501",
+      "rule": "remote_thread",
+      "fraction": 0.01,
+      "delay_multiple": 2,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "remote_thread",
+      "fraction": 0.01,
+      "delay_multiple": 2,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "remote_thread",
+      "fraction": 0.01,
+      "delay_multiple": 2,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "remote_thread",
+      "fraction": 0.01,
+      "delay_multiple": 5,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.0107
+    },
+    {
+      "case": "h501",
+      "rule": "remote_thread",
+      "fraction": 0.01,
+      "delay_multiple": 5,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0107
+    },
+    {
+      "case": "h501",
+      "rule": "remote_thread",
+      "fraction": 0.01,
+      "delay_multiple": 5,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0107
+    },
+    {
+      "case": "h501",
+      "rule": "remote_thread",
+      "fraction": 0.01,
+      "delay_multiple": 5,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0107
+    },
+    {
+      "case": "h501",
+      "rule": "remote_thread",
+      "fraction": 0.01,
+      "delay_multiple": 5,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "remote_thread",
+      "fraction": 0.01,
+      "delay_multiple": 5,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "remote_thread",
+      "fraction": 0.01,
+      "delay_multiple": 10,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.0107
+    },
+    {
+      "case": "h501",
+      "rule": "remote_thread",
+      "fraction": 0.01,
+      "delay_multiple": 10,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0107
+    },
+    {
+      "case": "h501",
+      "rule": "remote_thread",
+      "fraction": 0.01,
+      "delay_multiple": 10,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0107
+    },
+    {
+      "case": "h501",
+      "rule": "remote_thread",
+      "fraction": 0.01,
+      "delay_multiple": 10,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0107
+    },
+    {
+      "case": "h501",
+      "rule": "remote_thread",
+      "fraction": 0.01,
+      "delay_multiple": 10,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0107
+    },
+    {
+      "case": "h501",
+      "rule": "remote_thread",
+      "fraction": 0.01,
+      "delay_multiple": 10,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "remote_thread",
+      "fraction": 0.05,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.0024
+    },
+    {
+      "case": "h501",
+      "rule": "remote_thread",
+      "fraction": 0.05,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "remote_thread",
+      "fraction": 0.05,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "remote_thread",
+      "fraction": 0.05,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "remote_thread",
+      "fraction": 0.05,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "remote_thread",
+      "fraction": 0.05,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "remote_thread",
+      "fraction": 0.05,
+      "delay_multiple": 1,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.0705
+    },
+    {
+      "case": "h501",
+      "rule": "remote_thread",
+      "fraction": 0.05,
+      "delay_multiple": 1,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.002
+    },
+    {
+      "case": "h501",
+      "rule": "remote_thread",
+      "fraction": 0.05,
+      "delay_multiple": 1,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "remote_thread",
+      "fraction": 0.05,
+      "delay_multiple": 1,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "remote_thread",
+      "fraction": 0.05,
+      "delay_multiple": 1,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "remote_thread",
+      "fraction": 0.05,
+      "delay_multiple": 1,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "remote_thread",
+      "fraction": 0.05,
+      "delay_multiple": 2,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.0561
+    },
+    {
+      "case": "h501",
+      "rule": "remote_thread",
+      "fraction": 0.05,
+      "delay_multiple": 2,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0561
+    },
+    {
+      "case": "h501",
+      "rule": "remote_thread",
+      "fraction": 0.05,
+      "delay_multiple": 2,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0577
+    },
+    {
+      "case": "h501",
+      "rule": "remote_thread",
+      "fraction": 0.05,
+      "delay_multiple": 2,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "remote_thread",
+      "fraction": 0.05,
+      "delay_multiple": 2,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "remote_thread",
+      "fraction": 0.05,
+      "delay_multiple": 2,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "remote_thread",
+      "fraction": 0.05,
+      "delay_multiple": 5,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.0561
+    },
+    {
+      "case": "h501",
+      "rule": "remote_thread",
+      "fraction": 0.05,
+      "delay_multiple": 5,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0561
+    },
+    {
+      "case": "h501",
+      "rule": "remote_thread",
+      "fraction": 0.05,
+      "delay_multiple": 5,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0561
+    },
+    {
+      "case": "h501",
+      "rule": "remote_thread",
+      "fraction": 0.05,
+      "delay_multiple": 5,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0561
+    },
+    {
+      "case": "h501",
+      "rule": "remote_thread",
+      "fraction": 0.05,
+      "delay_multiple": 5,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "remote_thread",
+      "fraction": 0.05,
+      "delay_multiple": 5,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "remote_thread",
+      "fraction": 0.05,
+      "delay_multiple": 10,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.0561
+    },
+    {
+      "case": "h501",
+      "rule": "remote_thread",
+      "fraction": 0.05,
+      "delay_multiple": 10,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0561
+    },
+    {
+      "case": "h501",
+      "rule": "remote_thread",
+      "fraction": 0.05,
+      "delay_multiple": 10,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0561
+    },
+    {
+      "case": "h501",
+      "rule": "remote_thread",
+      "fraction": 0.05,
+      "delay_multiple": 10,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0561
+    },
+    {
+      "case": "h501",
+      "rule": "remote_thread",
+      "fraction": 0.05,
+      "delay_multiple": 10,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0561
+    },
+    {
+      "case": "h501",
+      "rule": "remote_thread",
+      "fraction": 0.05,
+      "delay_multiple": 10,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "remote_thread",
+      "fraction": 0.2,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.0057
+    },
+    {
+      "case": "h501",
+      "rule": "remote_thread",
+      "fraction": 0.2,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "remote_thread",
+      "fraction": 0.2,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "remote_thread",
+      "fraction": 0.2,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "remote_thread",
+      "fraction": 0.2,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "remote_thread",
+      "fraction": 0.2,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "remote_thread",
+      "fraction": 0.2,
+      "delay_multiple": 1,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.2242
+    },
+    {
+      "case": "h501",
+      "rule": "remote_thread",
+      "fraction": 0.2,
+      "delay_multiple": 1,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0054
+    },
+    {
+      "case": "h501",
+      "rule": "remote_thread",
+      "fraction": 0.2,
+      "delay_multiple": 1,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "remote_thread",
+      "fraction": 0.2,
+      "delay_multiple": 1,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "remote_thread",
+      "fraction": 0.2,
+      "delay_multiple": 1,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "remote_thread",
+      "fraction": 0.2,
+      "delay_multiple": 1,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "remote_thread",
+      "fraction": 0.2,
+      "delay_multiple": 2,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.2192
+    },
+    {
+      "case": "h501",
+      "rule": "remote_thread",
+      "fraction": 0.2,
+      "delay_multiple": 2,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.2192
+    },
+    {
+      "case": "h501",
+      "rule": "remote_thread",
+      "fraction": 0.2,
+      "delay_multiple": 2,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.1859
+    },
+    {
+      "case": "h501",
+      "rule": "remote_thread",
+      "fraction": 0.2,
+      "delay_multiple": 2,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "remote_thread",
+      "fraction": 0.2,
+      "delay_multiple": 2,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "remote_thread",
+      "fraction": 0.2,
+      "delay_multiple": 2,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "remote_thread",
+      "fraction": 0.2,
+      "delay_multiple": 5,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.2192
+    },
+    {
+      "case": "h501",
+      "rule": "remote_thread",
+      "fraction": 0.2,
+      "delay_multiple": 5,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.2192
+    },
+    {
+      "case": "h501",
+      "rule": "remote_thread",
+      "fraction": 0.2,
+      "delay_multiple": 5,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.2192
+    },
+    {
+      "case": "h501",
+      "rule": "remote_thread",
+      "fraction": 0.2,
+      "delay_multiple": 5,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.2192
+    },
+    {
+      "case": "h501",
+      "rule": "remote_thread",
+      "fraction": 0.2,
+      "delay_multiple": 5,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "remote_thread",
+      "fraction": 0.2,
+      "delay_multiple": 5,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "remote_thread",
+      "fraction": 0.2,
+      "delay_multiple": 10,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.2192
+    },
+    {
+      "case": "h501",
+      "rule": "remote_thread",
+      "fraction": 0.2,
+      "delay_multiple": 10,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.2192
+    },
+    {
+      "case": "h501",
+      "rule": "remote_thread",
+      "fraction": 0.2,
+      "delay_multiple": 10,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.2192
+    },
+    {
+      "case": "h501",
+      "rule": "remote_thread",
+      "fraction": 0.2,
+      "delay_multiple": 10,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.2192
+    },
+    {
+      "case": "h501",
+      "rule": "remote_thread",
+      "fraction": 0.2,
+      "delay_multiple": 10,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.2192
+    },
+    {
+      "case": "h501",
+      "rule": "remote_thread",
+      "fraction": 0.2,
+      "delay_multiple": 10,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "module_load",
+      "fraction": 0.01,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "module_load",
+      "fraction": 0.01,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "module_load",
+      "fraction": 0.01,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "module_load",
+      "fraction": 0.01,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "module_load",
+      "fraction": 0.01,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "module_load",
+      "fraction": 0.01,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "module_load",
+      "fraction": 0.01,
+      "delay_multiple": 1,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.0016
+    },
+    {
+      "case": "h501",
+      "rule": "module_load",
+      "fraction": 0.01,
+      "delay_multiple": 1,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "module_load",
+      "fraction": 0.01,
+      "delay_multiple": 1,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "module_load",
+      "fraction": 0.01,
+      "delay_multiple": 1,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "module_load",
+      "fraction": 0.01,
+      "delay_multiple": 1,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "module_load",
+      "fraction": 0.01,
+      "delay_multiple": 1,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "module_load",
+      "fraction": 0.01,
+      "delay_multiple": 2,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.0067
+    },
+    {
+      "case": "h501",
+      "rule": "module_load",
+      "fraction": 0.01,
+      "delay_multiple": 2,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0049
+    },
+    {
+      "case": "h501",
+      "rule": "module_load",
+      "fraction": 0.01,
+      "delay_multiple": 2,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0007
+    },
+    {
+      "case": "h501",
+      "rule": "module_load",
+      "fraction": 0.01,
+      "delay_multiple": 2,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "module_load",
+      "fraction": 0.01,
+      "delay_multiple": 2,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "module_load",
+      "fraction": 0.01,
+      "delay_multiple": 2,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "module_load",
+      "fraction": 0.01,
+      "delay_multiple": 5,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.0067
+    },
+    {
+      "case": "h501",
+      "rule": "module_load",
+      "fraction": 0.01,
+      "delay_multiple": 5,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0067
+    },
+    {
+      "case": "h501",
+      "rule": "module_load",
+      "fraction": 0.01,
+      "delay_multiple": 5,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0067
+    },
+    {
+      "case": "h501",
+      "rule": "module_load",
+      "fraction": 0.01,
+      "delay_multiple": 5,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0067
+    },
+    {
+      "case": "h501",
+      "rule": "module_load",
+      "fraction": 0.01,
+      "delay_multiple": 5,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "module_load",
+      "fraction": 0.01,
+      "delay_multiple": 5,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "module_load",
+      "fraction": 0.01,
+      "delay_multiple": 10,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.0067
+    },
+    {
+      "case": "h501",
+      "rule": "module_load",
+      "fraction": 0.01,
+      "delay_multiple": 10,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0067
+    },
+    {
+      "case": "h501",
+      "rule": "module_load",
+      "fraction": 0.01,
+      "delay_multiple": 10,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0067
+    },
+    {
+      "case": "h501",
+      "rule": "module_load",
+      "fraction": 0.01,
+      "delay_multiple": 10,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0067
+    },
+    {
+      "case": "h501",
+      "rule": "module_load",
+      "fraction": 0.01,
+      "delay_multiple": 10,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0067
+    },
+    {
+      "case": "h501",
+      "rule": "module_load",
+      "fraction": 0.01,
+      "delay_multiple": 10,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "module_load",
+      "fraction": 0.05,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.0001
+    },
+    {
+      "case": "h501",
+      "rule": "module_load",
+      "fraction": 0.05,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "module_load",
+      "fraction": 0.05,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "module_load",
+      "fraction": 0.05,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "module_load",
+      "fraction": 0.05,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "module_load",
+      "fraction": 0.05,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "module_load",
+      "fraction": 0.05,
+      "delay_multiple": 1,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.0124
+    },
+    {
+      "case": "h501",
+      "rule": "module_load",
+      "fraction": 0.05,
+      "delay_multiple": 1,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0001
+    },
+    {
+      "case": "h501",
+      "rule": "module_load",
+      "fraction": 0.05,
+      "delay_multiple": 1,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "module_load",
+      "fraction": 0.05,
+      "delay_multiple": 1,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "module_load",
+      "fraction": 0.05,
+      "delay_multiple": 1,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "module_load",
+      "fraction": 0.05,
+      "delay_multiple": 1,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "module_load",
+      "fraction": 0.05,
+      "delay_multiple": 2,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.0457
+    },
+    {
+      "case": "h501",
+      "rule": "module_load",
+      "fraction": 0.05,
+      "delay_multiple": 2,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0382
+    },
+    {
+      "case": "h501",
+      "rule": "module_load",
+      "fraction": 0.05,
+      "delay_multiple": 2,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0089
+    },
+    {
+      "case": "h501",
+      "rule": "module_load",
+      "fraction": 0.05,
+      "delay_multiple": 2,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "module_load",
+      "fraction": 0.05,
+      "delay_multiple": 2,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "module_load",
+      "fraction": 0.05,
+      "delay_multiple": 2,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "module_load",
+      "fraction": 0.05,
+      "delay_multiple": 5,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.0457
+    },
+    {
+      "case": "h501",
+      "rule": "module_load",
+      "fraction": 0.05,
+      "delay_multiple": 5,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0457
+    },
+    {
+      "case": "h501",
+      "rule": "module_load",
+      "fraction": 0.05,
+      "delay_multiple": 5,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0457
+    },
+    {
+      "case": "h501",
+      "rule": "module_load",
+      "fraction": 0.05,
+      "delay_multiple": 5,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0457
+    },
+    {
+      "case": "h501",
+      "rule": "module_load",
+      "fraction": 0.05,
+      "delay_multiple": 5,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "module_load",
+      "fraction": 0.05,
+      "delay_multiple": 5,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "module_load",
+      "fraction": 0.05,
+      "delay_multiple": 10,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.0457
+    },
+    {
+      "case": "h501",
+      "rule": "module_load",
+      "fraction": 0.05,
+      "delay_multiple": 10,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0457
+    },
+    {
+      "case": "h501",
+      "rule": "module_load",
+      "fraction": 0.05,
+      "delay_multiple": 10,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0457
+    },
+    {
+      "case": "h501",
+      "rule": "module_load",
+      "fraction": 0.05,
+      "delay_multiple": 10,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0457
+    },
+    {
+      "case": "h501",
+      "rule": "module_load",
+      "fraction": 0.05,
+      "delay_multiple": 10,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0457
+    },
+    {
+      "case": "h501",
+      "rule": "module_load",
+      "fraction": 0.05,
+      "delay_multiple": 10,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "module_load",
+      "fraction": 0.2,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.0003
+    },
+    {
+      "case": "h501",
+      "rule": "module_load",
+      "fraction": 0.2,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "module_load",
+      "fraction": 0.2,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "module_load",
+      "fraction": 0.2,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "module_load",
+      "fraction": 0.2,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "module_load",
+      "fraction": 0.2,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "module_load",
+      "fraction": 0.2,
+      "delay_multiple": 1,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.0647
+    },
+    {
+      "case": "h501",
+      "rule": "module_load",
+      "fraction": 0.2,
+      "delay_multiple": 1,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0003
+    },
+    {
+      "case": "h501",
+      "rule": "module_load",
+      "fraction": 0.2,
+      "delay_multiple": 1,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "module_load",
+      "fraction": 0.2,
+      "delay_multiple": 1,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "module_load",
+      "fraction": 0.2,
+      "delay_multiple": 1,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "module_load",
+      "fraction": 0.2,
+      "delay_multiple": 1,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "module_load",
+      "fraction": 0.2,
+      "delay_multiple": 2,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.2448
+    },
+    {
+      "case": "h501",
+      "rule": "module_load",
+      "fraction": 0.2,
+      "delay_multiple": 2,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.2083
+    },
+    {
+      "case": "h501",
+      "rule": "module_load",
+      "fraction": 0.2,
+      "delay_multiple": 2,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0473
+    },
+    {
+      "case": "h501",
+      "rule": "module_load",
+      "fraction": 0.2,
+      "delay_multiple": 2,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "module_load",
+      "fraction": 0.2,
+      "delay_multiple": 2,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "module_load",
+      "fraction": 0.2,
+      "delay_multiple": 2,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "module_load",
+      "fraction": 0.2,
+      "delay_multiple": 5,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.2452
+    },
+    {
+      "case": "h501",
+      "rule": "module_load",
+      "fraction": 0.2,
+      "delay_multiple": 5,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.2452
+    },
+    {
+      "case": "h501",
+      "rule": "module_load",
+      "fraction": 0.2,
+      "delay_multiple": 5,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.2452
+    },
+    {
+      "case": "h501",
+      "rule": "module_load",
+      "fraction": 0.2,
+      "delay_multiple": 5,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.2452
+    },
+    {
+      "case": "h501",
+      "rule": "module_load",
+      "fraction": 0.2,
+      "delay_multiple": 5,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "module_load",
+      "fraction": 0.2,
+      "delay_multiple": 5,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h501",
+      "rule": "module_load",
+      "fraction": 0.2,
+      "delay_multiple": 10,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.2452
+    },
+    {
+      "case": "h501",
+      "rule": "module_load",
+      "fraction": 0.2,
+      "delay_multiple": 10,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.2452
+    },
+    {
+      "case": "h501",
+      "rule": "module_load",
+      "fraction": 0.2,
+      "delay_multiple": 10,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.2452
+    },
+    {
+      "case": "h501",
+      "rule": "module_load",
+      "fraction": 0.2,
+      "delay_multiple": 10,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.2452
+    },
+    {
+      "case": "h501",
+      "rule": "module_load",
+      "fraction": 0.2,
+      "delay_multiple": 10,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.2452
+    },
+    {
+      "case": "h501",
+      "rule": "module_load",
+      "fraction": 0.2,
+      "delay_multiple": 10,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "net_scan",
+      "fraction": 0.01,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "net_scan",
+      "fraction": 0.01,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "net_scan",
+      "fraction": 0.01,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "net_scan",
+      "fraction": 0.01,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "net_scan",
+      "fraction": 0.01,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "net_scan",
+      "fraction": 0.01,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "net_scan",
+      "fraction": 0.01,
+      "delay_multiple": 1,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.2309
+    },
+    {
+      "case": "h051",
+      "rule": "net_scan",
+      "fraction": 0.01,
+      "delay_multiple": 1,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "net_scan",
+      "fraction": 0.01,
+      "delay_multiple": 1,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "net_scan",
+      "fraction": 0.01,
+      "delay_multiple": 1,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "net_scan",
+      "fraction": 0.01,
+      "delay_multiple": 1,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "net_scan",
+      "fraction": 0.01,
+      "delay_multiple": 1,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "net_scan",
+      "fraction": 0.01,
+      "delay_multiple": 2,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.0094
+    },
+    {
+      "case": "h051",
+      "rule": "net_scan",
+      "fraction": 0.01,
+      "delay_multiple": 2,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0094
+    },
+    {
+      "case": "h051",
+      "rule": "net_scan",
+      "fraction": 0.01,
+      "delay_multiple": 2,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.1714
+    },
+    {
+      "case": "h051",
+      "rule": "net_scan",
+      "fraction": 0.01,
+      "delay_multiple": 2,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "net_scan",
+      "fraction": 0.01,
+      "delay_multiple": 2,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "net_scan",
+      "fraction": 0.01,
+      "delay_multiple": 2,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "net_scan",
+      "fraction": 0.01,
+      "delay_multiple": 5,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.0094
+    },
+    {
+      "case": "h051",
+      "rule": "net_scan",
+      "fraction": 0.01,
+      "delay_multiple": 5,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0094
+    },
+    {
+      "case": "h051",
+      "rule": "net_scan",
+      "fraction": 0.01,
+      "delay_multiple": 5,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0094
+    },
+    {
+      "case": "h051",
+      "rule": "net_scan",
+      "fraction": 0.01,
+      "delay_multiple": 5,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0094
+    },
+    {
+      "case": "h051",
+      "rule": "net_scan",
+      "fraction": 0.01,
+      "delay_multiple": 5,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "net_scan",
+      "fraction": 0.01,
+      "delay_multiple": 5,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "net_scan",
+      "fraction": 0.01,
+      "delay_multiple": 10,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.0094
+    },
+    {
+      "case": "h051",
+      "rule": "net_scan",
+      "fraction": 0.01,
+      "delay_multiple": 10,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0094
+    },
+    {
+      "case": "h051",
+      "rule": "net_scan",
+      "fraction": 0.01,
+      "delay_multiple": 10,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0094
+    },
+    {
+      "case": "h051",
+      "rule": "net_scan",
+      "fraction": 0.01,
+      "delay_multiple": 10,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0094
+    },
+    {
+      "case": "h051",
+      "rule": "net_scan",
+      "fraction": 0.01,
+      "delay_multiple": 10,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0094
+    },
+    {
+      "case": "h051",
+      "rule": "net_scan",
+      "fraction": 0.01,
+      "delay_multiple": 10,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "net_scan",
+      "fraction": 0.05,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "net_scan",
+      "fraction": 0.05,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "net_scan",
+      "fraction": 0.05,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "net_scan",
+      "fraction": 0.05,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "net_scan",
+      "fraction": 0.05,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "net_scan",
+      "fraction": 0.05,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "net_scan",
+      "fraction": 0.05,
+      "delay_multiple": 1,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.4948
+    },
+    {
+      "case": "h051",
+      "rule": "net_scan",
+      "fraction": 0.05,
+      "delay_multiple": 1,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "net_scan",
+      "fraction": 0.05,
+      "delay_multiple": 1,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "net_scan",
+      "fraction": 0.05,
+      "delay_multiple": 1,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "net_scan",
+      "fraction": 0.05,
+      "delay_multiple": 1,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "net_scan",
+      "fraction": 0.05,
+      "delay_multiple": 1,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "net_scan",
+      "fraction": 0.05,
+      "delay_multiple": 2,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.0492
+    },
+    {
+      "case": "h051",
+      "rule": "net_scan",
+      "fraction": 0.05,
+      "delay_multiple": 2,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0492
+    },
+    {
+      "case": "h051",
+      "rule": "net_scan",
+      "fraction": 0.05,
+      "delay_multiple": 2,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.4094
+    },
+    {
+      "case": "h051",
+      "rule": "net_scan",
+      "fraction": 0.05,
+      "delay_multiple": 2,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "net_scan",
+      "fraction": 0.05,
+      "delay_multiple": 2,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "net_scan",
+      "fraction": 0.05,
+      "delay_multiple": 2,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "net_scan",
+      "fraction": 0.05,
+      "delay_multiple": 5,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.0492
+    },
+    {
+      "case": "h051",
+      "rule": "net_scan",
+      "fraction": 0.05,
+      "delay_multiple": 5,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0492
+    },
+    {
+      "case": "h051",
+      "rule": "net_scan",
+      "fraction": 0.05,
+      "delay_multiple": 5,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0492
+    },
+    {
+      "case": "h051",
+      "rule": "net_scan",
+      "fraction": 0.05,
+      "delay_multiple": 5,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0492
+    },
+    {
+      "case": "h051",
+      "rule": "net_scan",
+      "fraction": 0.05,
+      "delay_multiple": 5,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "net_scan",
+      "fraction": 0.05,
+      "delay_multiple": 5,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "net_scan",
+      "fraction": 0.05,
+      "delay_multiple": 10,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.0492
+    },
+    {
+      "case": "h051",
+      "rule": "net_scan",
+      "fraction": 0.05,
+      "delay_multiple": 10,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0492
+    },
+    {
+      "case": "h051",
+      "rule": "net_scan",
+      "fraction": 0.05,
+      "delay_multiple": 10,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0492
+    },
+    {
+      "case": "h051",
+      "rule": "net_scan",
+      "fraction": 0.05,
+      "delay_multiple": 10,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0492
+    },
+    {
+      "case": "h051",
+      "rule": "net_scan",
+      "fraction": 0.05,
+      "delay_multiple": 10,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0492
+    },
+    {
+      "case": "h051",
+      "rule": "net_scan",
+      "fraction": 0.05,
+      "delay_multiple": 10,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "net_scan",
+      "fraction": 0.2,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.0001
+    },
+    {
+      "case": "h051",
+      "rule": "net_scan",
+      "fraction": 0.2,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "net_scan",
+      "fraction": 0.2,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "net_scan",
+      "fraction": 0.2,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "net_scan",
+      "fraction": 0.2,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "net_scan",
+      "fraction": 0.2,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "net_scan",
+      "fraction": 0.2,
+      "delay_multiple": 1,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.6452
+    },
+    {
+      "case": "h051",
+      "rule": "net_scan",
+      "fraction": 0.2,
+      "delay_multiple": 1,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0002
+    },
+    {
+      "case": "h051",
+      "rule": "net_scan",
+      "fraction": 0.2,
+      "delay_multiple": 1,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "net_scan",
+      "fraction": 0.2,
+      "delay_multiple": 1,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "net_scan",
+      "fraction": 0.2,
+      "delay_multiple": 1,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "net_scan",
+      "fraction": 0.2,
+      "delay_multiple": 1,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "net_scan",
+      "fraction": 0.2,
+      "delay_multiple": 2,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.1995
+    },
+    {
+      "case": "h051",
+      "rule": "net_scan",
+      "fraction": 0.2,
+      "delay_multiple": 2,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.1992
+    },
+    {
+      "case": "h051",
+      "rule": "net_scan",
+      "fraction": 0.2,
+      "delay_multiple": 2,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.5967
+    },
+    {
+      "case": "h051",
+      "rule": "net_scan",
+      "fraction": 0.2,
+      "delay_multiple": 2,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "net_scan",
+      "fraction": 0.2,
+      "delay_multiple": 2,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "net_scan",
+      "fraction": 0.2,
+      "delay_multiple": 2,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "net_scan",
+      "fraction": 0.2,
+      "delay_multiple": 5,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.1995
+    },
+    {
+      "case": "h051",
+      "rule": "net_scan",
+      "fraction": 0.2,
+      "delay_multiple": 5,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.1995
+    },
+    {
+      "case": "h051",
+      "rule": "net_scan",
+      "fraction": 0.2,
+      "delay_multiple": 5,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.1995
+    },
+    {
+      "case": "h051",
+      "rule": "net_scan",
+      "fraction": 0.2,
+      "delay_multiple": 5,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.1995
+    },
+    {
+      "case": "h051",
+      "rule": "net_scan",
+      "fraction": 0.2,
+      "delay_multiple": 5,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "net_scan",
+      "fraction": 0.2,
+      "delay_multiple": 5,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "net_scan",
+      "fraction": 0.2,
+      "delay_multiple": 10,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.1995
+    },
+    {
+      "case": "h051",
+      "rule": "net_scan",
+      "fraction": 0.2,
+      "delay_multiple": 10,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.1995
+    },
+    {
+      "case": "h051",
+      "rule": "net_scan",
+      "fraction": 0.2,
+      "delay_multiple": 10,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.1995
+    },
+    {
+      "case": "h051",
+      "rule": "net_scan",
+      "fraction": 0.2,
+      "delay_multiple": 10,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.1995
+    },
+    {
+      "case": "h051",
+      "rule": "net_scan",
+      "fraction": 0.2,
+      "delay_multiple": 10,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.1995
+    },
+    {
+      "case": "h051",
+      "rule": "net_scan",
+      "fraction": 0.2,
+      "delay_multiple": 10,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "mass_file",
+      "fraction": 0.01,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.0002
+    },
+    {
+      "case": "h051",
+      "rule": "mass_file",
+      "fraction": 0.01,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "mass_file",
+      "fraction": 0.01,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "mass_file",
+      "fraction": 0.01,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "mass_file",
+      "fraction": 0.01,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "mass_file",
+      "fraction": 0.01,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "mass_file",
+      "fraction": 0.01,
+      "delay_multiple": 1,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.129
+    },
+    {
+      "case": "h051",
+      "rule": "mass_file",
+      "fraction": 0.01,
+      "delay_multiple": 1,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0002
+    },
+    {
+      "case": "h051",
+      "rule": "mass_file",
+      "fraction": 0.01,
+      "delay_multiple": 1,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "mass_file",
+      "fraction": 0.01,
+      "delay_multiple": 1,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "mass_file",
+      "fraction": 0.01,
+      "delay_multiple": 1,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "mass_file",
+      "fraction": 0.01,
+      "delay_multiple": 1,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "mass_file",
+      "fraction": 0.01,
+      "delay_multiple": 2,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.0143
+    },
+    {
+      "case": "h051",
+      "rule": "mass_file",
+      "fraction": 0.01,
+      "delay_multiple": 2,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0143
+    },
+    {
+      "case": "h051",
+      "rule": "mass_file",
+      "fraction": 0.01,
+      "delay_multiple": 2,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.1097
+    },
+    {
+      "case": "h051",
+      "rule": "mass_file",
+      "fraction": 0.01,
+      "delay_multiple": 2,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "mass_file",
+      "fraction": 0.01,
+      "delay_multiple": 2,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "mass_file",
+      "fraction": 0.01,
+      "delay_multiple": 2,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "mass_file",
+      "fraction": 0.01,
+      "delay_multiple": 5,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.0143
+    },
+    {
+      "case": "h051",
+      "rule": "mass_file",
+      "fraction": 0.01,
+      "delay_multiple": 5,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0143
+    },
+    {
+      "case": "h051",
+      "rule": "mass_file",
+      "fraction": 0.01,
+      "delay_multiple": 5,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0143
+    },
+    {
+      "case": "h051",
+      "rule": "mass_file",
+      "fraction": 0.01,
+      "delay_multiple": 5,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0143
+    },
+    {
+      "case": "h051",
+      "rule": "mass_file",
+      "fraction": 0.01,
+      "delay_multiple": 5,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "mass_file",
+      "fraction": 0.01,
+      "delay_multiple": 5,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "mass_file",
+      "fraction": 0.01,
+      "delay_multiple": 10,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.0143
+    },
+    {
+      "case": "h051",
+      "rule": "mass_file",
+      "fraction": 0.01,
+      "delay_multiple": 10,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0143
+    },
+    {
+      "case": "h051",
+      "rule": "mass_file",
+      "fraction": 0.01,
+      "delay_multiple": 10,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0143
+    },
+    {
+      "case": "h051",
+      "rule": "mass_file",
+      "fraction": 0.01,
+      "delay_multiple": 10,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0143
+    },
+    {
+      "case": "h051",
+      "rule": "mass_file",
+      "fraction": 0.01,
+      "delay_multiple": 10,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0143
+    },
+    {
+      "case": "h051",
+      "rule": "mass_file",
+      "fraction": 0.01,
+      "delay_multiple": 10,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "mass_file",
+      "fraction": 0.05,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.0007
+    },
+    {
+      "case": "h051",
+      "rule": "mass_file",
+      "fraction": 0.05,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "mass_file",
+      "fraction": 0.05,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "mass_file",
+      "fraction": 0.05,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "mass_file",
+      "fraction": 0.05,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "mass_file",
+      "fraction": 0.05,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "mass_file",
+      "fraction": 0.05,
+      "delay_multiple": 1,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.4014
+    },
+    {
+      "case": "h051",
+      "rule": "mass_file",
+      "fraction": 0.05,
+      "delay_multiple": 1,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0007
+    },
+    {
+      "case": "h051",
+      "rule": "mass_file",
+      "fraction": 0.05,
+      "delay_multiple": 1,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "mass_file",
+      "fraction": 0.05,
+      "delay_multiple": 1,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "mass_file",
+      "fraction": 0.05,
+      "delay_multiple": 1,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "mass_file",
+      "fraction": 0.05,
+      "delay_multiple": 1,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "mass_file",
+      "fraction": 0.05,
+      "delay_multiple": 2,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.0591
+    },
+    {
+      "case": "h051",
+      "rule": "mass_file",
+      "fraction": 0.05,
+      "delay_multiple": 2,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0591
+    },
+    {
+      "case": "h051",
+      "rule": "mass_file",
+      "fraction": 0.05,
+      "delay_multiple": 2,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.3602
+    },
+    {
+      "case": "h051",
+      "rule": "mass_file",
+      "fraction": 0.05,
+      "delay_multiple": 2,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "mass_file",
+      "fraction": 0.05,
+      "delay_multiple": 2,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "mass_file",
+      "fraction": 0.05,
+      "delay_multiple": 2,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "mass_file",
+      "fraction": 0.05,
+      "delay_multiple": 5,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.0591
+    },
+    {
+      "case": "h051",
+      "rule": "mass_file",
+      "fraction": 0.05,
+      "delay_multiple": 5,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0591
+    },
+    {
+      "case": "h051",
+      "rule": "mass_file",
+      "fraction": 0.05,
+      "delay_multiple": 5,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0591
+    },
+    {
+      "case": "h051",
+      "rule": "mass_file",
+      "fraction": 0.05,
+      "delay_multiple": 5,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0591
+    },
+    {
+      "case": "h051",
+      "rule": "mass_file",
+      "fraction": 0.05,
+      "delay_multiple": 5,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "mass_file",
+      "fraction": 0.05,
+      "delay_multiple": 5,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "mass_file",
+      "fraction": 0.05,
+      "delay_multiple": 10,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.0591
+    },
+    {
+      "case": "h051",
+      "rule": "mass_file",
+      "fraction": 0.05,
+      "delay_multiple": 10,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0591
+    },
+    {
+      "case": "h051",
+      "rule": "mass_file",
+      "fraction": 0.05,
+      "delay_multiple": 10,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0591
+    },
+    {
+      "case": "h051",
+      "rule": "mass_file",
+      "fraction": 0.05,
+      "delay_multiple": 10,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0591
+    },
+    {
+      "case": "h051",
+      "rule": "mass_file",
+      "fraction": 0.05,
+      "delay_multiple": 10,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0591
+    },
+    {
+      "case": "h051",
+      "rule": "mass_file",
+      "fraction": 0.05,
+      "delay_multiple": 10,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "mass_file",
+      "fraction": 0.2,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.0004
+    },
+    {
+      "case": "h051",
+      "rule": "mass_file",
+      "fraction": 0.2,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "mass_file",
+      "fraction": 0.2,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "mass_file",
+      "fraction": 0.2,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "mass_file",
+      "fraction": 0.2,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "mass_file",
+      "fraction": 0.2,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "mass_file",
+      "fraction": 0.2,
+      "delay_multiple": 1,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.5949
+    },
+    {
+      "case": "h051",
+      "rule": "mass_file",
+      "fraction": 0.2,
+      "delay_multiple": 1,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0004
+    },
+    {
+      "case": "h051",
+      "rule": "mass_file",
+      "fraction": 0.2,
+      "delay_multiple": 1,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "mass_file",
+      "fraction": 0.2,
+      "delay_multiple": 1,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "mass_file",
+      "fraction": 0.2,
+      "delay_multiple": 1,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "mass_file",
+      "fraction": 0.2,
+      "delay_multiple": 1,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "mass_file",
+      "fraction": 0.2,
+      "delay_multiple": 2,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.2181
+    },
+    {
+      "case": "h051",
+      "rule": "mass_file",
+      "fraction": 0.2,
+      "delay_multiple": 2,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.2181
+    },
+    {
+      "case": "h051",
+      "rule": "mass_file",
+      "fraction": 0.2,
+      "delay_multiple": 2,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.5692
+    },
+    {
+      "case": "h051",
+      "rule": "mass_file",
+      "fraction": 0.2,
+      "delay_multiple": 2,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "mass_file",
+      "fraction": 0.2,
+      "delay_multiple": 2,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "mass_file",
+      "fraction": 0.2,
+      "delay_multiple": 2,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "mass_file",
+      "fraction": 0.2,
+      "delay_multiple": 5,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.2181
+    },
+    {
+      "case": "h051",
+      "rule": "mass_file",
+      "fraction": 0.2,
+      "delay_multiple": 5,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.2181
+    },
+    {
+      "case": "h051",
+      "rule": "mass_file",
+      "fraction": 0.2,
+      "delay_multiple": 5,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.2181
+    },
+    {
+      "case": "h051",
+      "rule": "mass_file",
+      "fraction": 0.2,
+      "delay_multiple": 5,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.2181
+    },
+    {
+      "case": "h051",
+      "rule": "mass_file",
+      "fraction": 0.2,
+      "delay_multiple": 5,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "mass_file",
+      "fraction": 0.2,
+      "delay_multiple": 5,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "mass_file",
+      "fraction": 0.2,
+      "delay_multiple": 10,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.2181
+    },
+    {
+      "case": "h051",
+      "rule": "mass_file",
+      "fraction": 0.2,
+      "delay_multiple": 10,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.2181
+    },
+    {
+      "case": "h051",
+      "rule": "mass_file",
+      "fraction": 0.2,
+      "delay_multiple": 10,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.2181
+    },
+    {
+      "case": "h051",
+      "rule": "mass_file",
+      "fraction": 0.2,
+      "delay_multiple": 10,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.2181
+    },
+    {
+      "case": "h051",
+      "rule": "mass_file",
+      "fraction": 0.2,
+      "delay_multiple": 10,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.2181
+    },
+    {
+      "case": "h051",
+      "rule": "mass_file",
+      "fraction": 0.2,
+      "delay_multiple": 10,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "remote_thread",
+      "fraction": 0.01,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.0012
+    },
+    {
+      "case": "h051",
+      "rule": "remote_thread",
+      "fraction": 0.01,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "remote_thread",
+      "fraction": 0.01,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "remote_thread",
+      "fraction": 0.01,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "remote_thread",
+      "fraction": 0.01,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "remote_thread",
+      "fraction": 0.01,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "remote_thread",
+      "fraction": 0.01,
+      "delay_multiple": 1,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.011
+    },
+    {
+      "case": "h051",
+      "rule": "remote_thread",
+      "fraction": 0.01,
+      "delay_multiple": 1,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0012
+    },
+    {
+      "case": "h051",
+      "rule": "remote_thread",
+      "fraction": 0.01,
+      "delay_multiple": 1,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "remote_thread",
+      "fraction": 0.01,
+      "delay_multiple": 1,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "remote_thread",
+      "fraction": 0.01,
+      "delay_multiple": 1,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "remote_thread",
+      "fraction": 0.01,
+      "delay_multiple": 1,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "remote_thread",
+      "fraction": 0.01,
+      "delay_multiple": 2,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.0104
+    },
+    {
+      "case": "h051",
+      "rule": "remote_thread",
+      "fraction": 0.01,
+      "delay_multiple": 2,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0104
+    },
+    {
+      "case": "h051",
+      "rule": "remote_thread",
+      "fraction": 0.01,
+      "delay_multiple": 2,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0075
+    },
+    {
+      "case": "h051",
+      "rule": "remote_thread",
+      "fraction": 0.01,
+      "delay_multiple": 2,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "remote_thread",
+      "fraction": 0.01,
+      "delay_multiple": 2,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "remote_thread",
+      "fraction": 0.01,
+      "delay_multiple": 2,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "remote_thread",
+      "fraction": 0.01,
+      "delay_multiple": 5,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.011
+    },
+    {
+      "case": "h051",
+      "rule": "remote_thread",
+      "fraction": 0.01,
+      "delay_multiple": 5,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.011
+    },
+    {
+      "case": "h051",
+      "rule": "remote_thread",
+      "fraction": 0.01,
+      "delay_multiple": 5,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0104
+    },
+    {
+      "case": "h051",
+      "rule": "remote_thread",
+      "fraction": 0.01,
+      "delay_multiple": 5,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0104
+    },
+    {
+      "case": "h051",
+      "rule": "remote_thread",
+      "fraction": 0.01,
+      "delay_multiple": 5,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "remote_thread",
+      "fraction": 0.01,
+      "delay_multiple": 5,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "remote_thread",
+      "fraction": 0.01,
+      "delay_multiple": 10,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.0116
+    },
+    {
+      "case": "h051",
+      "rule": "remote_thread",
+      "fraction": 0.01,
+      "delay_multiple": 10,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0116
+    },
+    {
+      "case": "h051",
+      "rule": "remote_thread",
+      "fraction": 0.01,
+      "delay_multiple": 10,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0116
+    },
+    {
+      "case": "h051",
+      "rule": "remote_thread",
+      "fraction": 0.01,
+      "delay_multiple": 10,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0116
+    },
+    {
+      "case": "h051",
+      "rule": "remote_thread",
+      "fraction": 0.01,
+      "delay_multiple": 10,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.011
+    },
+    {
+      "case": "h051",
+      "rule": "remote_thread",
+      "fraction": 0.01,
+      "delay_multiple": 10,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "remote_thread",
+      "fraction": 0.05,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.0017
+    },
+    {
+      "case": "h051",
+      "rule": "remote_thread",
+      "fraction": 0.05,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "remote_thread",
+      "fraction": 0.05,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "remote_thread",
+      "fraction": 0.05,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "remote_thread",
+      "fraction": 0.05,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "remote_thread",
+      "fraction": 0.05,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "remote_thread",
+      "fraction": 0.05,
+      "delay_multiple": 1,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.0499
+    },
+    {
+      "case": "h051",
+      "rule": "remote_thread",
+      "fraction": 0.05,
+      "delay_multiple": 1,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0017
+    },
+    {
+      "case": "h051",
+      "rule": "remote_thread",
+      "fraction": 0.05,
+      "delay_multiple": 1,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "remote_thread",
+      "fraction": 0.05,
+      "delay_multiple": 1,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "remote_thread",
+      "fraction": 0.05,
+      "delay_multiple": 1,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "remote_thread",
+      "fraction": 0.05,
+      "delay_multiple": 1,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "remote_thread",
+      "fraction": 0.05,
+      "delay_multiple": 2,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.0499
+    },
+    {
+      "case": "h051",
+      "rule": "remote_thread",
+      "fraction": 0.05,
+      "delay_multiple": 2,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0499
+    },
+    {
+      "case": "h051",
+      "rule": "remote_thread",
+      "fraction": 0.05,
+      "delay_multiple": 2,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0377
+    },
+    {
+      "case": "h051",
+      "rule": "remote_thread",
+      "fraction": 0.05,
+      "delay_multiple": 2,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "remote_thread",
+      "fraction": 0.05,
+      "delay_multiple": 2,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "remote_thread",
+      "fraction": 0.05,
+      "delay_multiple": 2,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "remote_thread",
+      "fraction": 0.05,
+      "delay_multiple": 5,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.0562
+    },
+    {
+      "case": "h051",
+      "rule": "remote_thread",
+      "fraction": 0.05,
+      "delay_multiple": 5,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0557
+    },
+    {
+      "case": "h051",
+      "rule": "remote_thread",
+      "fraction": 0.05,
+      "delay_multiple": 5,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0499
+    },
+    {
+      "case": "h051",
+      "rule": "remote_thread",
+      "fraction": 0.05,
+      "delay_multiple": 5,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0499
+    },
+    {
+      "case": "h051",
+      "rule": "remote_thread",
+      "fraction": 0.05,
+      "delay_multiple": 5,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "remote_thread",
+      "fraction": 0.05,
+      "delay_multiple": 5,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "remote_thread",
+      "fraction": 0.05,
+      "delay_multiple": 10,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.0562
+    },
+    {
+      "case": "h051",
+      "rule": "remote_thread",
+      "fraction": 0.05,
+      "delay_multiple": 10,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0562
+    },
+    {
+      "case": "h051",
+      "rule": "remote_thread",
+      "fraction": 0.05,
+      "delay_multiple": 10,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0562
+    },
+    {
+      "case": "h051",
+      "rule": "remote_thread",
+      "fraction": 0.05,
+      "delay_multiple": 10,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0562
+    },
+    {
+      "case": "h051",
+      "rule": "remote_thread",
+      "fraction": 0.05,
+      "delay_multiple": 10,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0562
+    },
+    {
+      "case": "h051",
+      "rule": "remote_thread",
+      "fraction": 0.05,
+      "delay_multiple": 10,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "remote_thread",
+      "fraction": 0.2,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.007
+    },
+    {
+      "case": "h051",
+      "rule": "remote_thread",
+      "fraction": 0.2,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "remote_thread",
+      "fraction": 0.2,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "remote_thread",
+      "fraction": 0.2,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "remote_thread",
+      "fraction": 0.2,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "remote_thread",
+      "fraction": 0.2,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "remote_thread",
+      "fraction": 0.2,
+      "delay_multiple": 1,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.2162
+    },
+    {
+      "case": "h051",
+      "rule": "remote_thread",
+      "fraction": 0.2,
+      "delay_multiple": 1,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0064
+    },
+    {
+      "case": "h051",
+      "rule": "remote_thread",
+      "fraction": 0.2,
+      "delay_multiple": 1,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "remote_thread",
+      "fraction": 0.2,
+      "delay_multiple": 1,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "remote_thread",
+      "fraction": 0.2,
+      "delay_multiple": 1,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "remote_thread",
+      "fraction": 0.2,
+      "delay_multiple": 1,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "remote_thread",
+      "fraction": 0.2,
+      "delay_multiple": 2,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.2081
+    },
+    {
+      "case": "h051",
+      "rule": "remote_thread",
+      "fraction": 0.2,
+      "delay_multiple": 2,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.2081
+    },
+    {
+      "case": "h051",
+      "rule": "remote_thread",
+      "fraction": 0.2,
+      "delay_multiple": 2,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.1681
+    },
+    {
+      "case": "h051",
+      "rule": "remote_thread",
+      "fraction": 0.2,
+      "delay_multiple": 2,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "remote_thread",
+      "fraction": 0.2,
+      "delay_multiple": 2,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "remote_thread",
+      "fraction": 0.2,
+      "delay_multiple": 2,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "remote_thread",
+      "fraction": 0.2,
+      "delay_multiple": 5,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.2249
+    },
+    {
+      "case": "h051",
+      "rule": "remote_thread",
+      "fraction": 0.2,
+      "delay_multiple": 5,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.2226
+    },
+    {
+      "case": "h051",
+      "rule": "remote_thread",
+      "fraction": 0.2,
+      "delay_multiple": 5,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.2081
+    },
+    {
+      "case": "h051",
+      "rule": "remote_thread",
+      "fraction": 0.2,
+      "delay_multiple": 5,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.2081
+    },
+    {
+      "case": "h051",
+      "rule": "remote_thread",
+      "fraction": 0.2,
+      "delay_multiple": 5,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "remote_thread",
+      "fraction": 0.2,
+      "delay_multiple": 5,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "remote_thread",
+      "fraction": 0.2,
+      "delay_multiple": 10,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.2261
+    },
+    {
+      "case": "h051",
+      "rule": "remote_thread",
+      "fraction": 0.2,
+      "delay_multiple": 10,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.2261
+    },
+    {
+      "case": "h051",
+      "rule": "remote_thread",
+      "fraction": 0.2,
+      "delay_multiple": 10,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.2261
+    },
+    {
+      "case": "h051",
+      "rule": "remote_thread",
+      "fraction": 0.2,
+      "delay_multiple": 10,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.2261
+    },
+    {
+      "case": "h051",
+      "rule": "remote_thread",
+      "fraction": 0.2,
+      "delay_multiple": 10,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.2249
+    },
+    {
+      "case": "h051",
+      "rule": "remote_thread",
+      "fraction": 0.2,
+      "delay_multiple": 10,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "module_load",
+      "fraction": 0.01,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "module_load",
+      "fraction": 0.01,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "module_load",
+      "fraction": 0.01,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "module_load",
+      "fraction": 0.01,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "module_load",
+      "fraction": 0.01,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "module_load",
+      "fraction": 0.01,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "module_load",
+      "fraction": 0.01,
+      "delay_multiple": 1,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.0003
+    },
+    {
+      "case": "h051",
+      "rule": "module_load",
+      "fraction": 0.01,
+      "delay_multiple": 1,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "module_load",
+      "fraction": 0.01,
+      "delay_multiple": 1,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "module_load",
+      "fraction": 0.01,
+      "delay_multiple": 1,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "module_load",
+      "fraction": 0.01,
+      "delay_multiple": 1,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "module_load",
+      "fraction": 0.01,
+      "delay_multiple": 1,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "module_load",
+      "fraction": 0.01,
+      "delay_multiple": 2,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.0054
+    },
+    {
+      "case": "h051",
+      "rule": "module_load",
+      "fraction": 0.01,
+      "delay_multiple": 2,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0039
+    },
+    {
+      "case": "h051",
+      "rule": "module_load",
+      "fraction": 0.01,
+      "delay_multiple": 2,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0001
+    },
+    {
+      "case": "h051",
+      "rule": "module_load",
+      "fraction": 0.01,
+      "delay_multiple": 2,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "module_load",
+      "fraction": 0.01,
+      "delay_multiple": 2,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "module_load",
+      "fraction": 0.01,
+      "delay_multiple": 2,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "module_load",
+      "fraction": 0.01,
+      "delay_multiple": 5,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.0054
+    },
+    {
+      "case": "h051",
+      "rule": "module_load",
+      "fraction": 0.01,
+      "delay_multiple": 5,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0054
+    },
+    {
+      "case": "h051",
+      "rule": "module_load",
+      "fraction": 0.01,
+      "delay_multiple": 5,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0054
+    },
+    {
+      "case": "h051",
+      "rule": "module_load",
+      "fraction": 0.01,
+      "delay_multiple": 5,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0054
+    },
+    {
+      "case": "h051",
+      "rule": "module_load",
+      "fraction": 0.01,
+      "delay_multiple": 5,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "module_load",
+      "fraction": 0.01,
+      "delay_multiple": 5,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "module_load",
+      "fraction": 0.01,
+      "delay_multiple": 10,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.0054
+    },
+    {
+      "case": "h051",
+      "rule": "module_load",
+      "fraction": 0.01,
+      "delay_multiple": 10,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0054
+    },
+    {
+      "case": "h051",
+      "rule": "module_load",
+      "fraction": 0.01,
+      "delay_multiple": 10,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0054
+    },
+    {
+      "case": "h051",
+      "rule": "module_load",
+      "fraction": 0.01,
+      "delay_multiple": 10,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0054
+    },
+    {
+      "case": "h051",
+      "rule": "module_load",
+      "fraction": 0.01,
+      "delay_multiple": 10,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0053
+    },
+    {
+      "case": "h051",
+      "rule": "module_load",
+      "fraction": 0.01,
+      "delay_multiple": 10,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "module_load",
+      "fraction": 0.05,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "module_load",
+      "fraction": 0.05,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "module_load",
+      "fraction": 0.05,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "module_load",
+      "fraction": 0.05,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "module_load",
+      "fraction": 0.05,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "module_load",
+      "fraction": 0.05,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "module_load",
+      "fraction": 0.05,
+      "delay_multiple": 1,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.0063
+    },
+    {
+      "case": "h051",
+      "rule": "module_load",
+      "fraction": 0.05,
+      "delay_multiple": 1,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "module_load",
+      "fraction": 0.05,
+      "delay_multiple": 1,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "module_load",
+      "fraction": 0.05,
+      "delay_multiple": 1,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "module_load",
+      "fraction": 0.05,
+      "delay_multiple": 1,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "module_load",
+      "fraction": 0.05,
+      "delay_multiple": 1,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "module_load",
+      "fraction": 0.05,
+      "delay_multiple": 2,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.035
+    },
+    {
+      "case": "h051",
+      "rule": "module_load",
+      "fraction": 0.05,
+      "delay_multiple": 2,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0283
+    },
+    {
+      "case": "h051",
+      "rule": "module_load",
+      "fraction": 0.05,
+      "delay_multiple": 2,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0051
+    },
+    {
+      "case": "h051",
+      "rule": "module_load",
+      "fraction": 0.05,
+      "delay_multiple": 2,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "module_load",
+      "fraction": 0.05,
+      "delay_multiple": 2,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "module_load",
+      "fraction": 0.05,
+      "delay_multiple": 2,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "module_load",
+      "fraction": 0.05,
+      "delay_multiple": 5,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.035
+    },
+    {
+      "case": "h051",
+      "rule": "module_load",
+      "fraction": 0.05,
+      "delay_multiple": 5,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.035
+    },
+    {
+      "case": "h051",
+      "rule": "module_load",
+      "fraction": 0.05,
+      "delay_multiple": 5,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.035
+    },
+    {
+      "case": "h051",
+      "rule": "module_load",
+      "fraction": 0.05,
+      "delay_multiple": 5,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.035
+    },
+    {
+      "case": "h051",
+      "rule": "module_load",
+      "fraction": 0.05,
+      "delay_multiple": 5,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "module_load",
+      "fraction": 0.05,
+      "delay_multiple": 5,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "module_load",
+      "fraction": 0.05,
+      "delay_multiple": 10,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.035
+    },
+    {
+      "case": "h051",
+      "rule": "module_load",
+      "fraction": 0.05,
+      "delay_multiple": 10,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.035
+    },
+    {
+      "case": "h051",
+      "rule": "module_load",
+      "fraction": 0.05,
+      "delay_multiple": 10,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.035
+    },
+    {
+      "case": "h051",
+      "rule": "module_load",
+      "fraction": 0.05,
+      "delay_multiple": 10,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.035
+    },
+    {
+      "case": "h051",
+      "rule": "module_load",
+      "fraction": 0.05,
+      "delay_multiple": 10,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.035
+    },
+    {
+      "case": "h051",
+      "rule": "module_load",
+      "fraction": 0.05,
+      "delay_multiple": 10,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "module_load",
+      "fraction": 0.2,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 0,
+      "evasion_remaining": -0.0004
+    },
+    {
+      "case": "h051",
+      "rule": "module_load",
+      "fraction": 0.2,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "module_load",
+      "fraction": 0.2,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "module_load",
+      "fraction": 0.2,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "module_load",
+      "fraction": 0.2,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "module_load",
+      "fraction": 0.2,
+      "delay_multiple": 0.5,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "module_load",
+      "fraction": 0.2,
+      "delay_multiple": 1,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.065
+    },
+    {
+      "case": "h051",
+      "rule": "module_load",
+      "fraction": 0.2,
+      "delay_multiple": 1,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": -0.0004
+    },
+    {
+      "case": "h051",
+      "rule": "module_load",
+      "fraction": 0.2,
+      "delay_multiple": 1,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "module_load",
+      "fraction": 0.2,
+      "delay_multiple": 1,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "module_load",
+      "fraction": 0.2,
+      "delay_multiple": 1,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "module_load",
+      "fraction": 0.2,
+      "delay_multiple": 1,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "module_load",
+      "fraction": 0.2,
+      "delay_multiple": 2,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.2534
+    },
+    {
+      "case": "h051",
+      "rule": "module_load",
+      "fraction": 0.2,
+      "delay_multiple": 2,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.2036
+    },
+    {
+      "case": "h051",
+      "rule": "module_load",
+      "fraction": 0.2,
+      "delay_multiple": 2,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.052
+    },
+    {
+      "case": "h051",
+      "rule": "module_load",
+      "fraction": 0.2,
+      "delay_multiple": 2,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "module_load",
+      "fraction": 0.2,
+      "delay_multiple": 2,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "module_load",
+      "fraction": 0.2,
+      "delay_multiple": 2,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "module_load",
+      "fraction": 0.2,
+      "delay_multiple": 5,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.2542
+    },
+    {
+      "case": "h051",
+      "rule": "module_load",
+      "fraction": 0.2,
+      "delay_multiple": 5,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.2542
+    },
+    {
+      "case": "h051",
+      "rule": "module_load",
+      "fraction": 0.2,
+      "delay_multiple": 5,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.2542
+    },
+    {
+      "case": "h051",
+      "rule": "module_load",
+      "fraction": 0.2,
+      "delay_multiple": 5,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.2542
+    },
+    {
+      "case": "h051",
+      "rule": "module_load",
+      "fraction": 0.2,
+      "delay_multiple": 5,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "module_load",
+      "fraction": 0.2,
+      "delay_multiple": 5,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    },
+    {
+      "case": "h051",
+      "rule": "module_load",
+      "fraction": 0.2,
+      "delay_multiple": 10,
+      "buffer_multiple": 0,
+      "evasion_remaining": 0.2542
+    },
+    {
+      "case": "h051",
+      "rule": "module_load",
+      "fraction": 0.2,
+      "delay_multiple": 10,
+      "buffer_multiple": 0.5,
+      "evasion_remaining": 0.2542
+    },
+    {
+      "case": "h051",
+      "rule": "module_load",
+      "fraction": 0.2,
+      "delay_multiple": 10,
+      "buffer_multiple": 1,
+      "evasion_remaining": 0.2542
+    },
+    {
+      "case": "h051",
+      "rule": "module_load",
+      "fraction": 0.2,
+      "delay_multiple": 10,
+      "buffer_multiple": 2,
+      "evasion_remaining": 0.2542
+    },
+    {
+      "case": "h051",
+      "rule": "module_load",
+      "fraction": 0.2,
+      "delay_multiple": 10,
+      "buffer_multiple": 5,
+      "evasion_remaining": 0.2542
+    },
+    {
+      "case": "h051",
+      "rule": "module_load",
+      "fraction": 0.2,
+      "delay_multiple": 10,
+      "buffer_multiple": 10,
+      "evasion_remaining": 0.0
+    }
+  ],
+  "partial_buffer_backfire_cells": 6,
+  "note": "Evasion drops to ~0 exactly when buffer reaches delay. Partial buffers can worsen evasion."
+}
