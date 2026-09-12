@@ -1,0 +1,8 @@
+{
+  "schema": "targeting-sweep-manifest-v1",
+  "python": "3.11.9",
+  "records_written": 9000,
+  "seconds": 2736.8,
+  "dependent_variable": "malicious-subject evasion rate",
+  "note": "Only pid-keyed rules; malicious label is a set of pids."
+}
