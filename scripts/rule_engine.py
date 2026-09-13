@@ -14,8 +14,20 @@ cost of detection delay, which is the trade-off the mitigation study varies.
 
 The rule shape - N events sharing a key inside a T-second window - is the most
 common form of threshold rule in operations.
+
+Engine version 2 keeps each key's timestamps sorted and fires when some
+T-second span containing the new event holds N events. Version 1 assumed the
+per-key deque stayed in arrival order: an accepted late event appended at the
+tail made the key look idle, so retirement wiped live state. That fired only
+when a delay equalled the window almost exactly, and it inflated every
+out-of-order result measured with it. With version 2 the only way arrival
+order changes a verdict is the watermark drop, plus which events a firing
+clears.
 """
-from collections import deque
+import bisect
+
+ENGINE_VERSION = 2
+RETIRE_EVERY = 256
 
 
 class SlidingWindowRule:
@@ -49,9 +61,14 @@ class SlidingWindowRule:
         """Timestamps at or below this belong to windows already retired."""
         return self.watermark - self.window_seconds - self.allowed_lateness
 
+    def _useless_before(self):
+        # Every future accepted event is at or after the deadline, and any span
+        # containing it starts no earlier than one window before that.
+        return self._deadline() - self.window_seconds
+
     def _retire(self):
-        horizon = self._deadline()
-        for key in [k for k, times in self.pending.items() if not times or times[-1] < horizon]:
+        cutoff = self._useless_before()
+        for key in [k for k, times in self.pending.items() if not times or times[-1] < cutoff]:
             del self.pending[key]
 
     def process(self, event_time, event):
@@ -67,22 +84,35 @@ class SlidingWindowRule:
         self.accepted += 1
         if self.watermark is None or event_time > self.watermark:
             self.watermark = event_time
-        self._retire()
+        if self.accepted % RETIRE_EVERY == 0:
+            self._retire()
 
-        times = self.pending.setdefault(key, deque())
-        times.append(event_time)
-        # Accepted events are within the grace period of the watermark, so the
-        # deque stays close enough to sorted for a prefix trim to be correct.
-        while times and times[0] < event_time - self.window_seconds:
-            times.popleft()
+        window = self.window_seconds
+        times = self.pending.setdefault(key, [])
+        stale = bisect.bisect_left(times, self._useless_before())
+        if stale:
+            del times[:stale]
 
-        if len(times) >= self.threshold:
+        if not times or event_time >= times[-1]:
+            times.append(event_time)
+            first = bisect.bisect_left(times, event_time - window)
+            count, start, end = len(times) - first, times[first], event_time
+        else:
+            pos = bisect.bisect_right(times, event_time)
+            times.insert(pos, event_time)
+            count = start = end = 0
+            for i in range(bisect.bisect_left(times, event_time - window), pos + 1):
+                last = bisect.bisect_right(times, times[i] + window) - 1
+                if last >= pos and last - i + 1 > count:
+                    count, start, end = last - i + 1, times[i], times[last]
+
+        if count >= self.threshold:
             alert = {
                 "rule": self.name,
                 "key": key,
-                "count": len(times),
-                "window_start": min(times),
-                "window_end": max(times),
+                "count": count,
+                "window_start": start,
+                "window_end": end,
             }
             self.alerts.append(alert)
             times.clear()

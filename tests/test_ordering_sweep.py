@@ -70,6 +70,81 @@ class DelayTests(unittest.TestCase):
         self.assertEqual(a, b)
 
 
+class ModelTests(unittest.TestCase):
+    def projected(self):
+        return [(float(i), i % 3, 1 if i % 2 else 2) for i in range(40)]
+
+    def test_m1_keeps_occurrence_times_in_arrival_order(self):
+        m1 = delayed(self.projected(), 0.3, 5, "random", {1}, seed=3, model="m1")
+        m2 = delayed(self.projected(), 0.3, 5, "random", {1}, seed=3, model="m2")
+        self.assertEqual(sorted(t for t, _ in m1), [float(i) for i in range(40)])
+        self.assertEqual([v for _, v in m1], [v for _, v in m2])
+        self.assertNotEqual([t for t, _ in m1], sorted(t for t, _ in m1))
+
+    def test_m1_matches_a_zero_buffer_reorder(self):
+        from mitigation_sweep import distort
+        from reorder_buffer import reorder
+        m1 = delayed(self.projected(), 0.3, 5, "random", {1}, seed=3, model="m1")
+        moved = distort(self.projected(), 0.3, 5, seed=3)
+        released = reorder([(a, o, v) for a, o, v in moved], 0)
+        self.assertEqual(m1, [(o, v) for o, v in released])
+
+    def test_delete_removes_exactly_what_random_delay_moves(self):
+        from ordering_sweep import choose
+        projected = [(float(i) * 100, i % 3, 1) for i in range(40)]  # delay 5 never collides
+        chosen = choose(projected, 0.25, "random", {1}, seed=4)
+        kept = delayed(projected, 0.25, 5, "delete", {1}, seed=4)
+        m2 = delayed(projected, 0.25, 5, "random", {1}, seed=4, model="m2")
+        self.assertEqual({t for t, _ in kept}, {projected[i][0] for i in range(40) if i not in chosen})
+        self.assertEqual({t - 5 for t, _ in m2 if t % 100}, {projected[i][0] for i in chosen})
+
+    def test_unknown_model_is_rejected(self):
+        with self.assertRaises(ValueError):
+            delayed(self.projected(), 0.3, 5, "random", {1}, seed=0, model="m3")
+
+
+class DistributionTests(unittest.TestCase):
+    def projected(self, n=2000):
+        return [(i * 0.5, i % 7, i % 5) for i in range(n)]
+
+    def delays(self, dist, delay=60.0, fraction=0.2, seed=1):
+        from mitigation_sweep import distort
+        moved = distort(self.projected(), fraction, delay, seed, dist, window=60.0)
+        return [a - o for a, o, _ in moved if a != o], moved
+
+    def test_fixed_and_uniform_pick_the_same_events(self):
+        _, fixed = self.delays("fixed")
+        _, uniform = self.delays("uniform")
+        self.assertEqual({o for a, o, _ in fixed if a != o}, {o for a, o, _ in uniform if a != o})
+
+    def test_uniform_is_bounded_by_twice_the_mean(self):
+        d, _ = self.delays("uniform")
+        self.assertTrue(all(0 <= x <= 120 for x in d))
+        self.assertAlmostEqual(sum(d) / len(d), 60, delta=6)
+
+    def test_lognormal_has_the_requested_mean(self):
+        d, _ = self.delays("lognormal", seed=2)
+        self.assertAlmostEqual(sum(d) / len(d), 60, delta=12)
+        self.assertGreater(max(d), 120)
+
+    def test_burst_delays_whole_slots(self):
+        d, moved = self.delays("burst")
+        self.assertTrue(all(abs(x - 60) < 1e-9 for x in d))
+        slots = {int(o // 60) for a, o, _ in moved if a != o}
+        self.assertTrue(all(all(a != o for a, o, _ in moved if int(o // 60) == s) for s in slots))
+        self.assertGreaterEqual(sum(1 for a, o, _ in moved if a != o), int(2000 * 0.2))
+
+    def test_buffer_covering_every_delay_restores_the_baseline(self):
+        from reorder_buffer import reorder
+        from ordering_sweep import run_pairs
+        base = run_pairs([(t, v) for t, v, _ in self.projected()], "pid", 60, 20)["alerts"]
+        for dist in ("fixed", "uniform", "burst"):
+            _, moved = self.delays(dist)
+            horizon = max(a - o for a, o, _ in moved)
+            released = reorder([(a, o, v) for a, o, v in moved], horizon)
+            self.assertEqual(run_pairs([(o, v) for o, v in released], "pid", 60, 20)["alerts"], base, dist)
+
+
 class RunTests(unittest.TestCase):
     def test_run_projects_and_counts(self):
         projected = [(float(i), "k", 1) for i in range(5)]

@@ -8,21 +8,21 @@ actually cares about.
 
 Only pid-keyed rules are meaningful here, since the malicious label is a set of
 pids. Delaying only malicious-pid events (targeted) is compared against delaying a
-random fraction, at matched fraction and delay size.
+random fraction, at matched fraction and delay size, under either distortion
+model (see ordering_sweep).
 """
 import argparse
-from datetime import datetime
 import json
 from pathlib import Path
 import platform
-import random
 import sys
 import time
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 from rule_engine import SlidingWindowRule
-from ordering_sweep import CASE_SOURCES, load_case, project
+from ordering_sweep import MODELS, choose
+from sweep_common import CaseSource, provenance, select, write_manifest
 
 
 def alerting_malicious(pairs_with_pid, key, window_seconds, threshold, malicious):
@@ -36,42 +36,42 @@ def alerting_malicious(pairs_with_pid, key, window_seconds, threshold, malicious
     return fired
 
 
-def delayed_with_pid(projected, fraction, delay, structure, malicious, seed):
-    rng = random.Random(seed)
-    eligible = [i for i, (_, _, pid) in enumerate(projected)
-                if structure == "random" or pid in malicious]
-    if not eligible:
+def delayed_with_pid(projected, fraction, delay, structure, malicious, seed, model="m2"):
+    chosen = choose(projected, fraction, structure, malicious, seed)
+    if chosen is None:
         return None
-    chosen = set(rng.sample(eligible, max(1, int(len(eligible) * fraction))))
-    moved = [((t + delay if i in chosen else t), v, pid)
+    moved = [((t + delay if i in chosen else t), t, v, pid)
              for i, (t, v, pid) in enumerate(projected)]
     moved.sort(key=lambda row: row[0])
-    return moved
+    if model == "m2":
+        return [(arrival, v, pid) for arrival, _, v, pid in moved]
+    if model == "m1":
+        return [(occurrence, v, pid) for _, occurrence, v, pid in moved]
+    raise ValueError(f"unknown model {model!r}")
 
 
-def sweep(catalogue, stream):
+def sweep(stream, model, cases, rules, fractions, multiples, seeds, source):
     written = 0
-    pid_rules = [r for r in catalogue["rules"] if r["key"] == "pid"]
-    for case in catalogue["sweep"]["cases"]:
-        events, malicious = load_case(case)
-        for rule in pid_rules:
-            projected = project(events, rule)
+    for case in cases:
+        for rule in rules:
+            projected, malicious = source.get(case, rule)
             key, w, thr = rule["key"], rule["window_seconds"], rule["threshold"]
             base_fired = alerting_malicious(projected, key, w, thr, malicious)
             if not base_fired:
                 continue  # no malicious subject detected at baseline; nothing to evade
-            for fraction in catalogue["sweep"]["delay_fractions"]:
-                for mult in catalogue["sweep"]["delay_multiples_of_window"]:
+            for fraction in fractions:
+                for mult in multiples:
                     delay = w * mult
                     for structure in ("random", "targeted"):
-                        for seed in range(catalogue["sweep"]["seeds"]):
-                            moved = delayed_with_pid(projected, fraction, delay, structure, malicious, seed)
+                        for seed in range(seeds):
+                            moved = delayed_with_pid(projected, fraction, delay, structure, malicious, seed, model)
                             if moved is None:
                                 continue
                             fired = alerting_malicious(moved, key, w, thr, malicious)
                             evaded = base_fired - fired
                             stream.write(json.dumps({
-                                "schema": "targeting-sweep-v1",
+                                "schema": "targeting-sweep-v2",
+                                "model": model,
                                 "case": case, "rule": rule["name"],
                                 "delay_fraction": fraction, "delay_multiple": mult,
                                 "delay_seconds": delay, "delay_structure": structure,
@@ -88,25 +88,39 @@ def sweep(catalogue, stream):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--catalog", type=Path, default=ROOT / "config" / "rule_catalog.json")
+    parser.add_argument("--model", choices=MODELS, required=True)
+    parser.add_argument("--cases", nargs="+")
+    parser.add_argument("--rules", nargs="+")
+    parser.add_argument("--fractions", type=float, nargs="+")
+    parser.add_argument("--multiples", type=float, nargs="+")
+    parser.add_argument("--seeds", type=int)
+    parser.add_argument("--cache", type=Path)
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
     catalogue = json.loads(args.catalog.read_text(encoding="utf-8"))
+    grid = catalogue["sweep"]
+    cases = select(grid["cases"], args.cases)
+    rules = [r for r in catalogue["rules"] if r["key"] == "pid" and (not args.rules or r["name"] in args.rules)]
+    fractions = args.fractions or grid["delay_fractions"]
+    multiples = args.multiples or grid["delay_multiples_of_window"]
+    seeds = args.seeds or grid["seeds"]
 
     began = time.time()
     with args.output.open("x", encoding="utf-8") as stream:
-        written = sweep(catalogue, stream)
+        written = sweep(stream, args.model, cases, rules, fractions, multiples, seeds, CaseSource(args.cache))
     elapsed = time.time() - began
 
-    with args.output.with_suffix(".manifest.json").open("x", encoding="utf-8") as stream:
-        json.dump({
-            "schema": "targeting-sweep-manifest-v1",
-            "python": platform.python_version(),
-            "records_written": written,
-            "seconds": round(elapsed, 1),
-            "dependent_variable": "malicious-subject evasion rate",
-            "note": "Only pid-keyed rules; malicious label is a set of pids.",
-        }, stream, indent=2)
-        stream.write("\n")
+    write_manifest(args.output, provenance({
+        "schema": "targeting-sweep-manifest-v2",
+        "python": platform.python_version(),
+        "records_written": written,
+        "seconds": round(elapsed, 1),
+        "model": args.model,
+        "dependent_variable": "malicious-subject evasion rate",
+        "sweep": {"cases": cases, "rules": [r["name"] for r in rules], "delay_fractions": fractions,
+                  "delay_multiples_of_window": multiples, "seeds": seeds},
+        "note": "Only pid-keyed rules; malicious label is a set of pids.",
+    }))
     print(f"{written:,} records in {elapsed:.1f}s -> {args.output}", flush=True)
 
 

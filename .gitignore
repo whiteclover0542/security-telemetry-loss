@@ -26,6 +26,15 @@ data/p1/*
 # Raw measurements are the study's own output and belong in the reproduction package.
 !data/p1/*.json
 !data/p1/*.jsonl
+# Engine v2 re-measurement. Merged outputs are tracked; per-shard copies and the
+# projection cache (rebuilt by scripts/cache_projections.py) are not.
+!data/p1/v2/
+data/p1/v2/*
+!data/p1/v2/*.json
+!data/p1/v2/*.jsonl
+
+# VS Code local history extension.
+.history/
 
 # Raw *.headers stay local: successful responses carry a pre-signed S3 URL.
 # attempts.jsonl records each failure instead.

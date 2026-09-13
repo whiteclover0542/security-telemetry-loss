@@ -71,6 +71,50 @@ class OrderDependenceTests(unittest.TestCase):
                          run_rule(rule(), stream([20, 0, 10]))["alerts"])
 
 
+class LateEventBookkeepingTests(unittest.TestCase):
+    """Engine v1 wiped live state when an accepted late event landed on the deadline."""
+
+    def test_late_event_on_the_deadline_does_not_wipe_live_state(self):
+        # Key a has 100 and 110. Key b moves the watermark to 160 (deadline 100),
+        # then a late a@100 is accepted exactly on the deadline. b@161 advances
+        # the watermark again. All four a events fit in [100, 120], so a@120 fires.
+        events = [(100, {"pid": "a"}), (110, {"pid": "a"}), (160, {"pid": "b"}),
+                  (100, {"pid": "a"}), (161, {"pid": "b"}), (120, {"pid": "a"})]
+        result = run_rule(rule(threshold=4), events)
+        self.assertEqual(result["dropped_late"], 0)
+        self.assertEqual(result["alerts"], 1)
+
+    def test_accepted_permutations_agree_with_occurrence_order(self):
+        import itertools
+        base = [0, 5, 12, 30, 41, 55]
+        expected = run_rule(rule(), stream(base))["alerts"]
+        for order in itertools.permutations(base):
+            result = run_rule(rule(allowed_lateness=120), stream(list(order)))
+            self.assertEqual(result["dropped_late"], 0)
+            self.assertEqual(result["alerts"], expected, order)
+
+    def test_late_event_can_complete_a_span_that_ends_after_it(self):
+        # 20 and 40 arrive first; the late 0 makes {0, 20, 40} fit in 60 seconds.
+        self.assertEqual(run_rule(rule(), stream([20, 40, 0]))["alerts"], 1)
+
+    def test_in_order_streams_match_a_naive_counter(self):
+        import random
+        rng = random.Random(7)
+        for _ in range(200):
+            times, t = [], 0.0
+            for _ in range(rng.randint(5, 60)):
+                t += rng.choice([0.0, rng.uniform(0, 40)])
+                times.append((t, rng.choice("ab")))
+            expected, held = 0, {"a": [], "b": []}
+            for when, key in times:
+                held[key] = [x for x in held[key] if x >= when - 60] + [when]
+                if len(held[key]) >= 3:
+                    expected += 1
+                    held[key] = []
+            events = [(when, {"pid": key}) for when, key in times]
+            self.assertEqual(run_rule(rule(), events)["alerts"], expected)
+
+
 class GuardTests(unittest.TestCase):
     def test_rejects_invalid_configuration(self):
         for bad in ({"threshold": 0}, {"window_seconds": 0}, {"allowed_lateness": -1}):

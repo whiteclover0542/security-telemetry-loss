@@ -1,14 +1,22 @@
 """Sweep arrival-order distortion across rules, cases, delay sizes and structures.
 
 For each rule in the catalogue and each case, this establishes the no-distortion
-baseline, then delays a fraction of events and re-runs the rule. Two things are
-being tested: whether a delay matched to the window is worse than a much larger
-one (the P1 observation), and whether delaying only the attacker's own events
-(targeted) evades with less delay than delaying at random.
+baseline, then delays a fraction of events and re-runs the rule. No event is
+ever removed by a delay; only arrival times move.
 
-No event is ever removed. Only arrival times move. Delayed events are re-sorted
-into arrival order before the rule sees them, exactly as a pipeline would deliver
-them.
+Two distortion models are available, because pipelines differ in which clock the
+detector sees:
+
+- m2 (arrival-time stamping): the delayed arrival time becomes the event time.
+  The rule sees a monotone stream, so nothing is ever late; an event is only
+  displaced into a later window.
+- m1 (occurrence time preserved): events arrive in arrival order but carry their
+  original occurrence time, so the rule sees out-of-order input and drops events
+  whose window the watermark has already retired.
+
+The `delete` structure removes the same events random delay would have chosen,
+as a control: under m1, a delay beyond the window should cost what deleting
+those events costs.
 """
 import argparse
 from datetime import datetime
@@ -23,6 +31,7 @@ import time
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 from rule_engine import SlidingWindowRule, run_rule
+from sweep_common import CaseSource, provenance, select, write_manifest
 
 CASE_SOURCES = {
     "h201": ("data/inria_selected/2019-09-23/AIA-201-225.ecar-2019-09-23-sysclient0201.json.gz",
@@ -32,6 +41,7 @@ CASE_SOURCES = {
     "h051": ("data/inria_selected/2019-09-25/AIA-51-75.ecar-2019-09-25-sysclient0051.json.gz",
              "data/windows/scenario-3.json", "preliminary/data/labels/scenario-3.json"),
 }
+MODELS = ("m1", "m2")
 
 
 def load_case(case):
@@ -85,50 +95,64 @@ def run(projected, key, window_seconds, threshold):
             "dropped_late": result["dropped_late"]}
 
 
-def delayed(projected, fraction, delay, structure, malicious_pids, seed):
-    """Delay a fraction of events; targeted picks only malicious-pid events.
-
-    Returns (time, key_value) pairs in arrival order, or None if nothing is
-    eligible to delay.
-    """
+def choose(projected, fraction, structure, malicious_pids, seed):
+    """Indices to delay (or delete). None when targeting finds nothing to pick."""
     rng = random.Random(seed)
     eligible = [i for i, (_, _, pid) in enumerate(projected)
-                if structure == "random" or pid in malicious_pids]
+                if structure != "targeted" or pid in malicious_pids]
     if not eligible:
         return None
-    chosen = set(rng.sample(eligible, max(1, int(len(eligible) * fraction))))
-    moved = [((t + delay if i in chosen else t), v)
-             for i, (t, v, _) in enumerate(projected)]
+    return set(rng.sample(eligible, max(1, int(len(eligible) * fraction))))
+
+
+def delayed(projected, fraction, delay, structure, malicious_pids, seed, model="m2"):
+    """Distort the stream; return (time the rule sees, key_value) in arrival order.
+
+    Returns None if nothing is eligible to delay.
+    """
+    chosen = choose(projected, fraction, structure, malicious_pids, seed)
+    if chosen is None:
+        return None
+    if structure == "delete":
+        return [(t, v) for i, (t, v, _) in enumerate(projected) if i not in chosen]
+    moved = [((t + delay if i in chosen else t), t, v) for i, (t, v, _) in enumerate(projected)]
     moved.sort(key=lambda row: row[0])
-    return moved
+    if model == "m2":
+        return [(arrival, v) for arrival, _, v in moved]
+    if model == "m1":
+        return [(occurrence, v) for _, occurrence, v in moved]
+    raise ValueError(f"unknown model {model!r}")
 
 
-def sweep(catalogue, stream):
+def sweep(catalogue, stream, model, cases, rules, fractions, multiples, structures, seeds, source):
     written = 0
-    for case in catalogue["sweep"]["cases"]:
-        events, malicious = load_case(case)
-        for rule in catalogue["rules"]:
-            projected = project(events, rule)
+    for case in cases:
+        for rule in rules:
+            projected, malicious = source.get(case, rule)
             key, w, thr = rule["key"], rule["window_seconds"], rule["threshold"]
             base = run(projected, key, w, thr)
             base_alerts, base_keys = base["alerts"], set(base["alert_keys"])
 
-            for fraction in catalogue["sweep"]["delay_fractions"]:
-                for mult in catalogue["sweep"]["delay_multiples_of_window"]:
+            for fraction in fractions:
+                for mult in multiples:
                     delay = w * mult
-                    for structure in catalogue["sweep"]["delay_structures"]:
-                        for seed in range(catalogue["sweep"]["seeds"]):
-                            moved = delayed(projected, fraction, delay, structure, malicious, seed)
+                    for structure in structures:
+                        if structure == "delete" and mult != multiples[0]:
+                            continue  # deletion does not depend on delay size
+                        for seed in range(seeds):
+                            moved = delayed(projected, fraction, delay, structure, malicious, seed, model)
                             if moved is None:
                                 continue
                             res = run_pairs(moved, key, w, thr)
                             lost_keys = base_keys - res["alert_keys"]
                             stream.write(json.dumps({
-                                "schema": "ordering-sweep-v1",
+                                "schema": "ordering-sweep-v2",
+                                "model": model,
                                 "case": case, "rule": rule["name"],
                                 "window_seconds": w, "threshold": thr,
                                 "delay_fraction": fraction,
-                                "delay_multiple": mult, "delay_seconds": delay,
+                                "delay_multiple": None if structure == "delete" else mult,
+                                "delay_seconds": None if structure == "delete" else delay,
                                 "delay_structure": structure, "seed": seed,
                                 "baseline_alerts": base_alerts,
                                 "alerts": res["alerts"],
@@ -145,25 +169,41 @@ def sweep(catalogue, stream):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--catalog", type=Path, default=ROOT / "config" / "rule_catalog.json")
+    parser.add_argument("--model", choices=MODELS, required=True)
+    parser.add_argument("--cases", nargs="+", help="subset of catalogue cases")
+    parser.add_argument("--rules", nargs="+", help="subset of catalogue rule names")
+    parser.add_argument("--fractions", type=float, nargs="+")
+    parser.add_argument("--multiples", type=float, nargs="+")
+    parser.add_argument("--structures", nargs="+", choices=("random", "targeted", "delete"))
+    parser.add_argument("--seeds", type=int)
+    parser.add_argument("--cache", type=Path, help="projection cache directory")
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
     catalogue = json.loads(args.catalog.read_text(encoding="utf-8"))
+    grid = catalogue["sweep"]
+    cases = select(grid["cases"], args.cases)
+    rules = [r for r in catalogue["rules"] if not args.rules or r["name"] in args.rules]
+    fractions = args.fractions or grid["delay_fractions"]
+    multiples = args.multiples or grid["delay_multiples_of_window"]
+    structures = args.structures or grid["delay_structures"]
+    seeds = args.seeds or grid["seeds"]
 
     began = time.time()
     with args.output.open("x", encoding="utf-8") as stream:
-        written = sweep(catalogue, stream)
+        written = sweep(catalogue, stream, args.model, cases, rules, fractions, multiples,
+                        structures, seeds, CaseSource(args.cache))
     elapsed = time.time() - began
 
-    with args.output.with_suffix(".manifest.json").open("x", encoding="utf-8") as stream:
-        json.dump({
-            "schema": "ordering-sweep-manifest-v1",
-            "python": platform.python_version(),
-            "records_written": written,
-            "seconds": round(elapsed, 1),
-            "sweep": catalogue["sweep"],
-            "note": "No event removed; only arrival order changes. Delayed events re-sorted into arrival order.",
-        }, stream, indent=2)
-        stream.write("\n")
+    write_manifest(args.output, provenance({
+        "schema": "ordering-sweep-manifest-v2",
+        "python": platform.python_version(),
+        "records_written": written,
+        "seconds": round(elapsed, 1),
+        "model": args.model,
+        "sweep": {"cases": cases, "rules": [r["name"] for r in rules], "delay_fractions": fractions,
+                  "delay_multiples_of_window": multiples, "delay_structures": structures, "seeds": seeds},
+        "note": "Delays remove no event; delete is a control that removes the events random delay would pick.",
+    }))
     print(f"{written:,} records in {elapsed:.1f}s -> {args.output}", flush=True)
 
 
