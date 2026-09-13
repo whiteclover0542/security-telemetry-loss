@@ -80,8 +80,10 @@ def project(events, rule):
 def run_pairs(pairs, key, window_seconds, threshold):
     """Run a rule over (time, key_value) pairs without rebuilding event dicts."""
     rule = SlidingWindowRule("r", key, window_seconds, threshold)
+    process = rule.process_key
     for event_time, value in pairs:
-        rule.process(event_time, {key: value})
+        if value is not None:
+            process(event_time, value)
     return {
         "alerts": len(rule.alerts),
         "alert_keys": {a["key"] for a in rule.alerts},

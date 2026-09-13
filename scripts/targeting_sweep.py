@@ -29,8 +29,11 @@ def alerting_malicious(pairs_with_pid, key, window_seconds, threshold, malicious
     """Return the set of malicious pids that raise at least one alert."""
     rule = SlidingWindowRule("r", key, window_seconds, threshold)
     fired = set()
+    process = rule.process_key
     for event_time, value, pid in pairs_with_pid:
-        alert = rule.process(event_time, {key: value})
+        if value is None:
+            continue
+        alert = process(event_time, value)
         if alert is not None and pid in malicious:
             fired.add(pid)
     return fired

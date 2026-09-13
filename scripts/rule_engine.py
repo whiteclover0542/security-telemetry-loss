@@ -76,22 +76,29 @@ class SlidingWindowRule:
         key = event.get(self.key_field)
         if key is None:
             return None
+        return self.process_key(event_time, key)
 
-        if self.watermark is not None and event_time < self._deadline():
+    def process_key(self, event_time, key):
+        """`process` for a caller that already extracted the key; the sweeps' hot path."""
+        window = self.window_seconds
+        watermark = self.watermark
+        if watermark is not None and event_time < watermark - window - self.allowed_lateness:
             self.dropped_late += 1
             return None
 
         self.accepted += 1
-        if self.watermark is None or event_time > self.watermark:
-            self.watermark = event_time
+        if watermark is None or event_time > watermark:
+            self.watermark = watermark = event_time
         if self.accepted % RETIRE_EVERY == 0:
             self._retire()
 
-        window = self.window_seconds
-        times = self.pending.setdefault(key, [])
-        stale = bisect.bisect_left(times, self._useless_before())
-        if stale:
-            del times[:stale]
+        times = self.pending.get(key)
+        if times is None:
+            times = self.pending[key] = []
+        else:
+            cutoff = watermark - window - self.allowed_lateness - window
+            if times and times[0] < cutoff:
+                del times[:bisect.bisect_left(times, cutoff)]
 
         if not times or event_time >= times[-1]:
             times.append(event_time)
