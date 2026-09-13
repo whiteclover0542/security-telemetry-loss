@@ -1,0 +1,94 @@
+{
+  "schema": "sharded-run-manifest-v1",
+  "command": [
+    "scripts/ordering_sweep.py",
+    "--model",
+    "m2",
+    "--cache",
+    "data/p1/cache"
+  ],
+  "workers": 11,
+  "records_written": 13500,
+  "wall_seconds": 969.3,
+  "cpu_seconds": 6752.8,
+  "engine_version": 2,
+  "git_commit": "7bbf7beaecceb504368a1d6c253a2736115971a3",
+  "scripts_dirty": false,
+  "shards": [
+    {
+      "case": "h201",
+      "rule": "net_scan",
+      "records": 900
+    },
+    {
+      "case": "h201",
+      "rule": "mass_file",
+      "records": 900
+    },
+    {
+      "case": "h201",
+      "rule": "remote_thread",
+      "records": 900
+    },
+    {
+      "case": "h201",
+      "rule": "module_load",
+      "records": 900
+    },
+    {
+      "case": "h201",
+      "rule": "beacon",
+      "records": 900
+    },
+    {
+      "case": "h501",
+      "rule": "net_scan",
+      "records": 900
+    },
+    {
+      "case": "h501",
+      "rule": "mass_file",
+      "records": 900
+    },
+    {
+      "case": "h501",
+      "rule": "remote_thread",
+      "records": 900
+    },
+    {
+      "case": "h501",
+      "rule": "module_load",
+      "records": 900
+    },
+    {
+      "case": "h501",
+      "rule": "beacon",
+      "records": 900
+    },
+    {
+      "case": "h051",
+      "rule": "net_scan",
+      "records": 900
+    },
+    {
+      "case": "h051",
+      "rule": "mass_file",
+      "records": 900
+    },
+    {
+      "case": "h051",
+      "rule": "remote_thread",
+      "records": 900
+    },
+    {
+      "case": "h051",
+      "rule": "module_load",
+      "records": 900
+    },
+    {
+      "case": "h051",
+      "rule": "beacon",
+      "records": 900
+    }
+  ]
+}

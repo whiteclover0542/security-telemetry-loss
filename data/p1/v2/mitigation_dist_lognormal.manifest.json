@@ -1,0 +1,87 @@
+{
+  "schema": "sharded-run-manifest-v1",
+  "command": [
+    "scripts/mitigation_sweep.py",
+    "--cache",
+    "data/p1/cache",
+    "--fractions",
+    "0.2",
+    "--multiples",
+    "1",
+    "2",
+    "5",
+    "--seeds",
+    "10",
+    "--distribution",
+    "lognormal"
+  ],
+  "workers": 11,
+  "records_written": 2160,
+  "wall_seconds": 1034.8,
+  "cpu_seconds": 3627.9,
+  "engine_version": 2,
+  "git_commit": "7bbf7beaecceb504368a1d6c253a2736115971a3",
+  "scripts_dirty": false,
+  "shards": [
+    {
+      "case": "h201",
+      "rule": "net_scan",
+      "records": 180
+    },
+    {
+      "case": "h201",
+      "rule": "mass_file",
+      "records": 180
+    },
+    {
+      "case": "h201",
+      "rule": "remote_thread",
+      "records": 180
+    },
+    {
+      "case": "h201",
+      "rule": "module_load",
+      "records": 180
+    },
+    {
+      "case": "h501",
+      "rule": "net_scan",
+      "records": 180
+    },
+    {
+      "case": "h501",
+      "rule": "mass_file",
+      "records": 180
+    },
+    {
+      "case": "h501",
+      "rule": "remote_thread",
+      "records": 180
+    },
+    {
+      "case": "h501",
+      "rule": "module_load",
+      "records": 180
+    },
+    {
+      "case": "h051",
+      "rule": "net_scan",
+      "records": 180
+    },
+    {
+      "case": "h051",
+      "rule": "mass_file",
+      "records": 180
+    },
+    {
+      "case": "h051",
+      "rule": "remote_thread",
+      "records": 180
+    },
+    {
+      "case": "h051",
+      "rule": "module_load",
+      "records": 180
+    }
+  ]
+}

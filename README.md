@@ -19,19 +19,28 @@ monitoring sees nothing missing, and no deletion is recorded.
 
 ## Status
 
-Design stage. The hypothesis rests on four premises, and the most load-bearing
-one — that rule verdicts actually depend on arrival order — is being measured
-first with a minimal implementation. Nothing is built on top of it until that
-holds. No results yet.
+Complete. The paper is [paper/PAPER.md](paper/PAPER.md) (Korean). Its results
+come from 82,890 runs on rule engine v2 under a pre-registration committed before
+they ran.
+
+In short: where the detector stamps events with ingest time, delay silently
+displaces events between windows and loses detected subjects with no trace.
+Where the sensor's event time is preserved, every delay that removed a subject
+also left tens of thousands of late-drop records, and a reorder buffer undoes
+it. An earlier engine bug had inflated some effects about tenfold; the paper
+reports what it invalidated.
 
 ## Documents
 
 | Document | Contents |
 | --- | --- |
+| [Paper](paper/PAPER.md) | Full paper, including the correction record (section VII-4) |
+| [v2 results](research/V2_RESULTS.md) | Verdict on every pre-registered hypothesis |
+| [Pre-registration v2](research/PREREGISTRATION_V2.md) | Experiments, hypotheses and decision rules, fixed before running |
 | [Assignment requirements](docs/ASSIGNMENT.md) | Original brief; not edited after creation |
 | [Topic selection](docs/TOPIC_SELECTION.md) | Candidates considered and why each was dropped |
-| [Research progress](docs/PROGRESS.md) | Current status and open work |
-| [Research foundation](research/RESEARCH_FOUNDATION.md) | Hypothesis, premises to verify, measurement plan |
+| [Research progress](docs/PROGRESS.md) | Work log, verification passes and checklist |
+| [Research foundation](research/RESEARCH_FOUNDATION.md) | Hypothesis, premises, and the P1/P2 checks |
 
 ## Preliminary study
 
@@ -50,7 +59,10 @@ study as well.
 
 ```powershell
 python -m unittest discover -s tests -v
+python scripts/analyze_v2.py --output analysis_check.json   # re-judge the stored v2 results
 ```
+
+The full sweep commands are in the paper's reproduction section.
 
 Large inputs are not in this repository. The byte-range index and download
 manifests under `data/` are, so a selected member can be retrieved and verified

@@ -1,0 +1,77 @@
+{
+  "schema": "sharded-run-manifest-v1",
+  "command": [
+    "scripts/mitigation_sweep.py",
+    "--cache",
+    "data/p1/cache"
+  ],
+  "workers": 11,
+  "records_written": 5400,
+  "wall_seconds": 2691.3,
+  "cpu_seconds": 10118.6,
+  "engine_version": 2,
+  "git_commit": "7bbf7beaecceb504368a1d6c253a2736115971a3",
+  "scripts_dirty": false,
+  "shards": [
+    {
+      "case": "h201",
+      "rule": "net_scan",
+      "records": 450
+    },
+    {
+      "case": "h201",
+      "rule": "mass_file",
+      "records": 450
+    },
+    {
+      "case": "h201",
+      "rule": "remote_thread",
+      "records": 450
+    },
+    {
+      "case": "h201",
+      "rule": "module_load",
+      "records": 450
+    },
+    {
+      "case": "h501",
+      "rule": "net_scan",
+      "records": 450
+    },
+    {
+      "case": "h501",
+      "rule": "mass_file",
+      "records": 450
+    },
+    {
+      "case": "h501",
+      "rule": "remote_thread",
+      "records": 450
+    },
+    {
+      "case": "h501",
+      "rule": "module_load",
+      "records": 450
+    },
+    {
+      "case": "h051",
+      "rule": "net_scan",
+      "records": 450
+    },
+    {
+      "case": "h051",
+      "rule": "mass_file",
+      "records": 450
+    },
+    {
+      "case": "h051",
+      "rule": "remote_thread",
+      "records": 450
+    },
+    {
+      "case": "h051",
+      "rule": "module_load",
+      "records": 450
+    }
+  ]
+}

@@ -175,7 +175,7 @@ def h4(records_by_model):
                       "random_advantage_cells": sum(c["direction"] == "random" for c in primary),
                       "targeted_beyond_margin": beyond,
                       "adopted": bool(primary) and not beyond and share >= 0.7,
-                      "low_n_cells": [c for c in cells if not c["primary"]]}
+                      "cells_detail": cells}
     return out
 
 
@@ -210,21 +210,23 @@ def h5_h6(mitigation):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--results", type=Path, default=V2, help="directory holding the v2 sweep outputs")
     parser.add_argument("--output", type=Path, default=V2 / "analysis.json")
     args = parser.parse_args()
+    results = args.results
 
-    m1 = load(V2 / "m1_ordering_sweep.jsonl")
-    m2 = load(V2 / "ordering_sweep.jsonl")
-    e5 = load(V2 / "mitigation_sweep.jsonl")
-    e6 = [r for dist in DISTRIBUTIONS for r in load(V2 / f"mitigation_dist_{dist}.jsonl")]
+    m1 = load(results / "m1_ordering_sweep.jsonl")
+    m2 = load(results / "ordering_sweep.jsonl")
+    e5 = load(results / "mitigation_sweep.jsonl")
+    e6 = [r for dist in DISTRIBUTIONS for r in load(results / f"mitigation_dist_{dist}.jsonl")]
     mitigation = e5 + e6
 
     result = {"schema": "v2-analysis-v1"}
     result["propositions"] = check_propositions(m1, mitigation)
     result["H0"] = h0({"ordering": (load(V1 / "ordering_sweep.jsonl"), m2),
-                       "targeting": (load(V1 / "targeting_sweep.jsonl"), load(V2 / "targeting_sweep.jsonl"))})
+                       "targeting": (load(V1 / "targeting_sweep.jsonl"), load(results / "targeting_sweep.jsonl"))})
     result["H1"], result["H2"], result["H3"], result["m1_table"] = h1_h2_h3(m1, m2)
-    result["H4"] = h4({"m2": load(V2 / "targeting_sweep.jsonl"), "m1": load(V2 / "m1_targeting_sweep.jsonl")})
+    result["H4"] = h4({"m2": load(results / "targeting_sweep.jsonl"), "m1": load(results / "m1_targeting_sweep.jsonl")})
     # E5 (5 seeds) and E6-fixed (10 seeds) share fixed-delay cells and seeds 0-4;
     # relabelling E5 keeps their cell means from mixing.
     relabelled = [dict(r, delay_distribution="fixed-e5") for r in e5]

@@ -1,0 +1,109 @@
+{
+  "schema": "sharded-run-manifest-v1",
+  "command": [
+    "scripts/ordering_sweep.py",
+    "--model",
+    "m1",
+    "--cache",
+    "data/p1/cache",
+    "--multiples",
+    "0.5",
+    "0.75",
+    "0.9",
+    "1.0",
+    "1.1",
+    "1.25",
+    "1.5",
+    "2",
+    "5",
+    "10",
+    "--structures",
+    "random",
+    "targeted",
+    "delete"
+  ],
+  "workers": 11,
+  "records_written": 28350,
+  "wall_seconds": 1521.9,
+  "cpu_seconds": 9402.4,
+  "engine_version": 2,
+  "git_commit": "7bbf7beaecceb504368a1d6c253a2736115971a3",
+  "scripts_dirty": false,
+  "shards": [
+    {
+      "case": "h201",
+      "rule": "net_scan",
+      "records": 1890
+    },
+    {
+      "case": "h201",
+      "rule": "mass_file",
+      "records": 1890
+    },
+    {
+      "case": "h201",
+      "rule": "remote_thread",
+      "records": 1890
+    },
+    {
+      "case": "h201",
+      "rule": "module_load",
+      "records": 1890
+    },
+    {
+      "case": "h201",
+      "rule": "beacon",
+      "records": 1890
+    },
+    {
+      "case": "h501",
+      "rule": "net_scan",
+      "records": 1890
+    },
+    {
+      "case": "h501",
+      "rule": "mass_file",
+      "records": 1890
+    },
+    {
+      "case": "h501",
+      "rule": "remote_thread",
+      "records": 1890
+    },
+    {
+      "case": "h501",
+      "rule": "module_load",
+      "records": 1890
+    },
+    {
+      "case": "h501",
+      "rule": "beacon",
+      "records": 1890
+    },
+    {
+      "case": "h051",
+      "rule": "net_scan",
+      "records": 1890
+    },
+    {
+      "case": "h051",
+      "rule": "mass_file",
+      "records": 1890
+    },
+    {
+      "case": "h051",
+      "rule": "remote_thread",
+      "records": 1890
+    },
+    {
+      "case": "h051",
+      "rule": "module_load",
+      "records": 1890
+    },
+    {
+      "case": "h051",
+      "rule": "beacon",
+      "records": 1890
+    }
+  ]
+}
