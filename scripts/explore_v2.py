@@ -102,6 +102,8 @@ def main():
     parser.add_argument("--results", type=Path, default=V2)
     parser.add_argument("--cache", type=Path, default=ROOT / "data" / "p1" / "cache")
     parser.add_argument("--output", type=Path, default=V2 / "exploratory.json")
+    parser.add_argument("--no-fine-grid", action="store_true",
+                        help="skip part 3, which needs the projection cache built from the raw logs")
     args = parser.parse_args()
     ordering = load(args.results / "m1_ordering_sweep.jsonl")
     targeting = load(args.results / "m1_targeting_sweep.jsonl")
@@ -109,7 +111,7 @@ def main():
     result = {"schema": "v2-exploratory-v1",
               "subject_loss": subject_loss(ordering, targeting),
               "trace_size": trace_size(ordering, targeting),
-              "fine_grid_h201_20pct": fine_grid(catalogue, args.cache)}
+              "fine_grid_h201_20pct": None if args.no_fine_grid else fine_grid(catalogue, args.cache)}
     with args.output.open("x", encoding="utf-8") as stream:
         json.dump(result, stream, indent=2)
         stream.write("\n")
