@@ -26,8 +26,8 @@ they ran.
 In short: where the detector stamps events with ingest time, delay silently
 displaces events between windows and loses detected subjects with no trace.
 Where the sensor's event time is preserved, every delay that removed a subject
-also left tens of thousands of late-drop records, and a reorder buffer undoes
-it. An earlier engine bug had inflated some effects about tenfold; the paper
+also left late-drop records, though a targeted delay left as few as eight, and a
+reorder buffer undoes delays it covers. An earlier engine bug had inflated some effects about tenfold; the paper
 reports what it invalidated.
 
 ## Documents
