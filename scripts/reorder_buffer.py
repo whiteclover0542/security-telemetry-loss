@@ -1,19 +1,17 @@
 """A bounded reorder buffer, the mitigation for arrival-order distortion.
 
-An in-engine grace period cannot help here: a delayed event arrives carrying a
-late arrival time, pushes the watermark forward, and the window its occurrence
-belonged to is already retired. The fix has to act before the rule sees the
-stream - hold each event for a bounded time and release events in occurrence-time
-order, the way a log pipeline's sort buffer does.
+It acts before the rule sees the stream: events are held and released in
+occurrence-time order, the way a log pipeline's sort buffer does.
 
-The trade-off is direct. A buffer at least as large as the worst delay restores
-the original occurrence order exactly, so evasion is fully blocked; but every
-detection is held back by the buffer horizon. Smaller buffers cost less latency
-and block less evasion. The sweep measures both ends.
+A buffer at least as large as the worst delay restores occurrence order exactly,
+so evasion is fully blocked. Release is evaluated only when an event arrives and
+the remainder is flushed at end of stream; there is no timer. An undelayed event
+waits `buffer_seconds` plus the gap until the next arrival, except events flushed
+at end of stream, which wait less; on a sparse stream the real delay can exceed
+the buffer size by up to the longest inter-arrival gap.
 
 Input is (arrival_time, occurrence_time, event) in arrival order. Output is
-(occurrence_time, event) released in occurrence order among events whose arrival
-is within `buffer_seconds` of each other, matching what a real buffer can sort.
+(occurrence_time, event) in release order.
 """
 import heapq
 
@@ -21,11 +19,10 @@ import heapq
 def reorder(stream, buffer_seconds):
     """Release events in occurrence order within a bounded arrival horizon.
 
-    An event that arrived at A is released once the buffer has seen an arrival at
-    A + buffer_seconds, or at end of stream. Among all events still held, the one
-    with the smallest occurrence time is released first, so a delayed event whose
-    occurrence is old rejoins its neighbours as long as it arrived within the
-    horizon of them.
+    On each arrival at time A, every held event whose occurrence time is at most
+    A - buffer_seconds is released, smallest occurrence first; the rest are
+    released at end of stream. A delayed event rejoins its neighbours as long as
+    they are still held when it arrives.
     """
     if buffer_seconds < 0:
         raise ValueError("buffer_seconds must not be negative")

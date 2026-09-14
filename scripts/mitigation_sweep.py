@@ -2,8 +2,9 @@
 
 For each pid-keyed rule and case, an attacker delays a fraction of events. A
 reorder buffer of increasing size sits in front of the rule. This records, per
-buffer size, how much of the evasion is undone. The cost of a buffer of size B is
-exactly B seconds of detection latency.
+buffer size, how much of the evasion is undone. `detection_delay_seconds` records
+the nominal buffer size B, not the measured wait, which adds the gap to the next
+arrival and is shorter for events flushed at end of stream (explore_v2.py part 6).
 
 Occurrence time is preserved through the delay (only arrival moves), which is
 the m1 model: the buffer can only sort events back because they still carry it.
@@ -156,7 +157,7 @@ def main():
         "sweep": {"cases": cases, "rules": [r["name"] for r in rules], "delay_fractions": fractions,
                   "delay_multiples_of_window": multiples, "buffer_multiples": args.buffer_multiples,
                   "seeds": args.seeds},
-        "note": "m1 model: occurrence time preserved, buffer sorts toward occurrence order. Buffer cost is equal detection latency.",
+        "note": "m1 model: occurrence time preserved, buffer sorts toward occurrence order. detection_delay_seconds is the nominal buffer size, not a measured wait.",
     }))
     print(f"{written:,} records in {elapsed:.1f}s -> {args.output}", flush=True)
 

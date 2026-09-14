@@ -17,9 +17,19 @@ None of these were registered hypotheses; the paper labels them exploratory.
    missed.
 5. Sensitivity of the targeting equivalence verdict to the malicious-subject
    count, since one subject moves the evasion rate by 1/N.
+6. Actual buffer wait. The reorder buffer has no timer: it evaluates release
+   only when an event arrives and flushes at end of stream. An undelayed event
+   therefore waits B plus the gap to the next arrival after B, or less if the
+   stream ends first. This measures that wait on each rule's undelayed h201
+   stream, in arrival-clock seconds.
+7. Burst versus per-event delay without a buffer, from the stored distribution
+   sweep: alert reduction and drops when whole window-length slots are delayed
+   (closer to a backpressure episode) against the same share delayed event by
+   event.
 """
 import argparse
 import bisect
+import heapq
 from collections import defaultdict
 import json
 from pathlib import Path
@@ -182,6 +192,52 @@ def equivalence_sensitivity(analysis):
     return out
 
 
+def buffer_wait(catalogue, cache):
+    rules = {r["name"]: r for r in catalogue["rules"]}
+    out = {}
+    for name in ("net_scan", "mass_file", "remote_thread", "module_load", "beacon"):
+        rule = rules[name]
+        projected, _ = read_cache(cache, "h201", name)
+        window = rule["window_seconds"]
+        arrivals = [t for t, _, _ in projected]
+        row = {"events": len(arrivals), "window_seconds": window}
+        for mult in (0.5, 1, 2, 5, 10):
+            horizon = window * mult
+            held, waits, flushed = [], [], 0
+            for seq, arrival in enumerate(arrivals):
+                heapq.heappush(held, (arrival, seq))
+                while held and held[0][0] <= arrival - horizon:
+                    occurrence, _ = heapq.heappop(held)
+                    waits.append(arrival - occurrence)
+            flushed = len(held)
+            last = arrivals[-1]
+            waits += [last - occurrence for occurrence, _ in held]
+            released = sorted(waits[:len(waits) - flushed])
+            over = [w - horizon for w in released]
+            pick = lambda v, q: v[int(q * (len(v) - 1))]
+            row[str(mult)] = {"buffer_seconds": horizon, "flushed_early": flushed,
+                              "overshoot_median": pick(over, 0.5), "overshoot_p90": pick(over, 0.9),
+                              "overshoot_p99": pick(over, 0.99), "overshoot_max": over[-1],
+                              "wait_min_all": min(waits)}
+        out[name] = row
+    return out
+
+
+def burst_versus_fixed(results):
+    cells = defaultdict(lambda: {"reduction": [], "dropped": []})
+    for dist in ("fixed", "burst"):
+        for r in load(results / f"mitigation_dist_{dist}.jsonl"):
+            if r["buffer_multiple"] == 0:
+                c = cells[(dist, r["rule"], r["delay_multiple"])]
+                c["reduction"].append(r["evasion_remaining"])
+                c["dropped"].append(r["dropped_late"])
+    out = {}
+    for (dist, rule, mult), c in sorted(cells.items()):
+        out.setdefault(rule, {}).setdefault(str(mult), {})[dist] = {
+            "reduction": statistics.fmean(c["reduction"]), "dropped": statistics.fmean(c["dropped"])}
+    return out
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--catalog", type=Path, default=ROOT / "config" / "rule_catalog.json")
@@ -189,7 +245,7 @@ def main():
     parser.add_argument("--cache", type=Path, default=ROOT / "data" / "p1" / "cache")
     parser.add_argument("--output", type=Path, default=V2 / "exploratory.json")
     parser.add_argument("--no-fine-grid", action="store_true",
-                        help="skip parts 3 and 4, which need the projection cache built from the raw logs")
+                        help="skip parts 3, 4 and 6, which need the projection cache built from the raw logs")
     args = parser.parse_args()
     ordering = load(args.results / "m1_ordering_sweep.jsonl")
     targeting = load(args.results / "m1_targeting_sweep.jsonl")
@@ -199,6 +255,8 @@ def main():
               "trace_size": trace_size(ordering, targeting),
               "fine_grid_h201_20pct": None if args.no_fine_grid else fine_grid(catalogue, args.cache),
               "reset_semantics_h201_20pct": None if args.no_fine_grid else reset_semantics(catalogue, args.cache),
+              "buffer_wait_h201": None if args.no_fine_grid else buffer_wait(catalogue, args.cache),
+              "burst_versus_fixed_no_buffer": burst_versus_fixed(args.results),
               "equivalence_sensitivity": equivalence_sensitivity(
                   json.loads((args.results / "analysis.json").read_text(encoding="utf-8")))}
     with args.output.open("x", encoding="utf-8") as stream:
