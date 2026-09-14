@@ -55,4 +55,10 @@ python paper/make_figures.py   # data/p1/v2 → paper/figures/*.svg
 python paper/build_pdf.py      # paper/PAPER.md → paper/PAPER.pdf
 ```
 
+제출용 재현 패키지는 [reproduction_package.zip](reproduction_package.zip)이다. 논문과 그 원고, 인용한 연구 기록, 두 엔진 버전의 원자료, 재현에 쓰는 스크립트와 테스트, 로그를 다시 받기 위한 색인만 담았고, 예비 연구에서만 쓴 도구는 뺐다. 다시 만들 때는 다음을 실행한다.
+
+```powershell
+python scripts/build_package.py
+```
+
 대용량 입력은 저장소에 없다. 대신 바이트 범위 색인과 다운로드 manifest를 `data/` 아래에 두어, 필요한 파일을 다시 받아 검증할 수 있게 했다.

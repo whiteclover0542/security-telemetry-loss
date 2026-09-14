@@ -550,7 +550,7 @@ M1에서 윈도우를 넘는 지연의 회피율은 M2와 거의 같았다(예: 
 모든 스크립트는 출력 파일을 배타 생성으로 열어, 이미 있는 파일을 덮어쓰지 않는다. 재현 시에는 새 디렉터리에 기록한 뒤 동봉본과 비교한다.
 
 ```powershell
-python -m unittest discover -s tests -v          # 55개 테스트
+python -m unittest discover -s tests -v          # 단위 테스트
 
 python scripts/cache_projections.py --output data/p1/cache
 $OUT = "data/p1/rerun"; mkdir $OUT
