@@ -1,83 +1,58 @@
-# Event Time or Ingest Time: How Telemetry Delay Changes What Time-Window Detection Misses and the Trace It Leaves
+# 발생 시각인가, 수집 시각인가: 텔레메트리 도착 지연이 시간 윈도우 탐지의 누락과 그 흔적을 바꾸는 방식
 
-**Can an attacker evade time-window detection rules without deleting a single log line?**
+**로그를 한 줄도 지우지 않고 시간 윈도우 탐지 규칙을 피할 수 있을까?**
 
-Detection rules in security operations lean heavily on time windows: a hundred
-new connections from one process within a minute, a burst of file reads and
-writes, repeated remote thread creation. Such rules quietly assume events arrive
-in the order they occurred.
+보안 관제의 탐지 규칙은 시간 윈도우에 크게 기댄다. 한 프로세스가 1분 안에 새 연결을 100건 이상 만들거나, 파일 읽기·쓰기가 짧은 구간에 몰리거나, 원격 스레드 생성이 반복되는 경우가 그렇다. 이런 규칙은 이벤트가 발생한 순서대로 도착한다고 암묵적으로 전제한다.
 
-Real pipelines do not guarantee that. Events pass through agent buffers,
-collector batching, message queues, retries and backpressure, and each leg delays
-them by a different amount. Arrival order and occurrence order diverge. In
-practice this is treated as "a bit of lag" and rarely enters rule design.
+실제 파이프라인은 이를 보장하지 않는다. 이벤트는 에이전트 버퍼, 수집기 배치, 메시지 큐, 재시도와 백프레셔를 거치며 구간마다 다른 만큼 늦어지고, 도착 순서는 발생 순서와 어긋난다. 실무에서는 이를 "약간의 지연" 정도로 여기고 규칙 설계에 거의 반영하지 않는다.
 
-This study asks whether that gap is exploitable. If an attacker can induce delay
-at a chosen point in the pipeline, their events may land outside the rule's
-window while every log line still arrives intact: integrity checks pass, volume
-monitoring sees nothing missing, and no deletion is recorded.
+이 연구는 그 틈을 악용할 수 있는지 묻는다. 공격자가 파이프라인의 한 지점에서 지연을 유발할 수 있다면, 로그는 모두 온전히 도착하는데도 공격자의 이벤트가 규칙의 윈도우 밖으로 밀려날 수 있다. 무결성 검사는 통과하고, 수집량 감시에는 빠진 것이 보이지 않으며, 삭제 기록도 남지 않는다.
 
-## Status
+## 상태
 
-Complete. The paper is [paper/PAPER.md](paper/PAPER.md) (Korean), typeset with
-its figures as [paper/PAPER.pdf](paper/PAPER.pdf). A visual summary of the study,
-with an interactive example of the two engine configurations, is
-[docs/overview.html](docs/overview.html); open it in a browser. The results come
-from 82,890 runs on rule engine v2 under a pre-registration committed before
-they ran.
+완료. 논문은 [paper/PAPER.md](paper/PAPER.md)이고, 그림을 넣어 조판한 PDF는 [paper/PAPER.pdf](paper/PAPER.pdf)이다. 연구 전체를 한 페이지로 정리하고 두 엔진 구성을 직접 비교해 볼 수 있는 요약 페이지는 [docs/overview.html](docs/overview.html)이다(브라우저로 연다). 결과는 규칙 엔진 v2로 실행한 82,890회에서 나왔으며, 실행 전에 사전 등록을 커밋했다.
 
-In short: where the detector stamps events with ingest time, delay silently
-displaces events between windows and loses detected subjects without any
-late-drop record (other pipeline signals were not measured).
-Where the sensor's event time is preserved, every delay that removed a subject
-also left late-drop records, though a targeted delay left as few as eight, and a
-reorder buffer undoes delays it covers. An earlier engine bug had inflated some effects about tenfold; the paper
-reports what it invalidated.
+요약하면 이렇다.
 
-## Documents
+- **탐지 엔진이 수집 시각을 이벤트 시각으로 쓰는 구성(M2)**에서는 지연이 이벤트를 다른 윈도우로 옮기고, 늦은 이벤트 폐기 기록 없이 탐지되던 주체를 놓치게 만든다(다른 파이프라인 지표는 측정하지 않았다).
+- **센서의 발생 시각을 보존하는 구성(M1)**에서는 주체를 놓치게 한 지연이 모두 폐기 기록을 함께 남겼다. 다만 공격자가 자기 이벤트만 골라 늦추면 그 기록은 최소 8건까지 작아졌다.
+- **재정렬 버퍼**는 자신이 덮는 범위의 지연을 되돌린다.
+- 초기 엔진의 버그가 일부 효과를 약 10배 부풀렸으며, 논문은 그 버그로 무효가 된 주장을 함께 보고한다.
 
-| Document | Contents |
+## 문서
+
+| 문서 | 내용 |
 | --- | --- |
-| [Paper](paper/PAPER.md) | Full paper, including the correction record (section VII-4) |
-| [Paper PDF](paper/PAPER.pdf) | The same paper typeset on A4 with three figures |
-| [Visual summary](docs/overview.html) | One-page overview: key results as charts, the correction timeline, hypothesis verdicts |
-| [v2 results](research/V2_RESULTS.md) | Verdict on every pre-registered hypothesis |
-| [Pre-registration v2](research/PREREGISTRATION_V2.md) | Experiments, hypotheses and decision rules, fixed before running |
-| [Assignment requirements](docs/ASSIGNMENT.md) | Original brief; not edited after creation |
-| [Topic selection](docs/TOPIC_SELECTION.md) | Candidates considered and why each was dropped |
-| [Research progress](docs/PROGRESS.md) | Work log, verification passes and checklist |
-| [Research foundation](research/RESEARCH_FOUNDATION.md) | Hypothesis, premises, and the P1/P2 checks |
+| [논문](paper/PAPER.md) | 전체 논문. 정정 기록(VII-4절) 포함 |
+| [논문 PDF](paper/PAPER.pdf) | 같은 논문을 그림 3개와 함께 A4로 조판한 판 |
+| [시각화 요약](docs/overview.html) | 핵심 결과 차트, 정정 경위, 가설 판정을 한 페이지로 정리 |
+| [v2 결과](research/V2_RESULTS.md) | 사전 등록한 가설별 판정 |
+| [사전 등록 v2](research/PREREGISTRATION_V2.md) | 실행 전에 고정한 실험, 가설, 판정 규칙 |
+| [과제 요구사항](docs/ASSIGNMENT.md) | 원래 과제 안내. 작성 후 수정하지 않음 |
+| [주제 선정](docs/TOPIC_SELECTION.md) | 검토한 후보 주제와 각각을 제외한 이유 |
+| [연구 진행 기록](docs/PROGRESS.md) | 작업 기록, 검증 과정, 체크리스트 |
+| [연구 기반](research/RESEARCH_FOUNDATION.md) | 가설, 전제, P1/P2 확인 |
 
-## Preliminary study
+## 예비 연구
 
-An earlier topic — how the temporal structure of telemetry loss affects attack
-detection — was taken as far as data collection, environment setup and
-measurement before being dropped. It is preserved under
-[preliminary/](preliminary/) together with the measurements that justified
-dropping it: detector replay was ruled out after timing four training epochs, and
-the fallback measurement produced results derivable without an experiment.
+이전 주제인 "텔레메트리 손실의 시간 구조가 공격 탐지에 미치는 영향"은 데이터 수집, 환경 구성, 측정까지 진행한 뒤 중단했다. 중단 근거가 된 측정과 함께 [preliminary/](preliminary/)에 보존했다. 학습 에폭 4회의 소요 시간을 잰 결과 탐지기 재실행이 현실적으로 불가능했고, 대안으로 한 측정은 실험 없이도 도출할 수 있는 결과만 냈다.
 
-Its inputs carry over. The OpTC host logs (65,872,086 events, independently
-verified) and the malicious event labels are the evaluation corpus for this
-study as well.
+입력 데이터는 이어서 쓴다. 독립적으로 검증한 OpTC 호스트 로그(65,872,086건)와 악성 이벤트 라벨이 이 연구의 평가 데이터이기도 하다.
 
-## Reproducing the checks
+## 재현
 
 ```powershell
 python -m unittest discover -s tests -v
-python scripts/analyze_v2.py --output analysis_check.json   # re-judge the stored v2 results
+python scripts/analyze_v2.py --output analysis_check.json   # 저장된 v2 결과를 다시 판정
 ```
 
-The full sweep commands are in the paper's reproduction section.
+전체 스윕 명령은 논문의 재현 방법 절에 있다.
 
-The figures and the PDF are generated from the stored v2 results and the
-Markdown source. The PDF step needs `markdown-it-py` and a local Chrome or Edge.
+그림과 PDF는 저장된 v2 결과와 마크다운 원고에서 생성한다. PDF 생성에는 `markdown-it-py`와 로컬 Chrome 또는 Edge가 필요하다.
 
 ```powershell
-python paper/make_figures.py   # paper/figures/*.svg from data/p1/v2
-python paper/build_pdf.py      # paper/PAPER.md -> paper/PAPER.pdf
+python paper/make_figures.py   # data/p1/v2 → paper/figures/*.svg
+python paper/build_pdf.py      # paper/PAPER.md → paper/PAPER.pdf
 ```
 
-Large inputs are not in this repository. The byte-range index and download
-manifests under `data/` are, so a selected member can be retrieved and verified
-again.
+대용량 입력은 저장소에 없다. 대신 바이트 범위 색인과 다운로드 manifest를 `data/` 아래에 두어, 필요한 파일을 다시 받아 검증할 수 있게 했다.
