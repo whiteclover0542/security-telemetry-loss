@@ -10,8 +10,16 @@ None of these were registered hypotheses; the paper labels them exploratory.
    count is joined in.
 3. Fine delay grid just below and above the window (h201, 20%, seeds 0-4), to
    check the within-window damage is not an edge artefact like the v1 bug.
+4. Alert-state semantics: the engine resets a key after it fires. An engine that
+   never resets detects a key once any window-long span holds the threshold, so
+   without drops it cannot lose a subject. This compares detected subjects under
+   both semantics (h201, 20%, seeds 0-2) to see whether the reset changes who is
+   missed.
+5. Sensitivity of the targeting equivalence verdict to the malicious-subject
+   count, since one subject moves the evasion rate by 1/N.
 """
 import argparse
+import bisect
 from collections import defaultdict
 import json
 from pathlib import Path
@@ -21,6 +29,7 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 from ordering_sweep import delayed, run_pairs
+from rule_engine import SlidingWindowRule
 from sweep_common import read_cache
 
 V2 = ROOT / "data" / "p1" / "v2"
@@ -96,6 +105,83 @@ def fine_grid(catalogue, cache):
     return out
 
 
+def detected_with_reset(pairs, key, window, threshold):
+    rule = SlidingWindowRule("r", key, window, threshold)
+    fired = set()
+    for t, value in pairs:
+        if rule.process_key(t, value) is not None:
+            fired.add(value)
+    return fired, rule.dropped_late
+
+
+def detected_without_reset(pairs, window, threshold):
+    watermark, pending, detected, dropped = None, {}, set(), 0
+    for t, key in pairs:
+        if watermark is not None and t < watermark - window:
+            dropped += 1
+            continue
+        if watermark is None or t > watermark:
+            watermark = t
+        if key in detected:
+            continue
+        times = pending.setdefault(key, [])
+        cutoff = watermark - 2 * window
+        if times and times[0] < cutoff:
+            del times[:bisect.bisect_left(times, cutoff)]
+        pos = bisect.bisect_right(times, t)
+        times.insert(pos, t)
+        best = 0
+        for i in range(bisect.bisect_left(times, t - window), pos + 1):
+            last = bisect.bisect_right(times, times[i] + window) - 1
+            if last >= pos:
+                best = max(best, last - i + 1)
+        if best >= threshold:
+            detected.add(key)
+            del pending[key]
+    return detected, dropped
+
+
+def reset_semantics(catalogue, cache):
+    rules = {r["name"]: r for r in catalogue["rules"]}
+    out = {}
+    for name in ("net_scan", "mass_file", "remote_thread", "module_load", "beacon"):
+        rule = rules[name]
+        projected, malicious = read_cache(cache, "h201", name)
+        key, window, threshold = rule["key"], rule["window_seconds"], rule["threshold"]
+        inorder = [(t, v) for t, v, _ in projected]
+        base_reset, _ = detected_with_reset(inorder, key, window, threshold)
+        base_keep, _ = detected_without_reset(inorder, window, threshold)
+        row = {"baseline_subjects_equal": base_reset == base_keep, "baseline_subjects": len(base_reset)}
+        for mult in (0.5, 0.9, 1.0, 1.1, 2.0):
+            lost_reset, lost_keep, drops = [], [], []
+            for seed in range(3):
+                pairs = delayed(projected, 0.2, window * mult, "random", malicious, seed, "m1")
+                fired_reset, dropped = detected_with_reset(pairs, key, window, threshold)
+                fired_keep, _ = detected_without_reset(pairs, window, threshold)
+                lost_reset.append(len(base_reset - fired_reset))
+                lost_keep.append(len(base_keep - fired_keep))
+                drops.append(dropped)
+            row[str(mult)] = {"lost_with_reset": lost_reset, "lost_without_reset": lost_keep, "dropped": drops}
+        out[name] = row
+    return out
+
+
+def equivalence_sensitivity(analysis):
+    out = {}
+    for model, verdict in analysis["H4"].items():
+        bands = {}
+        for label, low, high in (("n_at_least_20", 20, None), ("n_5_to_19", 5, 20), ("n_below_5", 0, 5)):
+            cells = [c for c in verdict["cells_detail"]
+                     if c["baseline_malicious"] >= low and (high is None or c["baseline_malicious"] < high)]
+            bands[label] = {"cells": len(cells),
+                            "equivalent_share": sum(c["equivalent"] for c in cells) / len(cells),
+                            "targeted_advantage": [{k: c[k] for k in ("rule", "case", "fraction", "multiple", "baseline_malicious", "delta", "ci95")}
+                                                   for c in cells if c["direction"] == "targeted"],
+                            "random_advantage_cells": sum(c["direction"] == "random" for c in cells)}
+        out[model] = bands
+    return out
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--catalog", type=Path, default=ROOT / "config" / "rule_catalog.json")
@@ -103,7 +189,7 @@ def main():
     parser.add_argument("--cache", type=Path, default=ROOT / "data" / "p1" / "cache")
     parser.add_argument("--output", type=Path, default=V2 / "exploratory.json")
     parser.add_argument("--no-fine-grid", action="store_true",
-                        help="skip part 3, which needs the projection cache built from the raw logs")
+                        help="skip parts 3 and 4, which need the projection cache built from the raw logs")
     args = parser.parse_args()
     ordering = load(args.results / "m1_ordering_sweep.jsonl")
     targeting = load(args.results / "m1_targeting_sweep.jsonl")
@@ -111,7 +197,10 @@ def main():
     result = {"schema": "v2-exploratory-v1",
               "subject_loss": subject_loss(ordering, targeting),
               "trace_size": trace_size(ordering, targeting),
-              "fine_grid_h201_20pct": None if args.no_fine_grid else fine_grid(catalogue, args.cache)}
+              "fine_grid_h201_20pct": None if args.no_fine_grid else fine_grid(catalogue, args.cache),
+              "reset_semantics_h201_20pct": None if args.no_fine_grid else reset_semantics(catalogue, args.cache),
+              "equivalence_sensitivity": equivalence_sensitivity(
+                  json.loads((args.results / "analysis.json").read_text(encoding="utf-8")))}
     with args.output.open("x", encoding="utf-8") as stream:
         json.dump(result, stream, indent=2)
         stream.write("\n")

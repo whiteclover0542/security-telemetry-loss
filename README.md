@@ -1,4 +1,4 @@
-# Ordering Distortion in Asynchronous Log Pipelines
+# Event Time or Ingest Time: How Telemetry Delay Changes What Time-Window Detection Misses and the Trace It Leaves
 
 **Can an attacker evade time-window detection rules without deleting a single log line?**
 
@@ -24,7 +24,8 @@ come from 82,890 runs on rule engine v2 under a pre-registration committed befor
 they ran.
 
 In short: where the detector stamps events with ingest time, delay silently
-displaces events between windows and loses detected subjects with no trace.
+displaces events between windows and loses detected subjects without any
+late-drop record (other pipeline signals were not measured).
 Where the sensor's event time is preserved, every delay that removed a subject
 also left late-drop records, though a targeted delay left as few as eight, and a
 reorder buffer undoes delays it covers. An earlier engine bug had inflated some effects about tenfold; the paper

@@ -146,5 +146,507 @@
         "dropped": 36616.2
       }
     }
+  },
+  "reset_semantics_h201_20pct": {
+    "net_scan": {
+      "baseline_subjects_equal": true,
+      "baseline_subjects": 3,
+      "0.5": {
+        "lost_with_reset": [
+          0,
+          0,
+          0
+        ],
+        "lost_without_reset": [
+          0,
+          0,
+          0
+        ],
+        "dropped": [
+          0,
+          0,
+          0
+        ]
+      },
+      "0.9": {
+        "lost_with_reset": [
+          0,
+          0,
+          0
+        ],
+        "lost_without_reset": [
+          0,
+          0,
+          0
+        ],
+        "dropped": [
+          0,
+          0,
+          0
+        ]
+      },
+      "1.0": {
+        "lost_with_reset": [
+          0,
+          0,
+          0
+        ],
+        "lost_without_reset": [
+          0,
+          0,
+          0
+        ],
+        "dropped": [
+          0,
+          0,
+          0
+        ]
+      },
+      "1.1": {
+        "lost_with_reset": [
+          0,
+          0,
+          0
+        ],
+        "lost_without_reset": [
+          0,
+          0,
+          0
+        ],
+        "dropped": [
+          37405,
+          37401,
+          37401
+        ]
+      },
+      "2.0": {
+        "lost_with_reset": [
+          0,
+          0,
+          0
+        ],
+        "lost_without_reset": [
+          0,
+          0,
+          0
+        ],
+        "dropped": [
+          37405,
+          37401,
+          37401
+        ]
+      }
+    },
+    "mass_file": {
+      "baseline_subjects_equal": true,
+      "baseline_subjects": 35,
+      "0.5": {
+        "lost_with_reset": [
+          0,
+          0,
+          0
+        ],
+        "lost_without_reset": [
+          0,
+          0,
+          0
+        ],
+        "dropped": [
+          0,
+          0,
+          0
+        ]
+      },
+      "0.9": {
+        "lost_with_reset": [
+          0,
+          0,
+          0
+        ],
+        "lost_without_reset": [
+          0,
+          0,
+          0
+        ],
+        "dropped": [
+          0,
+          0,
+          0
+        ]
+      },
+      "1.0": {
+        "lost_with_reset": [
+          0,
+          0,
+          0
+        ],
+        "lost_without_reset": [
+          0,
+          0,
+          0
+        ],
+        "dropped": [
+          0,
+          0,
+          0
+        ]
+      },
+      "1.1": {
+        "lost_with_reset": [
+          2,
+          1,
+          2
+        ],
+        "lost_without_reset": [
+          2,
+          1,
+          2
+        ],
+        "dropped": [
+          9741,
+          9747,
+          9752
+        ]
+      },
+      "2.0": {
+        "lost_with_reset": [
+          2,
+          1,
+          2
+        ],
+        "lost_without_reset": [
+          2,
+          1,
+          2
+        ],
+        "dropped": [
+          9741,
+          9747,
+          9752
+        ]
+      }
+    },
+    "remote_thread": {
+      "baseline_subjects_equal": true,
+      "baseline_subjects": 11,
+      "0.5": {
+        "lost_with_reset": [
+          0,
+          0,
+          0
+        ],
+        "lost_without_reset": [
+          0,
+          0,
+          0
+        ],
+        "dropped": [
+          0,
+          0,
+          0
+        ]
+      },
+      "0.9": {
+        "lost_with_reset": [
+          0,
+          0,
+          0
+        ],
+        "lost_without_reset": [
+          0,
+          0,
+          0
+        ],
+        "dropped": [
+          0,
+          0,
+          0
+        ]
+      },
+      "1.0": {
+        "lost_with_reset": [
+          0,
+          0,
+          0
+        ],
+        "lost_without_reset": [
+          0,
+          0,
+          0
+        ],
+        "dropped": [
+          0,
+          0,
+          0
+        ]
+      },
+      "1.1": {
+        "lost_with_reset": [
+          3,
+          2,
+          3
+        ],
+        "lost_without_reset": [
+          3,
+          2,
+          3
+        ],
+        "dropped": [
+          351,
+          247,
+          368
+        ]
+      },
+      "2.0": {
+        "lost_with_reset": [
+          3,
+          2,
+          3
+        ],
+        "lost_without_reset": [
+          3,
+          2,
+          3
+        ],
+        "dropped": [
+          371,
+          371,
+          373
+        ]
+      }
+    },
+    "module_load": {
+      "baseline_subjects_equal": true,
+      "baseline_subjects": 389,
+      "0.5": {
+        "lost_with_reset": [
+          0,
+          0,
+          0
+        ],
+        "lost_without_reset": [
+          0,
+          0,
+          0
+        ],
+        "dropped": [
+          0,
+          0,
+          0
+        ]
+      },
+      "0.9": {
+        "lost_with_reset": [
+          0,
+          0,
+          0
+        ],
+        "lost_without_reset": [
+          0,
+          0,
+          0
+        ],
+        "dropped": [
+          0,
+          0,
+          0
+        ]
+      },
+      "1.0": {
+        "lost_with_reset": [
+          0,
+          0,
+          0
+        ],
+        "lost_without_reset": [
+          0,
+          0,
+          0
+        ],
+        "dropped": [
+          0,
+          0,
+          0
+        ]
+      },
+      "1.1": {
+        "lost_with_reset": [
+          19,
+          15,
+          18
+        ],
+        "lost_without_reset": [
+          19,
+          15,
+          18
+        ],
+        "dropped": [
+          2676,
+          2738,
+          2727
+        ]
+      },
+      "2.0": {
+        "lost_with_reset": [
+          41,
+          35,
+          38
+        ],
+        "lost_without_reset": [
+          41,
+          35,
+          38
+        ],
+        "dropped": [
+          5650,
+          5652,
+          5658
+        ]
+      }
+    },
+    "beacon": {
+      "baseline_subjects_equal": true,
+      "baseline_subjects": 19,
+      "0.5": {
+        "lost_with_reset": [
+          0,
+          0,
+          0
+        ],
+        "lost_without_reset": [
+          0,
+          0,
+          0
+        ],
+        "dropped": [
+          0,
+          0,
+          0
+        ]
+      },
+      "0.9": {
+        "lost_with_reset": [
+          0,
+          0,
+          0
+        ],
+        "lost_without_reset": [
+          0,
+          0,
+          0
+        ],
+        "dropped": [
+          0,
+          0,
+          0
+        ]
+      },
+      "1.0": {
+        "lost_with_reset": [
+          0,
+          0,
+          0
+        ],
+        "lost_without_reset": [
+          0,
+          0,
+          0
+        ],
+        "dropped": [
+          0,
+          0,
+          0
+        ]
+      },
+      "1.1": {
+        "lost_with_reset": [
+          1,
+          1,
+          1
+        ],
+        "lost_without_reset": [
+          1,
+          1,
+          1
+        ],
+        "dropped": [
+          36616,
+          36595,
+          36676
+        ]
+      },
+      "2.0": {
+        "lost_with_reset": [
+          1,
+          1,
+          1
+        ],
+        "lost_without_reset": [
+          1,
+          1,
+          1
+        ],
+        "dropped": [
+          36616,
+          36595,
+          36676
+        ]
+      }
+    }
+  },
+  "equivalence_sensitivity": {
+    "m2": {
+      "n_at_least_20": {
+        "cells": 60,
+        "equivalent_share": 1.0,
+        "targeted_advantage": [],
+        "random_advantage_cells": 4
+      },
+      "n_5_to_19": {
+        "cells": 45,
+        "equivalent_share": 0.8444444444444444,
+        "targeted_advantage": [],
+        "random_advantage_cells": 4
+      },
+      "n_below_5": {
+        "cells": 45,
+        "equivalent_share": 0.8222222222222222,
+        "targeted_advantage": [],
+        "random_advantage_cells": 0
+      }
+    },
+    "m1": {
+      "n_at_least_20": {
+        "cells": 120,
+        "equivalent_share": 1.0,
+        "targeted_advantage": [],
+        "random_advantage_cells": 6
+      },
+      "n_5_to_19": {
+        "cells": 90,
+        "equivalent_share": 0.8666666666666667,
+        "targeted_advantage": [],
+        "random_advantage_cells": 6
+      },
+      "n_below_5": {
+        "cells": 90,
+        "equivalent_share": 0.8666666666666667,
+        "targeted_advantage": [
+          {
+            "rule": "remote_thread",
+            "case": "h201",
+            "fraction": 0.2,
+            "multiple": 1.1,
+            "baseline_malicious": 2,
+            "delta": 0.13333333333333336,
+            "ci95": [
+              0.016666666666666663,
+              0.25
+            ]
+          }
+        ],
+        "random_advantage_cells": 0
+      }
+    }
   }
 }
