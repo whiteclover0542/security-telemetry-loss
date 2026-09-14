@@ -2,9 +2,9 @@
 
 **Can an attacker evade time-window detection rules without deleting a single log line?**
 
-Detection rules in security operations lean heavily on time windows: ten failed
-logins followed by a success within five minutes, one account seen in two regions
-within a minute, a burst of file access. Such rules quietly assume events arrive
+Detection rules in security operations lean heavily on time windows: a hundred
+new connections from one process within a minute, a burst of file reads and
+writes, repeated remote thread creation. Such rules quietly assume events arrive
 in the order they occurred.
 
 Real pipelines do not guarantee that. Events pass through agent buffers,
@@ -19,8 +19,11 @@ monitoring sees nothing missing, and no deletion is recorded.
 
 ## Status
 
-Complete. The paper is [paper/PAPER.md](paper/PAPER.md) (Korean). Its results
-come from 82,890 runs on rule engine v2 under a pre-registration committed before
+Complete. The paper is [paper/PAPER.md](paper/PAPER.md) (Korean), typeset with
+its figures as [paper/PAPER.pdf](paper/PAPER.pdf). A visual summary of the study,
+with an interactive example of the two engine configurations, is
+[docs/overview.html](docs/overview.html); open it in a browser. The results come
+from 82,890 runs on rule engine v2 under a pre-registration committed before
 they ran.
 
 In short: where the detector stamps events with ingest time, delay silently
@@ -36,6 +39,8 @@ reports what it invalidated.
 | Document | Contents |
 | --- | --- |
 | [Paper](paper/PAPER.md) | Full paper, including the correction record (section VII-4) |
+| [Paper PDF](paper/PAPER.pdf) | The same paper typeset on A4 with three figures |
+| [Visual summary](docs/overview.html) | One-page overview: key results as charts, the correction timeline, hypothesis verdicts |
 | [v2 results](research/V2_RESULTS.md) | Verdict on every pre-registered hypothesis |
 | [Pre-registration v2](research/PREREGISTRATION_V2.md) | Experiments, hypotheses and decision rules, fixed before running |
 | [Assignment requirements](docs/ASSIGNMENT.md) | Original brief; not edited after creation |
@@ -64,6 +69,14 @@ python scripts/analyze_v2.py --output analysis_check.json   # re-judge the store
 ```
 
 The full sweep commands are in the paper's reproduction section.
+
+The figures and the PDF are generated from the stored v2 results and the
+Markdown source. The PDF step needs `markdown-it-py` and a local Chrome or Edge.
+
+```powershell
+python paper/make_figures.py   # paper/figures/*.svg from data/p1/v2
+python paper/build_pdf.py      # paper/PAPER.md -> paper/PAPER.pdf
+```
 
 Large inputs are not in this repository. The byte-range index and download
 manifests under `data/` are, so a selected member can be retrieved and verified

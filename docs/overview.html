@@ -1,0 +1,909 @@
+<title>발생 시각인가, 수집 시각인가</title>
+<meta name="description" content="텔레메트리 도착 지연이 시간 윈도우 탐지를 어떻게 무너뜨리는지, 연구 과정과 결과를 시각화한 요약 페이지">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;700&display=swap">
+<style>
+:root {
+  color-scheme: light;
+  --ground: #f2f4f5;
+  --surface: #ffffff;
+  --sunk: #e9edef;
+  --ink: #11171c;
+  --ink2: #48535d;
+  --muted: #7a848d;
+  --rule: #d3d9dd;
+  --grid: #e5e9eb;
+  --m1: #2a78d6;
+  --m2: #eb6834;
+  --drop: #d03b3b;
+  --bgevt: #b4bcc2;
+  --d1: #1baf7a;
+  --d2: #4a3aa7;
+  --d3: #e87ba4;
+  --d4: #eda100;
+  --ok: #0b6b2e;
+  --bad: #b42f2f;
+  --warn: #86570a;
+  --focus: #2a78d6;
+  --sans: 'IBM Plex Sans KR', 'Noto Sans KR', 'Malgun Gothic', system-ui, sans-serif;
+  --mono: 'IBM Plex Mono', 'IBM Plex Sans KR', 'Noto Sans KR', ui-monospace, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --ground: #0e1215; --surface: #161b1f; --sunk: #1d2328; --ink: #e9eef1; --ink2: #aab4bc; --muted: #7f8a93;
+    --rule: #2d353b; --grid: #232a2f; --m1: #3987e5; --m2: #d95926; --drop: #e66767; --bgevt: #4a545b;
+    --d1: #199e70; --d2: #9085e9; --d3: #d55181; --d4: #c98500; --ok: #5fcf7d; --bad: #f08a8a; --warn: #e0b04a; --focus: #6da7ec;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --ground: #0e1215; --surface: #161b1f; --sunk: #1d2328; --ink: #e9eef1; --ink2: #aab4bc; --muted: #7f8a93;
+  --rule: #2d353b; --grid: #232a2f; --m1: #3987e5; --m2: #d95926; --drop: #e66767; --bgevt: #4a545b;
+  --d1: #199e70; --d2: #9085e9; --d3: #d55181; --d4: #c98500; --ok: #5fcf7d; --bad: #f08a8a; --warn: #e0b04a; --focus: #6da7ec;
+}
+
+* { box-sizing: border-box; }
+body { background: var(--ground); color: var(--ink); font-family: var(--sans); font-size: 16px; line-height: 1.75;
+       margin: 0; padding: 0 20px; word-break: keep-all; overflow-wrap: break-word; -webkit-font-smoothing: antialiased; }
+.page { max-width: 980px; margin: 0 auto; padding-block: 56px 80px; display: grid; gap: 72px; }
+.prose { max-width: 680px; }
+h1, h2, h3 { text-wrap: balance; margin: 0; letter-spacing: -0.01em; }
+h1 { font-size: clamp(32px, 6vw, 50px); line-height: 1.2; font-weight: 700; }
+h2 { font-size: clamp(23px, 3.4vw, 30px); line-height: 1.3; font-weight: 700; }
+h3 { font-size: 17px; line-height: 1.45; font-weight: 700; }
+p { margin: 0; }
+.stack { display: grid; gap: 16px; }
+.stack-lg { display: grid; gap: 28px; }
+.eyebrow { font-family: var(--mono); font-size: 12.5px; letter-spacing: 0.03em; text-transform: uppercase; color: var(--muted); }
+.lede { font-size: 19px; line-height: 1.7; color: var(--ink2); }
+.small { font-size: 14px; color: var(--ink2); line-height: 1.65; }
+.mono, .num { font-family: var(--mono); font-variant-numeric: tabular-nums; }
+strong { font-weight: 700; }
+.k-m1, .k-m2 { font-weight: 700; white-space: nowrap; }
+.k-m1::before, .k-m2::before { content: ""; display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 6px; vertical-align: 0.08em; }
+.k-m1::before { background: var(--m1); }
+.k-m2::before { background: var(--m2); }
+
+/* header */
+.masthead { display: grid; gap: 22px; }
+.logline { font-family: var(--mono); font-size: 13px; color: var(--ink2); display: flex; flex-wrap: wrap; gap: 6px 18px;
+           border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); padding-block: 10px; }
+.logline span b { color: var(--ink); font-weight: 500; }
+.byline { font-size: 14px; color: var(--muted); }
+
+.answers { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2px; background: var(--rule);
+           border: 1px solid var(--rule); border-radius: 6px; overflow: hidden; }
+.answer { background: var(--surface); padding: 20px 20px 22px; display: grid; grid-template-rows: auto auto 1fr; gap: 10px; }
+.answer .fig { font-family: var(--mono); font-size: 30px; font-weight: 500; line-height: 1.1; letter-spacing: -0.02em; }
+.answer .fig small { font-size: 14px; color: var(--muted); font-weight: 400; letter-spacing: 0; }
+.answer p { font-size: 15px; line-height: 1.65; color: var(--ink2); }
+
+/* panels */
+.panel { background: var(--surface); border: 1px solid var(--rule); border-radius: 6px; padding: 22px; display: grid; gap: 18px; }
+.panel-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 20px; }
+.chart { position: relative; width: 100%; }
+.chart svg { display: block; overflow: visible; }
+.scroll { overflow-x: auto; }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 13.5px; color: var(--ink2); }
+.legend span { display: inline-flex; align-items: center; gap: 7px; }
+.sw { width: 18px; height: 10px; position: relative; display: inline-block; }
+.sw::before { content: ""; position: absolute; left: 0; right: 0; top: 4px; height: 2px; background: var(--c); }
+.sw::after { content: ""; position: absolute; left: 5px; top: 1px; width: 8px; height: 8px; border-radius: 50%; background: var(--c); }
+.sw.dot::before { display: none; }
+.sw.range::after { display: none; }
+.sw.range::before { top: 2px; height: 6px; border-radius: 3px; }
+
+.tip { position: absolute; pointer-events: none; background: var(--surface); border: 1px solid var(--rule); border-radius: 5px;
+       padding: 8px 10px; font-size: 13px; line-height: 1.5; color: var(--ink); box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+       white-space: nowrap; z-index: 2; }
+.tip .row { display: flex; align-items: center; gap: 7px; }
+.tip .row b { font-family: var(--mono); font-weight: 500; margin-left: auto; padding-left: 12px; }
+.tip .head { color: var(--muted); font-family: var(--mono); font-size: 12px; margin-bottom: 2px; }
+
+svg text { font-family: var(--sans); }
+.t-ink { fill: var(--ink); } .t-ink2 { fill: var(--ink2); } .t-muted { fill: var(--muted); }
+.t-mono { font-family: var(--mono); }
+.grid { stroke: var(--grid); stroke-width: 1; }
+.axis { stroke: var(--rule); stroke-width: 1; }
+.marker { stroke: var(--ink2); stroke-width: 1; }
+.band { fill: var(--sunk); }
+
+details.data { font-size: 14px; color: var(--ink2); }
+details.data summary { cursor: pointer; width: fit-content; color: var(--ink2); }
+details.data summary:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; border-radius: 3px; }
+.table-wrap { overflow-x: auto; margin-top: 10px; }
+table { border-collapse: collapse; font-size: 13.5px; width: 100%; }
+th, td { padding: 7px 10px; border-bottom: 1px solid var(--grid); text-align: right; white-space: nowrap; }
+th { font-weight: 500; color: var(--ink2); border-bottom-color: var(--rule); }
+td { font-family: var(--mono); font-variant-numeric: tabular-nums; }
+th:first-child, td:first-child { text-align: left; font-family: var(--sans); }
+
+/* segmented control */
+.seg { display: inline-flex; border: 1px solid var(--rule); border-radius: 5px; overflow: hidden; }
+.seg button { font: inherit; font-size: 13.5px; border: 0; background: var(--surface); color: var(--ink2); padding: 6px 12px; cursor: pointer; }
+.seg button + button { border-left: 1px solid var(--rule); }
+.seg button[aria-pressed="true"] { background: var(--ink); color: var(--surface); }
+.seg button:focus-visible { outline: 2px solid var(--focus); outline-offset: -2px; }
+
+/* simulator */
+.sim-controls { display: grid; gap: 8px; }
+.sim-controls label { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; font-size: 15px; }
+.sim-controls output { font-family: var(--mono); font-size: 15px; color: var(--ink); }
+input[type="range"] { width: 100%; accent-color: var(--m2); height: 26px; margin: 0; }
+input[type="range"]:focus-visible { outline: 2px solid var(--focus); outline-offset: 4px; border-radius: 3px; }
+.zones { display: grid; grid-template-columns: 31fr 30fr 59fr; gap: 2px; font-size: 12.5px; color: var(--muted); font-family: var(--mono); }
+.zones span { border-top: 3px solid var(--grid); padding-top: 4px; }
+.zones span.on { border-top-color: var(--m2); color: var(--ink); }
+.sim-svg { min-width: 640px; }
+.verdicts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.verdict { border: 1px solid var(--rule); border-radius: 5px; padding: 14px 16px; display: grid; gap: 6px; background: var(--surface); }
+.verdict .top { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+.chip { font-size: 12.5px; font-weight: 700; padding: 2px 9px; border-radius: 999px; white-space: nowrap; }
+.chip.ok { color: var(--ok); background: color-mix(in srgb, var(--ok) 13%, transparent); }
+.chip.bad { color: var(--bad); background: color-mix(in srgb, var(--bad) 13%, transparent); }
+.chip.warn { color: var(--warn); background: color-mix(in srgb, var(--warn) 15%, transparent); }
+.verdict dl { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 2px 12px; font-size: 14.5px; }
+.verdict dt { color: var(--muted); }
+.verdict dd { margin: 0; font-family: var(--mono); }
+.sim-note { font-size: 15.5px; line-height: 1.7; padding: 12px 16px; background: var(--sunk); border-radius: 5px; }
+
+/* method */
+.flow { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 2px; background: var(--rule); border: 1px solid var(--rule); border-radius: 6px; overflow: hidden; }
+.flow > div { background: var(--surface); padding: 16px 16px 18px; display: grid; gap: 8px; align-content: start; }
+.flow h3 { font-size: 15.5px; }
+.flow p, .flow li { font-size: 14px; line-height: 1.6; color: var(--ink2); }
+.flow ul { margin: 0; padding-left: 18px; }
+.runs { display: grid; gap: 8px; }
+.runbar { display: flex; gap: 2px; height: 22px; }
+.runbar div { border-radius: 2px; }
+.runlabels { display: flex; gap: 2px; font-size: 12.5px; color: var(--ink2); line-height: 1.4; }
+.runlabels div { min-width: 0; overflow-wrap: anywhere; }
+.runlabels b { font-family: var(--mono); font-weight: 500; color: var(--ink); display: block; }
+
+.tiles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.tile { border-top: 2px solid var(--ink); padding-top: 10px; display: grid; gap: 4px; align-content: start; }
+.tile .v { font-family: var(--mono); font-size: 26px; font-weight: 500; line-height: 1.15; }
+.tile .l { font-size: 14px; color: var(--ink2); line-height: 1.55; }
+
+.two { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 28px; align-items: start; }
+
+/* correction */
+.timeline { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; }
+.timeline li { display: grid; grid-template-columns: 26px 1fr; gap: 12px; }
+.timeline .rail { position: relative; display: flex; justify-content: center; }
+.timeline .rail::before { content: ""; position: absolute; top: 0; bottom: 0; width: 2px; background: var(--rule); }
+.timeline li:first-child .rail::before { top: 12px; }
+.timeline li:last-child .rail::before { bottom: calc(100% - 12px); }
+.timeline .node { position: relative; margin-top: 6px; width: 12px; height: 12px; border-radius: 50%; background: var(--surface); border: 2px solid var(--ink2); }
+.timeline .node.alert { border-color: var(--drop); background: var(--drop); }
+.timeline .body { padding-bottom: 18px; display: grid; gap: 2px; }
+.timeline .body h3 { font-size: 15.5px; }
+.timeline .body p { font-size: 14.5px; color: var(--ink2); line-height: 1.65; }
+.bars { display: grid; gap: 10px; }
+.bar-row { display: grid; grid-template-columns: 76px 1fr; gap: 10px; align-items: center; font-size: 14px; }
+.bar-track { display: flex; align-items: center; gap: 8px; }
+.bar { height: 22px; border-radius: 0 4px 4px 0; }
+.bar-val { font-family: var(--mono); font-size: 14px; }
+.claims { display: grid; gap: 0; }
+.claim { display: grid; grid-template-columns: 1fr auto; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--grid); align-items: center; }
+.claim p { font-size: 14.5px; line-height: 1.55; }
+.claim p span { display: block; color: var(--muted); font-size: 13px; font-family: var(--mono); }
+
+/* hypotheses */
+.hyps { display: grid; gap: 0; border-top: 1px solid var(--rule); }
+.hyp { display: grid; grid-template-columns: 44px minmax(0, 1fr) minmax(0, 0.9fr) 86px; gap: 16px; padding: 13px 0; border-bottom: 1px solid var(--rule); align-items: center; }
+.hyp .id { font-family: var(--mono); font-weight: 500; color: var(--ink2); }
+.hyp .claim-t { font-size: 15px; line-height: 1.55; }
+.hyp .ev { font-family: var(--mono); font-size: 13px; color: var(--ink2); line-height: 1.55; }
+.hyp .chip { justify-self: end; }
+
+.limits { margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 28px; }
+.limits li { font-size: 15px; line-height: 1.65; color: var(--ink2); padding-left: 16px; position: relative; }
+.limits li::before { content: ""; position: absolute; left: 0; top: 0.72em; width: 7px; height: 1px; background: var(--ink2); }
+.limits b { color: var(--ink); }
+footer { border-top: 1px solid var(--rule); padding-top: 20px; font-size: 14px; color: var(--muted); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; }
+
+@media (max-width: 820px) {
+  .answers, .flow { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .answers .answer:last-child { grid-column: 1 / -1; }
+  .two { grid-template-columns: 1fr; }
+  .hyp { grid-template-columns: 40px minmax(0, 1fr) 80px; }
+  .hyp .ev { grid-column: 2 / 3; }
+  .hyp .chip { grid-row: 1; grid-column: 3; }
+}
+@media (max-width: 560px) {
+  body { font-size: 15.5px; }
+  .page { gap: 56px; padding-block: 36px 60px; }
+  .answers, .flow, .tiles, .verdicts, .limits { grid-template-columns: 1fr; }
+  .panel { padding: 16px; }
+  .runlabels { font-size: 11.5px; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .zones span, .seg button { transition: background-color .15s, color .15s, border-color .15s; }
+}
+</style>
+
+<main class="page">
+
+  <header class="masthead">
+    <p class="eyebrow">연구 요약 · 시간 윈도우 탐지와 텔레메트리 지연</p>
+    <h1>발생 시각인가, 수집 시각인가</h1>
+    <p class="lede prose">로그를 지우지도 고치지도 않고, <strong>늦게 도착하게만</strong> 만들어도 공격 탐지가 빠질까? 빠진다면 흔적이 남을까? 공개 공격 로그에 지연을 주입해 이 두 질문을 측정했다. 답은 탐지 엔진이 이벤트의 <strong>어느 시각</strong>을 보느냐에 따라 달라졌다.</p>
+    <div class="logline" aria-label="연구 규모">
+      <span>데이터 <b>DARPA OpTC eCAR</b></span>
+      <span>호스트 <b>h201 · h501 · h051</b></span>
+      <span>밀도 <b>초당 56~70건</b></span>
+      <span>규칙 <b>5종</b></span>
+      <span>재측정 <b>82,890회</b></span>
+    </div>
+    <p class="byline">반소람 · 2026년 9월</p>
+  </header>
+
+  <section class="stack-lg" aria-labelledby="answers-h">
+    <div class="stack prose">
+      <p class="eyebrow">먼저 결론</p>
+      <h2 id="answers-h">세 가지로 요약하면</h2>
+    </div>
+    <div class="answers">
+      <div class="answer">
+        <span class="k-m2">M2 · 수집 시각을 쓰는 엔진</span>
+        <div class="fig">0<small> 건 폐기</small></div>
+        <p>늦은 이벤트를 버리지 않고 다른 시간 창에 넣는다. 폐기 기록은 전혀 없는데 탐지되던 주체가 흔하게 빠졌고, 악성 주체 회피율은 최대 57%였다.</p>
+      </div>
+      <div class="answer">
+        <span class="k-m1">M1 · 발생 시각을 쓰는 엔진</span>
+        <div class="fig">0<small> / 5,562회</small></div>
+        <p>주체를 놓친 5,562회 중 폐기 없이 놓친 실행은 한 번도 없었다. 다만 공격자가 자기 이벤트만 골라 늦추면, 남는 폐기는 중앙값 260건으로 작았다.</p>
+      </div>
+      <div class="answer">
+        <span class="k-m1">완화 · 재정렬 버퍼 (M1 전용)</span>
+        <div class="fig">B ≥ 최대 지연</div>
+        <p>버퍼가 최대 지연을 덮으면 설계상 완전히 복구된다. 그보다 작은 버퍼도 회피를 악화시킨 경우는 없었다.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="stack-lg" aria-labelledby="sim-h">
+    <div class="stack prose">
+      <p class="eyebrow">핵심 개념 · 직접 늦춰 보기</p>
+      <h2 id="sim-h">같은 지연인데 엔진마다 결과가 갈린다</h2>
+      <p>탐지 규칙은 흔히 <strong>“W초 안에 같은 프로세스의 이벤트가 N건 이상이면 경보”</strong> 형태다. 그런데 로그는 에이전트 버퍼, 배치 전송, 메시지 큐를 거치며 제각각 늦게 도착한다. 이때 엔진이 센서가 기록한 <span class="k-m1">발생 시각</span>을 쓰는지(M1), 도착한 순간을 이벤트 시각으로 찍는지(<span class="k-m2">M2</span>)에 따라 벌어지는 일이 완전히 다르다.</p>
+      <p>아래는 W = 60초, N = 5인 규칙이다. 프로세스 p의 이벤트 5건 중 2건을 파이프라인이 늦게 전달한다. 슬라이더로 지연을 바꿔 보자.</p>
+    </div>
+
+    <div class="panel">
+      <div class="sim-controls">
+        <label for="delay"><span>늦게 도착한 2건의 지연</span><output id="delay-out" for="delay">45초 (0.75W)</output></label>
+        <input type="range" id="delay" min="0" max="120" step="5" value="45">
+        <div class="zones" aria-hidden="true">
+          <span id="z1">0~30초</span><span id="z2">35~60초</span><span id="z3">65초 이상 (W 초과)</span>
+        </div>
+      </div>
+      <div class="legend" aria-hidden="true">
+        <span><i class="sw dot" style="--c: var(--ink2)"></i>제때 도착한 p의 이벤트</span>
+        <span><i class="sw dot" style="--c: var(--m2)"></i>늦게 도착한 p의 이벤트</span>
+        <span><svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 2 L10 10 M10 2 L2 10" style="stroke: var(--drop); stroke-width: 2.2; stroke-linecap: round"/></svg>폐기된 이벤트</span>
+        <span><i class="sw dot" style="--c: var(--bgevt)"></i>다른 프로세스 이벤트</span>
+      </div>
+      <div class="scroll"><div class="sim-svg" id="sim"></div></div>
+      <div class="verdicts">
+        <div class="verdict" id="v-m1"></div>
+        <div class="verdict" id="v-m2"></div>
+      </div>
+      <p class="sim-note" id="sim-note" aria-live="polite"></p>
+      <p class="small">설명용 예시다. 실제 실험은 OpTC 공격 구간의 수백만 건 로그에 같은 원리의 엔진을 돌렸다. 엔진은 지금까지 본 가장 늦은 시각(워터마크)보다 W초 이상 이른 이벤트를 “너무 늦었다”며 버린다.</p>
+    </div>
+  </section>
+
+  <section class="stack-lg" aria-labelledby="method-h">
+    <div class="stack prose">
+      <p class="eyebrow">방법</p>
+      <h2 id="method-h">실제 공격 로그로 한 일</h2>
+      <p>원본 로그는 발생 순서대로 완벽히 정렬되어 있다. 여기에 도착 지연만 얹고, 지연 전후의 탐지를 악성 이벤트 정답과 비교했다. 이벤트는 한 건도 지우지 않았다.</p>
+    </div>
+    <div class="flow">
+      <div>
+        <h3>공격 로그</h3>
+        <p>DARPA OpTC 호스트 3대의 공격 구간(각 2~5시간)과 악성 이벤트 라벨.</p>
+      </div>
+      <div>
+        <h3>탐지 규칙 5종</h3>
+        <ul class="mono" style="font-size: 12.5px">
+          <li>net_scan 60초·100건</li>
+          <li>mass_file 60초·50건</li>
+          <li>remote_thread 300초·5건</li>
+          <li>module_load 60초·20건</li>
+          <li>beacon 300초·30건</li>
+        </ul>
+      </div>
+      <div>
+        <h3>지연 주입</h3>
+        <p>규칙이 세는 이벤트의 1·5·20%를 윈도우의 0.5~10배만큼 늦춘다. 고르는 방식은 무작위, 표적(악성 프로세스만), 삭제 대조군.</p>
+      </div>
+      <div>
+        <h3>두 엔진으로 판정</h3>
+        <p>M1과 M2 각각에서 경보 감소율, 사라진 탐지 주체, 폐기 건수를 기록. 시드 30개 반복.</p>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel-head">
+        <h3>사전 등록 후 재측정한 82,890회의 구성</h3>
+        <div class="legend"><span><i class="sw dot" style="--c: var(--m2)"></i>M2 실행</span><span><i class="sw dot" style="--c: var(--m1)"></i>M1 실행</span></div>
+      </div>
+      <div class="runs" id="runs"></div>
+      <p class="small">가설 7개와 판정 기준, 판정 코드를 결과를 보기 전에 커밋했다. 신뢰구간은 시드를 복원 추출한 부트스트랩 10,000회로 구했다.</p>
+    </div>
+  </section>
+
+  <section class="stack-lg" aria-labelledby="f1-h">
+    <div class="stack prose">
+      <p class="eyebrow">결과 · 주체 단위 누락</p>
+      <h2 id="f1-h">M2는 조용히 놓치고, M1은 버리면서 놓친다</h2>
+      <p>탐지되던 주체(프로세스·목적지)를 하나라도 잃은 실행의 비율이다. <span class="k-m2">M2</span>는 윈도우의 절반만 늦어도 주체를 잃기 시작한다. <span class="k-m1">M1</span>은 지연이 윈도우(W) 이하인 동안 한 번도 주체를 잃지 않다가, W를 넘는 순간 폐기와 함께 M2와 같은 수준으로 뛴다.</p>
+    </div>
+    <div class="panel">
+      <div class="panel-head">
+        <h3>주체를 하나 이상 잃은 실행의 비율</h3>
+        <div class="legend"><span><i class="sw" style="--c: var(--m1)"></i>M1 · 발생 시각</span><span><i class="sw" style="--c: var(--m2)"></i>M2 · 수집 시각</span></div>
+      </div>
+      <div class="chart" id="c-loss"></div>
+      <p class="small">무작위 지연, 규칙 5 × 사례 3 × 비율 3 × 시드 30 (점마다 1,350회). 가로축은 로그 척도.</p>
+      <details class="data"><summary>표로 보기</summary><div class="table-wrap" id="t-loss"></div></details>
+    </div>
+    <div class="tiles">
+      <div class="tile"><span class="v">0 / 13,500</span><span class="l">M2 일반화 실행 전체의 폐기 건수. 원리적으로 폐기가 생기지 않는다.</span></div>
+      <div class="tile"><span class="v">0 / 10,800</span><span class="l">M1에서 지연이 W 이하일 때 주체를 잃은 실행. 줄어든 경보는 여전히 탐지되는 주체의 반복 경보였다.</span></div>
+      <div class="tile"><span class="v">11,914건</span><span class="l">윈도우를 0.1%만 넘긴 지연(1.001W)에서 net_scan이 남긴 폐기. 경계를 넘으면 흔적이 한꺼번에 생긴다.</span></div>
+    </div>
+  </section>
+
+  <section class="stack-lg" aria-labelledby="f2-h">
+    <div class="two">
+      <div class="stack">
+        <p class="eyebrow">결과 · 규칙별 취약도</p>
+        <h2 id="f2-h">어느 규칙이 약한지도 뒤집힌다</h2>
+        <p>M2에서 가장 취약한 module_load는 M1의 폐기 없는 영역에서 사실상 면역이었다. 반대로 M2에서 면역이던 net_scan과 beacon은 M1에서 8~13%의 경보를 잃었다.</p>
+        <p>다섯 규칙 · 세 사례의 순위상관은 <span class="mono">ρ = −0.61</span>였다. 두 구성 모두에서 안전한 규칙은 없었다. 규칙의 취약성을 따지려면 먼저 <strong>내 파이프라인이 규칙에 어느 시각을 넘기는지</strong>부터 알아야 한다.</p>
+        <p class="small">규칙 다섯 종에서 본 기술적 관찰이며, 규칙 일반으로 통계적 일반화한 결과는 아니다.</p>
+      </div>
+      <div class="panel">
+        <h3>경보 감소율, 두 구성에서</h3>
+        <div class="chart" id="c-slope"></div>
+        <p class="small">20% 무작위 지연, 세 사례 평균. 왼쪽은 M2의 10배 지연, 오른쪽은 M1에서 폐기가 없는 가장 큰 지연(1.0배).</p>
+        <details class="data"><summary>표로 보기</summary><div class="table-wrap" id="t-slope"></div></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="stack-lg" aria-labelledby="f3-h">
+    <div class="stack prose">
+      <p class="eyebrow">결과 · 표적 지연</p>
+      <h2 id="f3-h">골라서 늦추면 더 많이 빼내지는 못하지만, 흔적은 작아진다</h2>
+      <p>공격자가 자기 프로세스의 이벤트만 골라 늦추는 경우를 같은 양의 무작위 지연과 비교했다. 빼내는 악성 주체 수는 두 구성 모두에서 늘지 않았다. 하지만 M1에서 악성 주체를 빼낸 실행이 남긴 폐기는 크게 줄었다.</p>
+    </div>
+    <div class="tiles">
+      <div class="tile"><span class="v">0 / 315</span><span class="l">표적 지연이 무작위보다 악성 주체를 더 많이 빼낸 주 분석 셀 (M2 105 + M1 210)</span></div>
+      <div class="tile"><span class="v">93% · 94%</span><span class="l">회피율 차이가 ±0.05 안에서 동등으로 판정된 셀 비율 (M2 · M1)</span></div>
+      <div class="tile"><span class="v">약 1/18</span><span class="l">같은 조건에서 표적 지연의 폐기 ÷ 무작위 지연의 폐기 (중앙값, 94셀, 1/2~1/63)</span></div>
+    </div>
+    <div class="panel">
+      <div class="panel-head">
+        <h3>악성 주체를 빼낸 M1 실행이 남긴 폐기 건수</h3>
+        <div class="legend"><span><i class="sw dot" style="--c: var(--m1)"></i>중앙값</span><span><i class="sw range" style="--c: color-mix(in srgb, var(--m1) 40%, transparent)"></i>10~90% 범위</span><span><svg width="10" height="12" viewBox="0 0 10 12"><line x1="5" y1="0" x2="5" y2="12" style="stroke: var(--ink2); stroke-width: 1.5"/></svg>최솟값</span></div>
+      </div>
+      <div class="chart" id="c-trace"></div>
+      <p class="small">무작위 1,466회 · 표적 1,346회. 폐기가 0건인 실행은 둘 다 없었다. 가로축은 로그 척도. 이 은밀성 이득은 “자기 이벤트만 골라 늦출 수 있다”는 강한 가정에서 나온 것이며, 정상 운영의 폐기 기저선은 측정하지 않았다.</p>
+      <details class="data"><summary>표로 보기</summary><div class="table-wrap" id="t-trace"></div></details>
+    </div>
+  </section>
+
+  <section class="stack-lg" aria-labelledby="f4-h">
+    <div class="stack prose">
+      <p class="eyebrow">완화 · M1 전용</p>
+      <h2 id="f4-h">재정렬 버퍼: 최대 지연을 덮으면 완전 복구</h2>
+      <p>이벤트를 발생 시각 기준 힙에 잠시 모았다가 순서대로 흘려보내는 버퍼다. 버퍼 B가 최대 지연 이상이면 엔진은 정확한 발생 순서를 받으므로 잔존 회피는 0이 된다. 이는 측정 결과이기 전에 증명된 성질이다. 그보다 작은 버퍼에서는 지연의 모양에 따라 복구 곡선이 달랐다.</p>
+    </div>
+    <div class="panel">
+      <div class="panel-head">
+        <h3>버퍼 크기별 잔존 회피 (경보 감소율)</h3>
+        <div class="seg" role="group" aria-label="평균 지연">
+          <button type="button" id="d-2" aria-pressed="true">평균 지연 D = 2W</button>
+          <button type="button" id="d-5" aria-pressed="false">D = 5W</button>
+        </div>
+      </div>
+      <div class="legend"><span><i class="sw" style="--c: var(--d1)"></i>고정</span><span><i class="sw" style="--c: var(--d2)"></i>균일 U(0, 2D)</span><span><i class="sw" style="--c: var(--d3)"></i>로그정규</span><span><i class="sw" style="--c: var(--d4)"></i>버스트</span></div>
+      <div class="chart" id="c-buffer"></div>
+      <p class="small">20% 지연, 규칙 4 × 사례 3 × 시드 10 평균. 가로축은 순서 척도. 고정·버스트 지연은 계단형으로, 균일·로그정규 지연은 점진적으로 복구되었고, 로그정규의 긴 꼬리는 10W 버퍼에서도 회피를 남겼다. 부분 버퍼가 회피를 0.01 이상 키운 셀은 0개였다.</p>
+      <details class="data"><summary>표로 보기</summary><div class="table-wrap" id="t-buffer"></div></details>
+    </div>
+  </section>
+
+  <section class="stack-lg" aria-labelledby="fix-h">
+    <div class="stack prose">
+      <p class="eyebrow">정정 기록</p>
+      <h2 id="fix-h">측정 도구가 틀렸다는 것을 스스로 찾아냈다</h2>
+      <p>이 연구의 출발점이던 “작은 지연이 가장 해롭다(경보 38% 감소)”는 관찰은 규칙 엔진의 버그가 만든 것이었다. 버그를 찾은 뒤 가설과 판정 기준을 먼저 등록하고 전부 다시 측정했다.</p>
+    </div>
+    <div class="two">
+      <div class="panel">
+        <h3>연구가 흘러간 순서</h3>
+        <ol class="timeline">
+          <li><div class="rail"><span class="node"></span></div><div class="body"><h3>예비 관찰</h3><p>h201에서 5% 이벤트를 60초 늦추자 경보가 37.8% 줄고 폐기도 없었다.</p></div></li>
+          <li><div class="rail"><span class="node"></span></div><div class="body"><h3>초고와 1차 검증</h3><p>표를 원자료에서 재집계했다. 수치는 맞았지만, 두 실험이 서로 다른 엔진 구성(M1/M2)을 쓴다는 서술 누락을 고쳤다.</p></div></li>
+          <li><div class="rail"><span class="node alert"></span></div><div class="body"><h3>이상한 모양 발견</h3><p>외부 검토를 확인하다 M1의 1.0배 지연에서만 경보 감소가 62~79%로 튀는 칼날 모양을 봤다. 0.9배, 1.1배에서는 사라졌다.</p></div></li>
+          <li><div class="rail"><span class="node alert"></span></div><div class="body"><h3>엔진 버그 확인</h3><p>엔진이 키별 기록을 도착 순으로 정렬되어 있다고 가정해, 윈도우만큼 늦은 이벤트가 오면 살아 있는 상태를 통째로 지웠다. 수정하고 회귀 테스트를 추가했다.</p></div></li>
+          <li><div class="rail"><span class="node"></span></div><div class="body"><h3>사전 등록 v2</h3><p>가설 H0~H6, 판정 기준, 판정 코드를 결과를 보기 전에 커밋했다.</p></div></li>
+          <li><div class="rail"><span class="node"></span></div><div class="body"><h3>82,890회 재측정</h3><p>가설 하나(균일 지연 예측)는 기각되었고 그대로 보고했다.</p></div></li>
+          <li><div class="rail"><span class="node"></span></div><div class="body"><h3>3차 점검</h3><p>“주체를 빼낸 지연은 수만 건의 폐기를 남긴다”는 문장이 무작위 지연에만 맞았다. 표적 지연은 중앙값 260건이라 “흔적은 남지만 작을 수 있다”로 고쳤다.</p></div></li>
+        </ol>
+      </div>
+      <div class="stack-lg">
+        <div class="panel">
+          <h3>같은 조건, 다른 엔진</h3>
+          <p class="small">h201 · 5% 이벤트를 60초 지연 · 경보 감소율</p>
+          <div class="bars">
+            <div class="bar-row"><span>초기 엔진</span><div class="bar-track"><div class="bar" style="width: calc(37.8% * 1.9); background: var(--drop)"></div><span class="bar-val">37.8%</span></div></div>
+            <div class="bar-row"><span>수정 엔진</span><div class="bar-track"><div class="bar" style="width: calc(3.8% * 1.9); background: var(--m1)"></div><span class="bar-val">3.8%</span></div></div>
+          </div>
+          <p class="small">“도착 순서만 바꿔도 판정이 달라진다”는 전제는 남았지만, 크기는 10분의 1이었다.</p>
+        </div>
+        <div class="panel">
+          <h3>버그가 바꾼 주장</h3>
+          <div class="claims">
+            <div class="claim"><p>5%·60초 지연으로 경보 38% 감소<span>−37.8% → −3.8%</span></p><span class="chip bad">무효</span></div>
+            <div class="claim"><p>작은 지연이 가장 해롭다<span>폐기 없는 지연 중에서만 최악</span></p><span class="chip bad">무효</span></div>
+            <div class="claim"><p>부분 버퍼가 회피를 악화시킨다<span>18셀 → 0셀, 0.204 → 0.125</span></p><span class="chip bad">무효</span></div>
+            <div class="claim"><p>M2 일반화·표적 결과<span>22,500건 전부 일치</span></p><span class="chip ok">유효</span></div>
+            <div class="claim"><p>버퍼 ≥ 지연이면 완전 복구<span>명제로 보장</span></p><span class="chip ok">유효</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="stack-lg" aria-labelledby="hyp-h">
+    <div class="stack prose">
+      <p class="eyebrow">판정</p>
+      <h2 id="hyp-h">미리 적어 둔 가설은 이렇게 판정됐다</h2>
+    </div>
+    <div class="hyps">
+      <div class="hyp"><span class="id">H0</span><span class="claim-t">M2 결과는 엔진 버그의 영향을 받지 않았다</span><span class="ev">초기·수정 엔진 22,500건 한 줄씩 일치</span><span class="chip ok">채택</span></div>
+      <div class="hyp"><span class="id">H1</span><span class="claim-t">윈도우를 크게 넘는 M1 지연은 삭제와 거의 같다</span><span class="ev">2·5·10배 135셀 중 97.0%가 0.01 이내</span><span class="chip ok">채택</span></div>
+      <div class="hyp"><span class="id">H2</span><span class="claim-t">폐기 없는 지연의 피해는 2배 지연보다 작다</span><span class="ev">15단위 모두, 최대 16.2%</span><span class="chip ok">채택</span></div>
+      <div class="hyp"><span class="id">H3</span><span class="claim-t">두 구성의 취약도 순위가 다르다</span><span class="ev">ρ = −0.614 (기준 &lt; 0.5), net_scan·beacon 6/6</span><span class="chip ok">채택</span></div>
+      <div class="hyp"><span class="id">H4</span><span class="claim-t">표적 지연은 무작위보다 악성 주체를 더 빼내지 못한다</span><span class="ev">표적 우위 0셀, 동등 93.3% · 94.3% (기준 70%)</span><span class="chip ok">채택</span></div>
+      <div class="hyp"><span class="id">H5</span><span class="claim-t">분포형 지연은 버퍼에 점진적으로 복구된다</span><span class="ev">로그정규 36/36 채택 · 균일 69.4% &lt; 75% 기각</span><span class="chip warn">일부 기각</span></div>
+      <div class="hyp"><span class="id">H6</span><span class="claim-t">부분 버퍼는 회피를 악화시키지 않는다</span><span class="ev">위반 0셀</span><span class="chip ok">채택</span></div>
+    </div>
+  </section>
+
+  <section class="stack-lg" aria-labelledby="lim-h">
+    <div class="stack prose">
+      <p class="eyebrow">한계</p>
+      <h2 id="lim-h">이 연구가 말하지 않는 것</h2>
+    </div>
+    <ul class="limits">
+      <li><b>실제 공격은 하지 않았다.</b> 지연은 기록된 로그에 인위적으로 주입했고, 공격자가 그런 지연을 실제로 만들 수 있는지는 검증하지 않았다.</li>
+      <li><b>엔진은 하나다.</b> 직접 구현한 최소 엔진의 결과이며, 상용 SIEM이나 창 단위로 판정하는 스트림 처리기로 교차 검증하지 않았다.</li>
+      <li><b>흔적은 폐기 건수만 봤다.</b> 큐 지연 같은 운영 지표와 정상 운영의 폐기 기저선은 측정하지 않았다. “흔적이 없다”가 곧 “탐지 불가”는 아니다.</li>
+      <li><b>표본이 작다.</b> 공격 사례 3개, 규칙 5종이고 인증 이벤트가 없다. 시드는 같은 로그에 대한 반복이다.</li>
+    </ul>
+  </section>
+
+  <footer>
+    <span>반소람 · 「발생 시각인가, 수집 시각인가: 텔레메트리 도착 지연이 시간 윈도우 탐지의 누락과 그 흔적을 바꾸는 방식」 요약</span>
+    <span>수치 출처: data/p1/v2 (엔진 v2)</span>
+  </footer>
+</main>
+
+<script>
+(() => {
+  const NS = 'http://www.w3.org/2000/svg';
+  const $ = (s) => document.querySelector(s);
+  function el(tag, attrs = {}, parent) {
+    const e = document.createElementNS(NS, tag);
+    for (const [k, v] of Object.entries(attrs)) e.setAttribute(k, v);
+    if (parent) parent.appendChild(e);
+    return e;
+  }
+  function text(parent, x, y, s, cls = 't-ink2', anchor = 'start', size = 12.5, extra = {}) {
+    const t = el('text', { x, y, class: cls, 'text-anchor': anchor, 'font-size': size, ...extra }, parent);
+    t.textContent = s;
+    return t;
+  }
+  const pct = (v, d = 1) => (v * 100).toFixed(d).replace('-', '−') + '%';
+  const comma = (v) => Math.round(v).toLocaleString('en-US');
+  const mult = (v) => (v === 1 ? '1' : String(v)) + 'W';
+
+  function responsive(host, draw) {
+    let last = -1;
+    const run = () => {
+      const w = Math.floor(host.clientWidth);
+      if (w === last || w === 0) return;
+      last = w;
+      host.querySelectorAll('svg, .tip').forEach((n) => n.remove());
+      draw(w);
+    };
+    run();
+    new ResizeObserver(run).observe(host);
+    return () => { last = -1; run(); };
+  }
+
+  function makeTip(host) {
+    const tip = document.createElement('div');
+    tip.className = 'tip';
+    tip.hidden = true;
+    host.appendChild(tip);
+    return {
+      show(html, x, y, w) {
+        tip.innerHTML = html;
+        tip.hidden = false;
+        const tw = tip.offsetWidth;
+        const left = x + 14 + tw > w ? x - 14 - tw : x + 14;
+        tip.style.left = Math.max(0, left) + 'px';
+        tip.style.top = Math.max(0, y - 10) + 'px';
+      },
+      hide() { tip.hidden = true; },
+    };
+  }
+
+  function table(hostSel, head, rows) {
+    const t = document.createElement('table');
+    t.innerHTML = '<thead><tr>' + head.map((h) => `<th scope="col">${h}</th>`).join('') + '</tr></thead><tbody>' +
+      rows.map((r) => '<tr>' + r.map((c) => `<td>${c}</td>`).join('') + '</tr>').join('') + '</tbody>';
+    $(hostSel).appendChild(t);
+  }
+
+  /* ---------- generic line chart ---------- */
+  function lineChart(host, o) {
+    return responsive(host, (W) => {
+      const series = o.series();
+      const H = o.height || 320;
+      const m = { l: 50, r: 18, t: 16, b: 50 };
+      const iw = W - m.l - m.r, ih = H - m.t - m.b;
+      const [x0, x1] = o.x.domain, [y0, y1] = o.y.domain;
+      const xs = o.x.log
+        ? (v) => m.l + (Math.log(v) - Math.log(x0)) / (Math.log(x1) - Math.log(x0)) * iw
+        : (v) => m.l + (v - x0) / (x1 - x0) * iw;
+      const ys = (v) => m.t + ih - (v - y0) / (y1 - y0) * ih;
+      const svg = el('svg', { viewBox: `0 0 ${W} ${H}`, width: W, height: H, role: 'img', 'aria-label': o.label });
+      host.appendChild(svg);
+
+      (o.bands || []).forEach((b) => {
+        el('rect', { x: xs(b.from), y: m.t, width: xs(b.to) - xs(b.from), height: ih, class: 'band' }, svg);
+      });
+      o.y.ticks.forEach((t) => {
+        el('line', { x1: m.l, x2: W - m.r, y1: ys(t), y2: ys(t), class: t === 0 ? 'axis' : 'grid' }, svg);
+        text(svg, m.l - 8, ys(t) + 4, o.y.fmt(t), 't-muted t-mono', 'end', 11.5);
+      });
+      o.x.ticks.forEach((t) => text(svg, xs(t), m.t + ih + 18, o.x.fmt(t), 't-muted t-mono', 'middle', 11.5));
+      text(svg, m.l + iw / 2, H - 8, o.x.label, 't-ink2', 'middle', 12.5);
+      (o.markers || []).forEach((mk) => {
+        el('line', { x1: xs(mk.x), x2: xs(mk.x), y1: m.t, y2: m.t + ih, class: 'marker' }, svg);
+        const right = xs(mk.x) + 6 + mk.label.length * 12 < W - m.r;
+        text(svg, xs(mk.x) + (right ? 6 : -6), m.t + 13, mk.label, 't-ink2', right ? 'start' : 'end', 12);
+      });
+
+      series.forEach((s) => {
+        const pts = s.points.map(([x, y]) => `${xs(x).toFixed(1)},${ys(y).toFixed(1)}`).join(' ');
+        el('polyline', { points: pts, fill: 'none', style: `stroke: var(${s.color}); stroke-width: 2; stroke-linejoin: round; stroke-linecap: round` }, svg);
+      });
+      series.forEach((s) => {
+        s.points.forEach(([x, y]) => el('circle', { cx: xs(x), cy: ys(y), r: 4, style: `fill: var(${s.color}); stroke: var(--surface); stroke-width: 2` }, svg));
+      });
+
+      const allX = [...new Set(series.flatMap((s) => s.points.map((p) => p[0])))].sort((a, b) => a - b);
+      const cross = el('line', { y1: m.t, y2: m.t + ih, class: 'marker', visibility: 'hidden' }, svg);
+      const tip = makeTip(host);
+      const hit = el('rect', { x: m.l - 10, y: m.t, width: iw + 20, height: ih, fill: 'transparent' }, svg);
+      hit.addEventListener('pointermove', (e) => {
+        const r = svg.getBoundingClientRect();
+        const px = e.clientX - r.left;
+        let best = allX[0];
+        allX.forEach((v) => { if (Math.abs(xs(v) - px) < Math.abs(xs(best) - px)) best = v; });
+        cross.setAttribute('x1', xs(best)); cross.setAttribute('x2', xs(best)); cross.setAttribute('visibility', 'visible');
+        const rows = series.map((s) => {
+          const p = s.points.find((q) => q[0] === best);
+          return p ? `<div class="row"><i class="sw dot" style="--c: var(${s.color})"></i>${s.name}<b>${o.y.tip(p[1])}</b></div>` : '';
+        }).join('');
+        tip.show(`<div class="head">${o.x.tip(best)}</div>${rows}`, xs(best), e.clientY - r.top, W);
+      });
+      hit.addEventListener('pointerleave', () => { tip.hide(); cross.setAttribute('visibility', 'hidden'); });
+    });
+  }
+
+  /* ---------- simulator ---------- */
+  const SW = 60, SN = 5;
+  const TARGET = [10, 20, 30, 40, 50];
+  const DELAYED = new Set([1, 3]);
+  const BG = Array.from({ length: 41 }, (_, i) => i * 5);
+
+  function simulate(model, d) {
+    const evs = BG.map((t, i) => ({ bg: true, t, a: t, i }));
+    TARGET.forEach((t, i) => evs.push({ bg: false, t, a: t + (DELAYED.has(i) ? d : 0), i }));
+    evs.sort((x, y) => x.a - y.a || (x.bg === y.bg ? 0 : x.bg ? -1 : 1));
+    let wm = -Infinity, list = [], alert = null;
+    const dropped = [], counted = [];
+    for (const e of evs) {
+      const time = model === 'm1' ? e.t : e.a;
+      wm = Math.max(wm, time);
+      if (time < wm - SW) { if (!e.bg) dropped.push(e.i); continue; }
+      if (e.bg) continue;
+      counted.push({ i: e.i, x: time });
+      list.push(time); list.sort((a, b) => a - b);
+      if (!alert) {
+        for (const s of list) {
+          if (s < time - SW || s > time) continue;
+          const c = list.filter((v) => v >= s && v <= s + SW).length;
+          if (c >= SN) { alert = { at: e.a, start: s }; list = []; break; }
+        }
+      }
+    }
+    let best = { start: 0, count: 0 };
+    if (!alert) {
+      const xsC = counted.map((c) => c.x);
+      xsC.forEach((s) => {
+        const c = xsC.filter((v) => v >= s && v <= s + SW).length;
+        if (c > best.count) best = { start: s, count: c };
+      });
+    }
+    return { dropped, alert, counted, best };
+  }
+
+  const simHost = $('#sim');
+  const slider = $('#delay');
+  function drawSim() {
+    const d = Number(slider.value);
+    simHost.innerHTML = '';
+    const W = 860, H = 330, x0 = 210, x1 = 840;
+    const xs = (t) => x0 + (t / 180) * (x1 - x0);
+    const svg = el('svg', { viewBox: `0 0 ${W} ${H}`, width: '100%', role: 'img', 'aria-label': `지연 ${d}초일 때 발생 시각, 도착 시각, 두 엔진의 판정` }, simHost);
+    const r1 = el('g', {}, svg);
+    const res = { m1: simulate('m1', d), m2: simulate('m2', d) };
+    const rows = [
+      { y: 42, title: '센서가 기록한 발생 시각', sub: '원본 로그' },
+      { y: 112, title: '파이프라인 도착 시각', sub: '규칙 엔진에 들어온 순간' },
+      { y: 202, title: 'M1이 세는 위치', sub: '발생 시각을 쓰는 엔진', key: 'm1' },
+      { y: 272, title: 'M2가 세는 위치', sub: '도착 시각을 이벤트 시각으로', key: 'm2' },
+    ];
+    for (let t = 0; t <= 180; t += 30) {
+      el('line', { x1: xs(t), x2: xs(t), y1: 16, y2: 300, class: 'grid' }, r1);
+      text(r1, xs(t), 318, t + '초', 't-muted t-mono', 'middle', 11.5);
+    }
+    el('line', { x1: 16, x2: W - 16, y1: 158, y2: 158, class: 'axis' }, r1);
+    rows.forEach((r) => {
+      el('line', { x1: xs(0), x2: x1, y1: r.y, y2: r.y, class: 'axis' }, r1);
+      text(r1, 16, r.y - 2, r.title, 't-ink', 'start', 13.5, { 'font-weight': 700 });
+      text(r1, 16, r.y + 15, r.sub, 't-muted', 'start', 12);
+    });
+    const ringStyle = (c) => `fill: var(${c}); stroke: var(--surface); stroke-width: 2`;
+    const colorOf = (i) => (DELAYED.has(i) && d > 0 ? '--m2' : '--ink2');
+
+    BG.forEach((t) => el('line', { x1: xs(t), x2: xs(t), y1: 112 - 5, y2: 112 + 5, style: 'stroke: var(--bgevt); stroke-width: 2' }, r1));
+    TARGET.forEach((t, i) => {
+      const a = t + (DELAYED.has(i) ? d : 0);
+      if (DELAYED.has(i) && d > 0) {
+        el('path', { d: `M${xs(t)},${42 + 6} C${xs(t)},${80} ${xs(a)},${74} ${xs(a)},${112 - 6}`, fill: 'none', style: 'stroke: var(--m2); stroke-width: 1.5; opacity: .7' }, r1);
+      }
+    });
+    TARGET.forEach((t, i) => {
+      el('circle', { cx: xs(t), cy: 42, r: 6, style: ringStyle(colorOf(i)) }, r1);
+      el('circle', { cx: xs(t + (DELAYED.has(i) ? d : 0)), cy: 112, r: 6, style: ringStyle(colorOf(i)) }, r1);
+    });
+    text(r1, xs(TARGET[4]) + 14, 38, '프로세스 p의 이벤트 5건: 60초 안에 5건이면 경보', 't-ink2', 'start', 12);
+
+    ['m1', 'm2'].forEach((key) => {
+      const r = rows.find((q) => q.key === key);
+      const s = res[key];
+      const start = s.alert ? s.alert.start : s.best.start;
+      const count = s.alert ? SN : s.best.count;
+      el('rect', { x: xs(start), y: r.y - 20, width: xs(start + SW) - xs(start), height: 40, rx: 3, class: 'band' }, r1);
+      const lbl = s.alert ? `60초 창에 5/5건 → 경보` : `60초 창에 최대 ${count}/5건`;
+      text(r1, xs(start) + 4, r.y - 25, lbl, s.alert ? 't-ink' : 't-ink2', 'start', 12, { 'font-weight': s.alert ? 700 : 400 });
+      el('line', { x1: xs(0), x2: x1, y1: r.y, y2: r.y, class: 'axis' }, r1);
+      s.counted.forEach((c) => el('circle', { cx: xs(c.x), cy: r.y, r: 6, style: ringStyle(colorOf(c.i)) }, r1));
+      s.dropped.forEach((i) => {
+        const x = xs(TARGET[i]);
+        el('path', { d: `M${x - 6},${r.y - 6} L${x + 6},${r.y + 6} M${x + 6},${r.y - 6} L${x - 6},${r.y + 6}`, style: 'stroke: var(--drop); stroke-width: 2.4; stroke-linecap: round' }, r1);
+      });
+      if (s.dropped.length) text(r1, xs(TARGET[s.dropped[s.dropped.length - 1]]) + 10, r.y + 18, `폐기 ${s.dropped.length}건`, 't-ink', 'start', 12, { 'font-weight': 700 });
+    });
+
+    const verdict = (key, name, cls) => {
+      const s = res[key];
+      const ok = !!s.alert;
+      const chip = ok ? '<span class="chip ok">탐지</span>' : '<span class="chip bad">놓침</span>';
+      const alertTxt = ok ? `도착 ${s.alert.at}초에 발화` : '없음';
+      const dropTxt = s.dropped.length ? `${s.dropped.length}건 기록됨` : '0건';
+      const trace = ok ? '—' : (s.dropped.length ? '폐기 기록이 흔적으로 남음' : '폐기 지표로는 보이지 않음');
+      $('#v-' + key).innerHTML = `<div class="top"><span class="${cls}">${name}</span>${chip}</div>
+        <dl><dt>경보</dt><dd>${alertTxt}</dd><dt>폐기</dt><dd>${dropTxt}</dd><dt>흔적</dt><dd style="font-family: var(--sans)">${trace}</dd></dl>`;
+    };
+    verdict('m1', 'M1 · 발생 시각', 'k-m1');
+    verdict('m2', 'M2 · 수집 시각', 'k-m2');
+
+    $('#delay-out').textContent = `${d}초 (${+(d / SW).toFixed(2)}W)`;
+    const zone = d <= 30 ? 1 : d <= 60 ? 2 : 3;
+    ['#z1', '#z2', '#z3'].forEach((z, i) => $(z).classList.toggle('on', i + 1 === zone));
+    $('#sim-note').textContent = zone === 1
+      ? (d === 0 ? '지연이 없으면 두 엔진 모두 50초에 경보를 낸다.' : '늦은 이벤트가 여전히 같은 60초 창 안에 들어간다. 두 엔진 모두 탐지한다.')
+      : zone === 2
+        ? 'M2는 늦은 2건을 도착 시각으로 세서 다른 창에 넣는다. 한 창에 5건이 모이지 않아 놓치지만, 버린 이벤트가 없으니 폐기 흔적도 없다. M1은 발생 시각으로 되돌려 세므로 늦게라도 탐지한다.'
+        : '지연이 윈도우(60초)를 넘었다. M1은 너무 늦은 2건을 버려 놓치지만 폐기 2건이 기록된다. M2는 여전히 흔적 없이 놓친다. 이것이 논문의 핵심 구분이다.';
+  }
+  slider.addEventListener('input', drawSim);
+  drawSim();
+
+  /* ---------- runs strip ---------- */
+  const RUNS = [
+    { id: 'E1', name: 'M2 일반화·표적', n: 22500, c: '--m2' },
+    { id: 'E3', name: 'M1 일반화 (삭제 대조 포함)', n: 28350, c: '--m1' },
+    { id: 'E4', name: 'M1 표적', n: 18000, c: '--m1' },
+    { id: 'E5', name: '버퍼 · 고정 지연', n: 5400, c: '--m1' },
+    { id: 'E6', name: '버퍼 · 분포형', n: 8640, c: '--m1' },
+  ];
+  const runs = $('#runs');
+  const bar = document.createElement('div'); bar.className = 'runbar';
+  const labels = document.createElement('div'); labels.className = 'runlabels';
+  RUNS.forEach((r) => {
+    const seg = document.createElement('div');
+    seg.style.flex = r.n; seg.style.background = `var(${r.c})`; seg.title = `${r.id} ${r.name}: ${comma(r.n)}회`;
+    bar.appendChild(seg);
+    const lab = document.createElement('div');
+    lab.style.flex = Math.max(r.n, 9000);
+    lab.innerHTML = `<b>${comma(r.n)}</b>${r.id} ${r.name}`;
+    labels.appendChild(lab);
+  });
+  runs.append(bar, labels);
+
+  /* ---------- subject loss chart ---------- */
+  const M1X = [0.5, 0.75, 0.9, 1, 1.1, 1.25, 1.5, 2, 5, 10];
+  const M1L = [0, 0, 0, 0, 0.48, 0.493, 0.493, 0.496, 0.496, 0.496];
+  const M2X = [0.5, 1, 2, 5, 10];
+  const M2L = [0.081, 0.479, 0.493, 0.497, 0.494];
+  lineChart($('#c-loss'), {
+    label: '지연 크기별 주체 손실 실행 비율, M1과 M2',
+    height: 320,
+    x: { log: true, domain: [0.45, 11], ticks: [0.5, 1, 2, 5, 10], fmt: mult, tip: (v) => `지연 ${mult(v)}`, label: '지연 크기 (윈도우 W의 배수)' },
+    y: { domain: [0, 0.6], ticks: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6], fmt: (v) => (v * 100).toFixed(0) + '%', tip: (v) => pct(v) },
+    bands: [{ from: 1, to: 11 }],
+    markers: [{ x: 1, label: '지연 = W · M1 폐기 시작' }],
+    series: () => [
+      { name: 'M1 · 발생 시각', color: '--m1', points: M1X.map((x, i) => [x, M1L[i]]) },
+      { name: 'M2 · 수집 시각', color: '--m2', points: M2X.map((x, i) => [x, M2L[i]]) },
+    ],
+  });
+  table('#t-loss', ['지연', ...M1X.map(mult)], [
+    ['M1', ...M1L.map((v) => pct(v))],
+    ['M2', ...M1X.map((x) => { const i = M2X.indexOf(x); return i < 0 ? '—' : pct(M2L[i]); })],
+  ]);
+
+  /* ---------- slope chart ---------- */
+  const SLOPE = [
+    { rule: 'module_load', m2: 0.2163, m1: 0.0014 },
+    { rule: 'remote_thread', m2: 0.0516, m1: 0.0760 },
+    { rule: 'mass_file', m2: 0.0449, m1: 0.1243 },
+    { rule: 'beacon', m2: 0.0016, m1: 0.0886 },
+    { rule: 'net_scan', m2: -0.0011, m1: 0.1251 },
+  ];
+  function dodge(items, gap, lo, hi) {
+    const s = [...items].sort((a, b) => a.y - b.y);
+    s.forEach((it, i) => { it.ly = i ? Math.max(it.y, s[i - 1].ly + gap) : Math.max(it.y, lo); });
+    for (let i = s.length - 1; i >= 0; i--) {
+      const cap = i === s.length - 1 ? hi : s[i + 1].ly - gap;
+      if (s[i].ly > cap) s[i].ly = cap;
+    }
+    return items;
+  }
+  responsive($('#c-slope'), (W) => {
+    const host = $('#c-slope');
+    const H = 360, top = 58, bottom = 330;
+    const xL = Math.round(W * 0.36), xR = Math.round(W * 0.64);
+    const ys = (v) => bottom - (v + 0.01) / 0.26 * (bottom - top);
+    const svg = el('svg', { viewBox: `0 0 ${W} ${H}`, width: W, height: H, role: 'img', 'aria-label': '규칙별 경보 감소율의 M2와 M1 비교' }, host);
+    text(svg, xL, 18, 'M2 · 수집 시각', 't-ink', 'middle', 13, { 'font-weight': 700 });
+    text(svg, xL, 36, '20%·10배 지연', 't-muted', 'middle', 12);
+    text(svg, xR, 18, 'M1 · 발생 시각', 't-ink', 'middle', 13, { 'font-weight': 700 });
+    text(svg, xR, 36, '20%·1배, 폐기 없음', 't-muted', 'middle', 12);
+    [0, 0.05, 0.1, 0.15, 0.2, 0.25].forEach((t) => {
+      el('line', { x1: xL, x2: xR, y1: ys(t), y2: ys(t), class: t === 0 ? 'axis' : 'grid' }, svg);
+    });
+    el('line', { x1: xL, x2: xL, y1: ys(0.25), y2: ys(0), class: 'axis' }, svg);
+    el('line', { x1: xR, x2: xR, y1: ys(0.25), y2: ys(0), class: 'axis' }, svg);
+    const left = dodge(SLOPE.map((d) => ({ d, y: ys(d.m2) })), 17, top, bottom + 10);
+    const right = dodge(SLOPE.map((d) => ({ d, y: ys(d.m1) })), 17, top, bottom + 10);
+    const groups = SLOPE.map((d, i) => {
+      const g = el('g', { tabindex: 0, 'aria-label': `${d.rule}: M2 ${pct(d.m2)}, M1 ${pct(d.m1)}` }, svg);
+      el('line', { x1: xL, y1: ys(d.m2), x2: xR, y2: ys(d.m1), style: 'stroke: var(--muted); stroke-width: 1.5' }, g);
+      el('circle', { cx: xL, cy: ys(d.m2), r: 5, style: 'fill: var(--m2); stroke: var(--surface); stroke-width: 2' }, g);
+      el('circle', { cx: xR, cy: ys(d.m1), r: 5, style: 'fill: var(--m1); stroke: var(--surface); stroke-width: 2' }, g);
+      const L = left[i], R = right[i];
+      if (Math.abs(L.ly - L.y) > 2) el('line', { x1: xL - 7, y1: L.y, x2: xL - 14, y2: L.ly - 4, class: 'marker' }, g);
+      if (Math.abs(R.ly - R.y) > 2) el('line', { x1: xR + 7, y1: R.y, x2: xR + 14, y2: R.ly - 4, class: 'marker' }, g);
+      const small = W < 460;
+      const lt = text(g, xL - 16, L.ly, '', 't-ink2', 'end', small ? 11 : 12);
+      lt.innerHTML = `${d.rule} <tspan class="t-mono t-ink">${pct(d.m2)}</tspan>`;
+      const rt = text(g, xR + 16, R.ly, '', 't-ink2', 'start', small ? 11 : 12);
+      rt.innerHTML = `<tspan class="t-mono t-ink">${pct(d.m1)}</tspan> ${d.rule}`;
+      return g;
+    });
+    groups.forEach((g) => {
+      const on = () => groups.forEach((o) => { o.style.opacity = o === g ? 1 : 0.28; });
+      const off = () => groups.forEach((o) => { o.style.opacity = 1; });
+      g.addEventListener('pointerenter', on); g.addEventListener('pointerleave', off);
+      g.addEventListener('focus', on); g.addEventListener('blur', off);
+    });
+  });
+  table('#t-slope', ['규칙', 'M2 (20%·10배)', 'M1 (20%·1배)'], SLOPE.map((d) => [d.rule, pct(d.m2), pct(d.m1)]));
+
+  /* ---------- trace chart ---------- */
+  const TRACE = [
+    { name: '무작위 지연', n: 1466, min: 18, p10: 312, median: 3808, p90: 37525 },
+    { name: '표적 지연', n: 1346, min: 8, p10: 33, median: 260, p90: 2075 },
+  ];
+  responsive($('#c-trace'), (W) => {
+    const host = $('#c-trace');
+    const H = 210, l = W < 460 ? 80 : 100, r = 22;
+    const xs = (v) => l + Math.log10(v) / 5 * (W - l - r);
+    const svg = el('svg', { viewBox: `0 0 ${W} ${H}`, width: W, height: H, role: 'img', 'aria-label': '무작위와 표적 지연의 폐기 건수 분포' }, host);
+    [1, 10, 100, 1000, 10000, 100000].forEach((v, i) => {
+      el('line', { x1: xs(v), x2: xs(v), y1: 18, y2: 160, class: i ? 'grid' : 'axis' }, svg);
+      if (W >= 460 || i % 2 === 0 || i === 5) text(svg, xs(v), 178, comma(v), 't-muted t-mono', 'middle', 11.5);
+    });
+    text(svg, l + (W - l - r) / 2, H - 6, '폐기 이벤트 수 (로그 척도)', 't-ink2', 'middle', 12.5);
+    const tip = makeTip(host);
+    TRACE.forEach((q, i) => {
+      const y = 58 + i * 64;
+      text(svg, l - 14, y + 4, q.name, 't-ink', 'end', 13, { 'font-weight': 500 });
+      el('line', { x1: xs(q.p10), x2: xs(q.p90), y1: y, y2: y, style: 'stroke: var(--m1); stroke-width: 10; stroke-linecap: round; opacity: .3' }, svg);
+      el('line', { x1: xs(q.min), x2: xs(q.min), y1: y - 11, y2: y + 11, style: 'stroke: var(--ink2); stroke-width: 1.5' }, svg);
+      el('circle', { cx: xs(q.median), cy: y, r: 6, style: 'fill: var(--m1); stroke: var(--surface); stroke-width: 2' }, svg);
+      text(svg, xs(q.median), y - 16, `중앙값 ${comma(q.median)}`, 't-ink t-mono', 'middle', 12);
+      text(svg, xs(q.min), y + 26, `최소 ${q.min}`, 't-muted t-mono', 'middle', 11.5);
+      const hit = el('rect', { x: xs(q.min) - 10, y: y - 26, width: xs(q.p90) - xs(q.min) + 24, height: 52, fill: 'transparent' }, svg);
+      hit.addEventListener('pointermove', (e) => {
+        const b = svg.getBoundingClientRect();
+        tip.show(`<div class="head">${q.name} · ${comma(q.n)}회</div>
+          <div class="row">최솟값<b>${comma(q.min)}</b></div><div class="row">10%<b>${comma(q.p10)}</b></div>
+          <div class="row">중앙값<b>${comma(q.median)}</b></div><div class="row">90%<b>${comma(q.p90)}</b></div>`, e.clientX - b.left, e.clientY - b.top, W);
+      });
+      hit.addEventListener('pointerleave', () => tip.hide());
+    });
+  });
+  table('#t-trace', ['구조', '실행', '폐기 0', '최소', '10%', '중앙값', '90%'],
+    TRACE.map((q) => [q.name, comma(q.n), '0', comma(q.min), comma(q.p10), comma(q.median), comma(q.p90)]));
+
+  /* ---------- buffer chart ---------- */
+  const BUF = ['0', '0.5W', '1W', '2W', '5W', '10W'];
+  const DIST = [['고정', '--d1'], ['균일 U(0, 2D)', '--d2'], ['로그정규', '--d3'], ['버스트', '--d4']];
+  const BUFDATA = {
+    2: [[0.227, 0.215, 0.079, 0, 0, 0], [0.166, 0.135, 0.106, 0.052, 0, 0], [0.128, 0.089, 0.065, 0.038, 0.011, 0.003], [0.213, 0.192, 0.043, 0, 0, 0]],
+    5: [[0.229, 0.228, 0.227, 0.227, 0, 0], [0.204, 0.191, 0.179, 0.154, 0.083, 0], [0.195, 0.169, 0.146, 0.109, 0.051, 0.021], [0.225, 0.224, 0.224, 0.222, 0, 0]],
+  };
+  let D = 2;
+  const redrawBuffer = lineChart($('#c-buffer'), {
+    label: '버퍼 크기별 잔존 회피, 지연 분포별',
+    height: 320,
+    x: { log: false, domain: [0, 5], ticks: [0, 1, 2, 3, 4, 5], fmt: (i) => BUF[i], tip: (i) => `버퍼 ${BUF[i]}`, label: '버퍼 크기 B (윈도우 W의 배수, 순서 척도)' },
+    y: { domain: [0, 0.25], ticks: [0, 0.05, 0.1, 0.15, 0.2, 0.25], fmt: (v) => (v * 100).toFixed(0) + '%', tip: (v) => pct(v) },
+    get markers() { return [{ x: D === 2 ? 3 : 4, label: 'B = D' }]; },
+    series: () => DIST.map(([name, c], k) => ({ name, color: c, points: BUFDATA[D][k].map((v, i) => [i, v]) })),
+  });
+  function bufferTable() {
+    $('#t-buffer').innerHTML = '';
+    table('#t-buffer', ['분포 (D = ' + D + 'W)', ...BUF], DIST.map(([name], k) => [name, ...BUFDATA[D][k].map((v) => v.toFixed(3))]));
+  }
+  bufferTable();
+  [2, 5].forEach((v) => {
+    $('#d-' + v).addEventListener('click', () => {
+      D = v;
+      $('#d-2').setAttribute('aria-pressed', String(v === 2));
+      $('#d-5').setAttribute('aria-pressed', String(v === 5));
+      redrawBuffer();
+      bufferTable();
+    });
+  });
+})();
+</script>

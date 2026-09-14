@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 400" width="700" height="400" font-family="'Noto Sans KR','NanumGothic','Malgun Gothic',system-ui,sans-serif">
+<rect width="700" height="400" fill="#fcfcfb"/>
+<text x="24.0" y="30.0" font-size="16" fill="#0b0b0b" text-anchor="start" font-weight="700">그림 1. M1에서 지연 크기에 따른 경보 감소</text>
+<text x="24.0" y="52.0" font-size="12" fill="#52514e" text-anchor="start" font-weight="400">20% 무작위 지연, 세 사례·시드 30 평균. 윈도우(W)를 넘으면 폐기가 발생한다.</text>
+<line x1="24.0" y1="72.0" x2="42.0" y2="72.0" stroke="#2a78d6" stroke-width="2"/>
+<circle cx="33.0" cy="72.0" r="3.5" fill="#2a78d6" stroke="#fcfcfb" stroke-width="2"/>
+<text x="48.0" y="76.0" font-size="12" fill="#52514e" text-anchor="start" font-weight="400">net_scan</text>
+<line x1="121.6" y1="72.0" x2="139.6" y2="72.0" stroke="#eb6834" stroke-width="2"/>
+<circle cx="130.6" cy="72.0" r="3.5" fill="#eb6834" stroke="#fcfcfb" stroke-width="2"/>
+<text x="145.6" y="76.0" font-size="12" fill="#52514e" text-anchor="start" font-weight="400">mass_file</text>
+<line x1="226.4" y1="72.0" x2="244.4" y2="72.0" stroke="#1baf7a" stroke-width="2"/>
+<circle cx="235.4" cy="72.0" r="3.5" fill="#1baf7a" stroke="#fcfcfb" stroke-width="2"/>
+<text x="250.4" y="76.0" font-size="12" fill="#52514e" text-anchor="start" font-weight="400">remote_thread</text>
+<line x1="360.0" y1="72.0" x2="378.0" y2="72.0" stroke="#eda100" stroke-width="2"/>
+<circle cx="369.0" cy="72.0" r="3.5" fill="#eda100" stroke="#fcfcfb" stroke-width="2"/>
+<text x="384.0" y="76.0" font-size="12" fill="#52514e" text-anchor="start" font-weight="400">module_load</text>
+<line x1="479.2" y1="72.0" x2="497.2" y2="72.0" stroke="#e87ba4" stroke-width="2"/>
+<circle cx="488.2" cy="72.0" r="3.5" fill="#e87ba4" stroke="#fcfcfb" stroke-width="2"/>
+<text x="503.2" y="76.0" font-size="12" fill="#52514e" text-anchor="start" font-weight="400">beacon</text>
+<line x1="64.0" y1="340.0" x2="664.0" y2="340.0" stroke="#c3c2b7" stroke-width="1"/>
+<text x="56.0" y="344.0" font-size="11" fill="#898781" text-anchor="end" font-weight="400">0</text>
+<line x1="64.0" y1="298.7" x2="664.0" y2="298.7" stroke="#e1e0d9" stroke-width="1"/>
+<text x="56.0" y="302.7" font-size="11" fill="#898781" text-anchor="end" font-weight="400">0.05</text>
+<line x1="64.0" y1="257.3" x2="664.0" y2="257.3" stroke="#e1e0d9" stroke-width="1"/>
+<text x="56.0" y="261.3" font-size="11" fill="#898781" text-anchor="end" font-weight="400">0.1</text>
+<line x1="64.0" y1="216.0" x2="664.0" y2="216.0" stroke="#e1e0d9" stroke-width="1"/>
+<text x="56.0" y="220.0" font-size="11" fill="#898781" text-anchor="end" font-weight="400">0.15</text>
+<line x1="64.0" y1="174.7" x2="664.0" y2="174.7" stroke="#e1e0d9" stroke-width="1"/>
+<text x="56.0" y="178.7" font-size="11" fill="#898781" text-anchor="end" font-weight="400">0.2</text>
+<line x1="64.0" y1="133.3" x2="664.0" y2="133.3" stroke="#e1e0d9" stroke-width="1"/>
+<text x="56.0" y="137.3" font-size="11" fill="#898781" text-anchor="end" font-weight="400">0.25</text>
+<line x1="64.0" y1="92.0" x2="664.0" y2="92.0" stroke="#e1e0d9" stroke-width="1"/>
+<text x="56.0" y="96.0" font-size="11" fill="#898781" text-anchor="end" font-weight="400">0.3</text>
+<text x="64.0" y="358.0" font-size="11" fill="#898781" text-anchor="middle" font-weight="400">0.5×</text>
+<text x="130.7" y="358.0" font-size="11" fill="#898781" text-anchor="middle" font-weight="400">0.75×</text>
+<text x="197.3" y="358.0" font-size="11" fill="#898781" text-anchor="middle" font-weight="400">0.9×</text>
+<text x="264.0" y="358.0" font-size="11" fill="#898781" text-anchor="middle" font-weight="400">1×</text>
+<text x="330.7" y="358.0" font-size="11" fill="#898781" text-anchor="middle" font-weight="400">1.1×</text>
+<text x="397.3" y="358.0" font-size="11" fill="#898781" text-anchor="middle" font-weight="400">1.25×</text>
+<text x="464.0" y="358.0" font-size="11" fill="#898781" text-anchor="middle" font-weight="400">1.5×</text>
+<text x="530.7" y="358.0" font-size="11" fill="#898781" text-anchor="middle" font-weight="400">2×</text>
+<text x="597.3" y="358.0" font-size="11" fill="#898781" text-anchor="middle" font-weight="400">5×</text>
+<text x="664.0" y="358.0" font-size="11" fill="#898781" text-anchor="middle" font-weight="400">10×</text>
+<text x="364.0" y="380.0" font-size="12" fill="#52514e" text-anchor="middle" font-weight="400">지연 크기 (윈도우 W의 배수, 순서 척도)</text>
+<text x="18" y="216.0" font-size="12" fill="#52514e" text-anchor="middle" transform="rotate(-90 18 216.0)">경보 감소율</text>
+<line x1="264.0" y1="92.0" x2="264.0" y2="340.0" stroke="#52514e" stroke-width="1"/>
+<text x="270.0" y="104.0" font-size="11" fill="#52514e" text-anchor="start" font-weight="400">지연 = W  (오른쪽부터 폐기 발생)</text>
+<polyline points="64.0,337.6 130.7,330.3 197.3,307.8 264.0,236.5 330.7,173.0 397.3,172.9 464.0,172.9 530.7,172.5 597.3,172.4 664.0,172.4" fill="none" stroke="#2a78d6" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="64.0" cy="337.6" r="4" fill="#2a78d6" stroke="#fcfcfb" stroke-width="2"/>
+<circle cx="130.7" cy="330.3" r="4" fill="#2a78d6" stroke="#fcfcfb" stroke-width="2"/>
+<circle cx="197.3" cy="307.8" r="4" fill="#2a78d6" stroke="#fcfcfb" stroke-width="2"/>
+<circle cx="264.0" cy="236.5" r="4" fill="#2a78d6" stroke="#fcfcfb" stroke-width="2"/>
+<circle cx="330.7" cy="173.0" r="4" fill="#2a78d6" stroke="#fcfcfb" stroke-width="2"/>
+<circle cx="397.3" cy="172.9" r="4" fill="#2a78d6" stroke="#fcfcfb" stroke-width="2"/>
+<circle cx="464.0" cy="172.9" r="4" fill="#2a78d6" stroke="#fcfcfb" stroke-width="2"/>
+<circle cx="530.7" cy="172.5" r="4" fill="#2a78d6" stroke="#fcfcfb" stroke-width="2"/>
+<circle cx="597.3" cy="172.4" r="4" fill="#2a78d6" stroke="#fcfcfb" stroke-width="2"/>
+<circle cx="664.0" cy="172.4" r="4" fill="#2a78d6" stroke="#fcfcfb" stroke-width="2"/>
+<polyline points="64.0,330.5 130.7,305.9 197.3,267.4 264.0,237.3 330.7,142.2 397.3,142.2 464.0,142.2 530.7,142.2 597.3,142.2 664.0,142.2" fill="none" stroke="#eb6834" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="64.0" cy="330.5" r="4" fill="#eb6834" stroke="#fcfcfb" stroke-width="2"/>
+<circle cx="130.7" cy="305.9" r="4" fill="#eb6834" stroke="#fcfcfb" stroke-width="2"/>
+<circle cx="197.3" cy="267.4" r="4" fill="#eb6834" stroke="#fcfcfb" stroke-width="2"/>
+<circle cx="264.0" cy="237.3" r="4" fill="#eb6834" stroke="#fcfcfb" stroke-width="2"/>
+<circle cx="330.7" cy="142.2" r="4" fill="#eb6834" stroke="#fcfcfb" stroke-width="2"/>
+<circle cx="397.3" cy="142.2" r="4" fill="#eb6834" stroke="#fcfcfb" stroke-width="2"/>
+<circle cx="464.0" cy="142.2" r="4" fill="#eb6834" stroke="#fcfcfb" stroke-width="2"/>
+<circle cx="530.7" cy="142.2" r="4" fill="#eb6834" stroke="#fcfcfb" stroke-width="2"/>
+<circle cx="597.3" cy="142.2" r="4" fill="#eb6834" stroke="#fcfcfb" stroke-width="2"/>
+<circle cx="664.0" cy="142.2" r="4" fill="#eb6834" stroke="#fcfcfb" stroke-width="2"/>
+<polyline points="64.0,332.9 130.7,318.2 197.3,298.5 264.0,277.1 330.7,171.2 397.3,160.2 464.0,160.2 530.7,160.2 597.3,156.1 664.0,155.4" fill="none" stroke="#1baf7a" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="64.0" cy="332.9" r="4" fill="#1baf7a" stroke="#fcfcfb" stroke-width="2"/>
+<circle cx="130.7" cy="318.2" r="4" fill="#1baf7a" stroke="#fcfcfb" stroke-width="2"/>
+<circle cx="197.3" cy="298.5" r="4" fill="#1baf7a" stroke="#fcfcfb" stroke-width="2"/>
+<circle cx="264.0" cy="277.1" r="4" fill="#1baf7a" stroke="#fcfcfb" stroke-width="2"/>
+<circle cx="330.7" cy="171.2" r="4" fill="#1baf7a" stroke="#fcfcfb" stroke-width="2"/>
+<circle cx="397.3" cy="160.2" r="4" fill="#1baf7a" stroke="#fcfcfb" stroke-width="2"/>
+<circle cx="464.0" cy="160.2" r="4" fill="#1baf7a" stroke="#fcfcfb" stroke-width="2"/>
+<circle cx="530.7" cy="160.2" r="4" fill="#1baf7a" stroke="#fcfcfb" stroke-width="2"/>
+<circle cx="597.3" cy="156.1" r="4" fill="#1baf7a" stroke="#fcfcfb" stroke-width="2"/>
+<circle cx="664.0" cy="155.4" r="4" fill="#1baf7a" stroke="#fcfcfb" stroke-width="2"/>
+<polyline points="64.0,339.9 130.7,339.5 197.3,339.3 264.0,338.9 330.7,221.6 397.3,192.1 464.0,165.9 530.7,134.4 597.3,134.1 664.0,134.1" fill="none" stroke="#eda100" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="64.0" cy="339.9" r="4" fill="#eda100" stroke="#fcfcfb" stroke-width="2"/>
+<circle cx="130.7" cy="339.5" r="4" fill="#eda100" stroke="#fcfcfb" stroke-width="2"/>
+<circle cx="197.3" cy="339.3" r="4" fill="#eda100" stroke="#fcfcfb" stroke-width="2"/>
+<circle cx="264.0" cy="338.9" r="4" fill="#eda100" stroke="#fcfcfb" stroke-width="2"/>
+<circle cx="330.7" cy="221.6" r="4" fill="#eda100" stroke="#fcfcfb" stroke-width="2"/>
+<circle cx="397.3" cy="192.1" r="4" fill="#eda100" stroke="#fcfcfb" stroke-width="2"/>
+<circle cx="464.0" cy="165.9" r="4" fill="#eda100" stroke="#fcfcfb" stroke-width="2"/>
+<circle cx="530.7" cy="134.4" r="4" fill="#eda100" stroke="#fcfcfb" stroke-width="2"/>
+<circle cx="597.3" cy="134.1" r="4" fill="#eda100" stroke="#fcfcfb" stroke-width="2"/>
+<circle cx="664.0" cy="134.1" r="4" fill="#eda100" stroke="#fcfcfb" stroke-width="2"/>
+<polyline points="64.0,339.8 130.7,339.3 197.3,337.6 264.0,266.8 330.7,181.2 397.3,180.9 464.0,180.8 530.7,180.8 597.3,175.8 664.0,175.8" fill="none" stroke="#e87ba4" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="64.0" cy="339.8" r="4" fill="#e87ba4" stroke="#fcfcfb" stroke-width="2"/>
+<circle cx="130.7" cy="339.3" r="4" fill="#e87ba4" stroke="#fcfcfb" stroke-width="2"/>
+<circle cx="197.3" cy="337.6" r="4" fill="#e87ba4" stroke="#fcfcfb" stroke-width="2"/>
+<circle cx="264.0" cy="266.8" r="4" fill="#e87ba4" stroke="#fcfcfb" stroke-width="2"/>
+<circle cx="330.7" cy="181.2" r="4" fill="#e87ba4" stroke="#fcfcfb" stroke-width="2"/>
+<circle cx="397.3" cy="180.9" r="4" fill="#e87ba4" stroke="#fcfcfb" stroke-width="2"/>
+<circle cx="464.0" cy="180.8" r="4" fill="#e87ba4" stroke="#fcfcfb" stroke-width="2"/>
+<circle cx="530.7" cy="180.8" r="4" fill="#e87ba4" stroke="#fcfcfb" stroke-width="2"/>
+<circle cx="597.3" cy="175.8" r="4" fill="#e87ba4" stroke="#fcfcfb" stroke-width="2"/>
+<circle cx="664.0" cy="175.8" r="4" fill="#e87ba4" stroke="#fcfcfb" stroke-width="2"/>
+</svg>
